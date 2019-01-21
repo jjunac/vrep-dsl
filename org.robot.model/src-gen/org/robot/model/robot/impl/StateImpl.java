@@ -6,14 +6,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.robot.model.robot.Action;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.State;
@@ -27,14 +29,14 @@ import org.robot.model.robot.State;
  * </p>
  * <ul>
  *   <li>{@link org.robot.model.robot.impl.StateImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link org.robot.model.robot.impl.StateImpl#getDestinations <em>Destinations</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.StateImpl#getDestination <em>Destination</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StateImpl extends NamedElementImpl implements State {
 	/**
-	 * The cached value of the '{@link #getActions() <em>Actions</em>}' reference list.
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getActions()
@@ -44,24 +46,14 @@ public class StateImpl extends NamedElementImpl implements State {
 	protected EList<Action> actions;
 
 	/**
-	 * The default value of the '{@link #getDestinations() <em>Destinations</em>}' attribute.
+	 * The cached value of the '{@link #getDestination() <em>Destination</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDestinations()
+	 * @see #getDestination()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DESTINATIONS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDestinations() <em>Destinations</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestinations()
-	 * @generated
-	 * @ordered
-	 */
-	protected String destinations = DESTINATIONS_EDEFAULT;
+	protected Action destination;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +81,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 */
 	public EList<Action> getActions() {
 		if (actions == null) {
-			actions = new EObjectResolvingEList<Action>(Action.class, this, RobotPackage.STATE__ACTIONS);
+			actions = new EObjectContainmentEList<Action>(Action.class, this, RobotPackage.STATE__ACTIONS);
 		}
 		return actions;
 	}
@@ -99,8 +91,17 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDestinations() {
-		return destinations;
+	public Action getDestination() {
+		if (destination != null && destination.eIsProxy()) {
+			InternalEObject oldDestination = (InternalEObject) destination;
+			destination = (Action) eResolveProxy(oldDestination);
+			if (destination != oldDestination) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotPackage.STATE__DESTINATION,
+							oldDestination, destination));
+			}
+		}
+		return destination;
 	}
 
 	/**
@@ -108,12 +109,35 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDestinations(String newDestinations) {
-		String oldDestinations = destinations;
-		destinations = newDestinations;
+	public Action basicGetDestination() {
+		return destination;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDestination(Action newDestination) {
+		Action oldDestination = destination;
+		destination = newDestination;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.STATE__DESTINATIONS, oldDestinations,
-					destinations));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.STATE__DESTINATION, oldDestination,
+					destination));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RobotPackage.STATE__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -126,8 +150,10 @@ public class StateImpl extends NamedElementImpl implements State {
 		switch (featureID) {
 		case RobotPackage.STATE__ACTIONS:
 			return getActions();
-		case RobotPackage.STATE__DESTINATIONS:
-			return getDestinations();
+		case RobotPackage.STATE__DESTINATION:
+			if (resolve)
+				return getDestination();
+			return basicGetDestination();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,8 +171,8 @@ public class StateImpl extends NamedElementImpl implements State {
 			getActions().clear();
 			getActions().addAll((Collection<? extends Action>) newValue);
 			return;
-		case RobotPackage.STATE__DESTINATIONS:
-			setDestinations((String) newValue);
+		case RobotPackage.STATE__DESTINATION:
+			setDestination((Action) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -163,8 +189,8 @@ public class StateImpl extends NamedElementImpl implements State {
 		case RobotPackage.STATE__ACTIONS:
 			getActions().clear();
 			return;
-		case RobotPackage.STATE__DESTINATIONS:
-			setDestinations(DESTINATIONS_EDEFAULT);
+		case RobotPackage.STATE__DESTINATION:
+			setDestination((Action) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -180,27 +206,10 @@ public class StateImpl extends NamedElementImpl implements State {
 		switch (featureID) {
 		case RobotPackage.STATE__ACTIONS:
 			return actions != null && !actions.isEmpty();
-		case RobotPackage.STATE__DESTINATIONS:
-			return DESTINATIONS_EDEFAULT == null ? destinations != null : !DESTINATIONS_EDEFAULT.equals(destinations);
+		case RobotPackage.STATE__DESTINATION:
+			return destination != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (destinations: ");
-		result.append(destinations);
-		result.append(')');
-		return result.toString();
 	}
 
 } //StateImpl

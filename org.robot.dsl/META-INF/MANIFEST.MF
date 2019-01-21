@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.robot.dsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.robot.dsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.robot.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.robot.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.robot.dsl.formatting2,
+ org.robot.dsl.parser.antlr,
+ org.robot.dsl.scoping,
+ org.robot.dsl.services,
+ org.robot.dsl.serializer,
+ org.robot.dsl.generator,
+ org.robot.dsl,
+ org.robot.dsl.parser.antlr.internal,
+ org.robot.dsl.validation
+Import-Package: org.apache.log4j

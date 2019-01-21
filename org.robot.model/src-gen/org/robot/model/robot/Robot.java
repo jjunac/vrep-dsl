@@ -20,26 +20,26 @@ package org.robot.model.robot;
  */
 public interface Robot extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Scenario</b></em>' reference.
+	 * Returns the value of the '<em><b>Scenario</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Scenario</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scenario</em>' reference.
+	 * @return the value of the '<em>Scenario</em>' containment reference.
 	 * @see #setScenario(Scenario)
 	 * @see org.robot.model.robot.RobotPackage#getRobot_Scenario()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Scenario getScenario();
 
 	/**
-	 * Sets the value of the '{@link org.robot.model.robot.Robot#getScenario <em>Scenario</em>}' reference.
+	 * Sets the value of the '{@link org.robot.model.robot.Robot#getScenario <em>Scenario</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scenario</em>' reference.
+	 * @param value the new value of the '<em>Scenario</em>' containment reference.
 	 * @see #getScenario()
 	 * @generated
 	 */

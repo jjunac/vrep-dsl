@@ -4,12 +4,14 @@ package org.robot.model.robot.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.State;
@@ -29,7 +31,7 @@ import org.robot.model.robot.State;
  */
 public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
+	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStates()
@@ -64,9 +66,23 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	 */
 	public EList<State> getStates() {
 		if (states == null) {
-			states = new EObjectResolvingEList<State>(State.class, this, RobotPackage.SCENARIO__STATES);
+			states = new EObjectContainmentEList<State>(State.class, this, RobotPackage.SCENARIO__STATES);
 		}
 		return states;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RobotPackage.SCENARIO__STATES:
+			return ((InternalEList<?>) getStates()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

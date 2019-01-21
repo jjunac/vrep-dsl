@@ -18,7 +18,7 @@
     </genClasses>
     <genClasses ecoreClass="robot.ecore#//State">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robot.ecore#//State/actions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//State/destinations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robot.ecore#//State/destination"/>
     </genClasses>
     <genClasses image="false" ecoreClass="robot.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//NamedElement/name"/>

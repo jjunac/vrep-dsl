@@ -113,7 +113,7 @@ public interface RobotPackage extends EPackage {
 	int ROBOT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Scenario</b></em>' reference.
+	 * The feature id for the '<em><b>Scenario</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,7 +159,7 @@ public interface RobotPackage extends EPackage {
 	int SCENARIO__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>States</b></em>' reference list.
+	 * The feature id for the '<em><b>States</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -205,7 +205,7 @@ public interface RobotPackage extends EPackage {
 	int STATE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -214,13 +214,13 @@ public interface RobotPackage extends EPackage {
 	int STATE__ACTIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Destinations</b></em>' attribute.
+	 * The feature id for the '<em><b>Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__DESTINATIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int STATE__DESTINATION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -288,10 +288,10 @@ public interface RobotPackage extends EPackage {
 	EClass getRobot();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.robot.model.robot.Robot#getScenario <em>Scenario</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.robot.model.robot.Robot#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Scenario</em>'.
+	 * @return the meta object for the containment reference '<em>Scenario</em>'.
 	 * @see org.robot.model.robot.Robot#getScenario()
 	 * @see #getRobot()
 	 * @generated
@@ -309,10 +309,10 @@ public interface RobotPackage extends EPackage {
 	EClass getScenario();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.robot.model.robot.Scenario#getStates <em>States</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.robot.model.robot.Scenario#getStates <em>States</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>States</em>'.
+	 * @return the meta object for the containment reference list '<em>States</em>'.
 	 * @see org.robot.model.robot.Scenario#getStates()
 	 * @see #getScenario()
 	 * @generated
@@ -330,10 +330,10 @@ public interface RobotPackage extends EPackage {
 	EClass getState();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.robot.model.robot.State#getActions <em>Actions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.robot.model.robot.State#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Actions</em>'.
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
 	 * @see org.robot.model.robot.State#getActions()
 	 * @see #getState()
 	 * @generated
@@ -341,15 +341,15 @@ public interface RobotPackage extends EPackage {
 	EReference getState_Actions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.robot.model.robot.State#getDestinations <em>Destinations</em>}'.
+	 * Returns the meta object for the reference '{@link org.robot.model.robot.State#getDestination <em>Destination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Destinations</em>'.
-	 * @see org.robot.model.robot.State#getDestinations()
+	 * @return the meta object for the reference '<em>Destination</em>'.
+	 * @see org.robot.model.robot.State#getDestination()
 	 * @see #getState()
 	 * @generated
 	 */
-	EAttribute getState_Destinations();
+	EReference getState_Destination();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.NamedElement <em>Named Element</em>}'.
@@ -416,7 +416,7 @@ public interface RobotPackage extends EPackage {
 		EClass ROBOT = eINSTANCE.getRobot();
 
 		/**
-		 * The meta object literal for the '<em><b>Scenario</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Scenario</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -434,7 +434,7 @@ public interface RobotPackage extends EPackage {
 		EClass SCENARIO = eINSTANCE.getScenario();
 
 		/**
-		 * The meta object literal for the '<em><b>States</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -452,7 +452,7 @@ public interface RobotPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
-		 * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -460,12 +460,12 @@ public interface RobotPackage extends EPackage {
 		EReference STATE__ACTIONS = eINSTANCE.getState_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Destinations</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Destination</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATE__DESTINATIONS = eINSTANCE.getState_Destinations();
+		EReference STATE__DESTINATION = eINSTANCE.getState_Destination();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.NamedElementImpl <em>Named Element</em>}' class.
