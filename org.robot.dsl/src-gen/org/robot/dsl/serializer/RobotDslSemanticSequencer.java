@@ -15,10 +15,12 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.robot.dsl.services.RobotDslGrammarAccess;
+import org.robot.model.robot.ExecuteStatement;
+import org.robot.model.robot.ForwardStatement;
+import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
-import org.robot.model.robot.State;
 
 @SuppressWarnings("all")
 public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -34,17 +36,20 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RobotPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RobotPackage.ACTION:
-				sequence_Action(context, (org.robot.model.robot.Action) semanticObject); 
+			case RobotPackage.EXECUTE_STATEMENT:
+				sequence_ExecuteStatement(context, (ExecuteStatement) semanticObject); 
+				return; 
+			case RobotPackage.FORWARD_STATEMENT:
+				sequence_ForwardStatement(context, (ForwardStatement) semanticObject); 
+				return; 
+			case RobotPackage.PRINT_STATEMENT:
+				sequence_PrintStatement(context, (PrintStatement) semanticObject); 
 				return; 
 			case RobotPackage.ROBOT:
 				sequence_Robot(context, (Robot) semanticObject); 
 				return; 
 			case RobotPackage.SCENARIO:
 				sequence_Scenario(context, (Scenario) semanticObject); 
-				return; 
-			case RobotPackage.STATE:
-				sequence_State(context, (State) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -53,18 +58,51 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Action returns Action
+	 *     Statement returns ExecuteStatement
+	 *     ExecuteStatement returns ExecuteStatement
 	 *
 	 * Constraint:
-	 *     name=EString
+	 *     destination=[Scenario|EString]
 	 */
-	protected void sequence_Action(ISerializationContext context, org.robot.model.robot.Action semanticObject) {
+	protected void sequence_ExecuteStatement(ISerializationContext context, ExecuteStatement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.EXECUTE_STATEMENT__DESTINATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.EXECUTE_STATEMENT__DESTINATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getActionAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getExecuteStatementAccess().getDestinationScenarioEStringParserRuleCall_2_0_1(), semanticObject.eGet(RobotPackage.Literals.EXECUTE_STATEMENT__DESTINATION, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns ForwardStatement
+	 *     ForwardStatement returns ForwardStatement
+	 *
+	 * Constraint:
+	 *     {ForwardStatement}
+	 */
+	protected void sequence_ForwardStatement(ISerializationContext context, ForwardStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns PrintStatement
+	 *     PrintStatement returns PrintStatement
+	 *
+	 * Constraint:
+	 *     text=EString
+	 */
+	protected void sequence_PrintStatement(ISerializationContext context, PrintStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.PRINT_STATEMENT__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.PRINT_STATEMENT__TEXT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPrintStatementAccess().getTextEStringParserRuleCall_2_0(), semanticObject.getText());
 		feeder.finish();
 	}
 	
@@ -74,7 +112,7 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Robot returns Robot
 	 *
 	 * Constraint:
-	 *     (name=EString scenario=Scenario?)
+	 *     (name=EString (scenarii+=Scenario scenarii+=Scenario*)? global=Scenario initial=[Scenario|EString])
 	 */
 	protected void sequence_Robot(ISerializationContext context, Robot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -86,21 +124,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Scenario returns Scenario
 	 *
 	 * Constraint:
-	 *     (name=EString (states+=State states+=State*)?)
+	 *     (name=EString (statements+=Statement statements+=Statement*)?)
 	 */
 	protected void sequence_Scenario(ISerializationContext context, Scenario semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     State returns State
-	 *
-	 * Constraint:
-	 *     (name=EString destination=[Action|EString]? (actions+=Action actions+=Action*)?)
-	 */
-	protected void sequence_State(ISerializationContext context, State semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

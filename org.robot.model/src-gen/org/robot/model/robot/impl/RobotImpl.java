@@ -2,13 +2,20 @@
  */
 package org.robot.model.robot.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
@@ -22,21 +29,43 @@ import org.robot.model.robot.Scenario;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.robot.model.robot.impl.RobotImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.RobotImpl#getScenarii <em>Scenarii</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.RobotImpl#getGlobal <em>Global</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.RobotImpl#getInitial <em>Initial</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RobotImpl extends NamedElementImpl implements Robot {
 	/**
-	 * The cached value of the '{@link #getScenario() <em>Scenario</em>}' containment reference.
+	 * The cached value of the '{@link #getScenarii() <em>Scenarii</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScenario()
+	 * @see #getScenarii()
 	 * @generated
 	 * @ordered
 	 */
-	protected Scenario scenario;
+	protected EList<Scenario> scenarii;
+
+	/**
+	 * The cached value of the '{@link #getGlobal() <em>Global</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlobal()
+	 * @generated
+	 * @ordered
+	 */
+	protected Scenario global;
+
+	/**
+	 * The cached value of the '{@link #getInitial() <em>Initial</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitial()
+	 * @generated
+	 * @ordered
+	 */
+	protected Scenario initial;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,8 +91,11 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scenario getScenario() {
-		return scenario;
+	public EList<Scenario> getScenarii() {
+		if (scenarii == null) {
+			scenarii = new EObjectContainmentEList<Scenario>(Scenario.class, this, RobotPackage.ROBOT__SCENARII);
+		}
+		return scenarii;
 	}
 
 	/**
@@ -71,12 +103,21 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetScenario(Scenario newScenario, NotificationChain msgs) {
-		Scenario oldScenario = scenario;
-		scenario = newScenario;
+	public Scenario getGlobal() {
+		return global;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGlobal(Scenario newGlobal, NotificationChain msgs) {
+		Scenario oldGlobal = global;
+		global = newGlobal;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__SCENARIO,
-					oldScenario, newScenario);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__GLOBAL,
+					oldGlobal, newGlobal);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -90,21 +131,59 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setScenario(Scenario newScenario) {
-		if (newScenario != scenario) {
+	public void setGlobal(Scenario newGlobal) {
+		if (newGlobal != global) {
 			NotificationChain msgs = null;
-			if (scenario != null)
-				msgs = ((InternalEObject) scenario).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - RobotPackage.ROBOT__SCENARIO, null, msgs);
-			if (newScenario != null)
-				msgs = ((InternalEObject) newScenario).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - RobotPackage.ROBOT__SCENARIO, null, msgs);
-			msgs = basicSetScenario(newScenario, msgs);
+			if (global != null)
+				msgs = ((InternalEObject) global).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - RobotPackage.ROBOT__GLOBAL, null, msgs);
+			if (newGlobal != null)
+				msgs = ((InternalEObject) newGlobal).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - RobotPackage.ROBOT__GLOBAL, null, msgs);
+			msgs = basicSetGlobal(newGlobal, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__SCENARIO, newScenario,
-					newScenario));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__GLOBAL, newGlobal, newGlobal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scenario getInitial() {
+		if (initial != null && initial.eIsProxy()) {
+			InternalEObject oldInitial = (InternalEObject) initial;
+			initial = (Scenario) eResolveProxy(oldInitial);
+			if (initial != oldInitial) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotPackage.ROBOT__INITIAL, oldInitial,
+							initial));
+			}
+		}
+		return initial;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scenario basicGetInitial() {
+		return initial;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitial(Scenario newInitial) {
+		Scenario oldInitial = initial;
+		initial = newInitial;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__INITIAL, oldInitial, initial));
 	}
 
 	/**
@@ -115,8 +194,10 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RobotPackage.ROBOT__SCENARIO:
-			return basicSetScenario(null, msgs);
+		case RobotPackage.ROBOT__SCENARII:
+			return ((InternalEList<?>) getScenarii()).basicRemove(otherEnd, msgs);
+		case RobotPackage.ROBOT__GLOBAL:
+			return basicSetGlobal(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,8 +210,14 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotPackage.ROBOT__SCENARIO:
-			return getScenario();
+		case RobotPackage.ROBOT__SCENARII:
+			return getScenarii();
+		case RobotPackage.ROBOT__GLOBAL:
+			return getGlobal();
+		case RobotPackage.ROBOT__INITIAL:
+			if (resolve)
+				return getInitial();
+			return basicGetInitial();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,11 +227,19 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotPackage.ROBOT__SCENARIO:
-			setScenario((Scenario) newValue);
+		case RobotPackage.ROBOT__SCENARII:
+			getScenarii().clear();
+			getScenarii().addAll((Collection<? extends Scenario>) newValue);
+			return;
+		case RobotPackage.ROBOT__GLOBAL:
+			setGlobal((Scenario) newValue);
+			return;
+		case RobotPackage.ROBOT__INITIAL:
+			setInitial((Scenario) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -158,8 +253,14 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotPackage.ROBOT__SCENARIO:
-			setScenario((Scenario) null);
+		case RobotPackage.ROBOT__SCENARII:
+			getScenarii().clear();
+			return;
+		case RobotPackage.ROBOT__GLOBAL:
+			setGlobal((Scenario) null);
+			return;
+		case RobotPackage.ROBOT__INITIAL:
+			setInitial((Scenario) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -173,8 +274,12 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotPackage.ROBOT__SCENARIO:
-			return scenario != null;
+		case RobotPackage.ROBOT__SCENARII:
+			return scenarii != null && !scenarii.isEmpty();
+		case RobotPackage.ROBOT__GLOBAL:
+			return global != null;
+		case RobotPackage.ROBOT__INITIAL:
+			return initial != null;
 		}
 		return super.eIsSet(featureID);
 	}

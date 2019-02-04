@@ -59,10 +59,12 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 			return createRobot();
 		case RobotPackage.SCENARIO:
 			return createScenario();
-		case RobotPackage.STATE:
-			return createState();
-		case RobotPackage.ACTION:
-			return createAction();
+		case RobotPackage.EXECUTE_STATEMENT:
+			return createExecuteStatement();
+		case RobotPackage.PRINT_STATEMENT:
+			return createPrintStatement();
+		case RobotPackage.FORWARD_STATEMENT:
+			return createForwardStatement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,9 +95,9 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State createState() {
-		StateImpl state = new StateImpl();
-		return state;
+	public ExecuteStatement createExecuteStatement() {
+		ExecuteStatementImpl executeStatement = new ExecuteStatementImpl();
+		return executeStatement;
 	}
 
 	/**
@@ -103,9 +105,19 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
+	public PrintStatement createPrintStatement() {
+		PrintStatementImpl printStatement = new PrintStatementImpl();
+		return printStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ForwardStatement createForwardStatement() {
+		ForwardStatementImpl forwardStatement = new ForwardStatementImpl();
+		return forwardStatement;
 	}
 
 	/**

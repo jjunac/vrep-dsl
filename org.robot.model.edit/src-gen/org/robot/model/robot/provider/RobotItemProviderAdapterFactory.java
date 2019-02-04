@@ -119,49 +119,72 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.State} instances.
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.ExecuteStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StateItemProvider stateItemProvider;
+	protected ExecuteStatementItemProvider executeStatementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.robot.model.robot.State}.
+	 * This creates an adapter for a {@link org.robot.model.robot.ExecuteStatement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStateAdapter() {
-		if (stateItemProvider == null) {
-			stateItemProvider = new StateItemProvider(this);
+	public Adapter createExecuteStatementAdapter() {
+		if (executeStatementItemProvider == null) {
+			executeStatementItemProvider = new ExecuteStatementItemProvider(this);
 		}
 
-		return stateItemProvider;
+		return executeStatementItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.Action} instances.
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.PrintStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionItemProvider actionItemProvider;
+	protected PrintStatementItemProvider printStatementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.robot.model.robot.Action}.
+	 * This creates an adapter for a {@link org.robot.model.robot.PrintStatement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
+	public Adapter createPrintStatementAdapter() {
+		if (printStatementItemProvider == null) {
+			printStatementItemProvider = new PrintStatementItemProvider(this);
 		}
 
-		return actionItemProvider;
+		return printStatementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.ForwardStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForwardStatementItemProvider forwardStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.ForwardStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForwardStatementAdapter() {
+		if (forwardStatementItemProvider == null) {
+			forwardStatementItemProvider = new ForwardStatementItemProvider(this);
+		}
+
+		return forwardStatementItemProvider;
 	}
 
 	/**
@@ -267,10 +290,12 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			robotItemProvider.dispose();
 		if (scenarioItemProvider != null)
 			scenarioItemProvider.dispose();
-		if (stateItemProvider != null)
-			stateItemProvider.dispose();
-		if (actionItemProvider != null)
-			actionItemProvider.dispose();
+		if (executeStatementItemProvider != null)
+			executeStatementItemProvider.dispose();
+		if (printStatementItemProvider != null)
+			printStatementItemProvider.dispose();
+		if (forwardStatementItemProvider != null)
+			forwardStatementItemProvider.dispose();
 	}
 
 }

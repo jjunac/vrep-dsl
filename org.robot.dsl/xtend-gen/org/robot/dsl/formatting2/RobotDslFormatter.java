@@ -14,7 +14,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.robot.dsl.services.RobotDslGrammarAccess;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.Scenario;
-import org.robot.model.robot.State;
+import org.robot.model.robot.Statement;
 
 @SuppressWarnings("all")
 public class RobotDslFormatter extends AbstractFormatter2 {
@@ -23,13 +23,17 @@ public class RobotDslFormatter extends AbstractFormatter2 {
   private RobotDslGrammarAccess _robotDslGrammarAccess;
   
   protected void _format(final Robot robot, @Extension final IFormattableDocument document) {
-    document.<Scenario>format(robot.getScenario());
+    EList<Scenario> _scenarii = robot.getScenarii();
+    for (final Scenario scenario : _scenarii) {
+      document.<Scenario>format(scenario);
+    }
+    document.<Scenario>format(robot.getGlobal());
   }
   
   protected void _format(final Scenario scenario, @Extension final IFormattableDocument document) {
-    EList<State> _states = scenario.getStates();
-    for (final State state : _states) {
-      document.<State>format(state);
+    EList<Statement> _statements = scenario.getStatements();
+    for (final Statement statement : _statements) {
+      document.<Statement>format(statement);
     }
   }
   

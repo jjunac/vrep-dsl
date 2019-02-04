@@ -9,13 +9,16 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.robot.model.robot.Action;
+import org.robot.model.robot.ControlStatement;
+import org.robot.model.robot.ExecuteStatement;
+import org.robot.model.robot.ForwardStatement;
 import org.robot.model.robot.NamedElement;
+import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotFactory;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
-import org.robot.model.robot.State;
+import org.robot.model.robot.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +46,21 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stateEClass = null;
+	private EClass statementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass executeStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass printStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -57,7 +74,14 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass actionEClass = null;
+	private EClass controlStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass forwardStatementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -137,8 +161,26 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRobot_Scenario() {
+	public EReference getRobot_Scenarii() {
 		return (EReference) robotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRobot_Global() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRobot_Initial() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -155,7 +197,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScenario_States() {
+	public EReference getScenario_Statements() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -164,8 +206,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getState() {
-		return stateEClass;
+	public EClass getStatement() {
+		return statementEClass;
 	}
 
 	/**
@@ -173,8 +215,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_Actions() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(0);
+	public EClass getExecuteStatement() {
+		return executeStatementEClass;
 	}
 
 	/**
@@ -182,8 +224,26 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_Destination() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(1);
+	public EReference getExecuteStatement_Destination() {
+		return (EReference) executeStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrintStatement() {
+		return printStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPrintStatement_Text() {
+		return (EAttribute) printStatementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -209,8 +269,17 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAction() {
-		return actionEClass;
+	public EClass getControlStatement() {
+		return controlStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getForwardStatement() {
+		return forwardStatementEClass;
 	}
 
 	/**
@@ -243,19 +312,27 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 
 		// Create classes and their features
 		robotEClass = createEClass(ROBOT);
-		createEReference(robotEClass, ROBOT__SCENARIO);
+		createEReference(robotEClass, ROBOT__SCENARII);
+		createEReference(robotEClass, ROBOT__GLOBAL);
+		createEReference(robotEClass, ROBOT__INITIAL);
 
 		scenarioEClass = createEClass(SCENARIO);
-		createEReference(scenarioEClass, SCENARIO__STATES);
+		createEReference(scenarioEClass, SCENARIO__STATEMENTS);
 
-		stateEClass = createEClass(STATE);
-		createEReference(stateEClass, STATE__ACTIONS);
-		createEReference(stateEClass, STATE__DESTINATION);
+		statementEClass = createEClass(STATEMENT);
+
+		executeStatementEClass = createEClass(EXECUTE_STATEMENT);
+		createEReference(executeStatementEClass, EXECUTE_STATEMENT__DESTINATION);
+
+		printStatementEClass = createEClass(PRINT_STATEMENT);
+		createEAttribute(printStatementEClass, PRINT_STATEMENT__TEXT);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
-		actionEClass = createEClass(ACTION);
+		controlStatementEClass = createEClass(CONTROL_STATEMENT);
+
+		forwardStatementEClass = createEClass(FORWARD_STATEMENT);
 	}
 
 	/**
@@ -289,35 +366,53 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		// Add supertypes to classes
 		robotEClass.getESuperTypes().add(this.getNamedElement());
 		scenarioEClass.getESuperTypes().add(this.getNamedElement());
-		stateEClass.getESuperTypes().add(this.getNamedElement());
-		actionEClass.getESuperTypes().add(this.getNamedElement());
+		executeStatementEClass.getESuperTypes().add(this.getStatement());
+		printStatementEClass.getESuperTypes().add(this.getStatement());
+		controlStatementEClass.getESuperTypes().add(this.getStatement());
+		forwardStatementEClass.getESuperTypes().add(this.getControlStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(robotEClass, Robot.class, "Robot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRobot_Scenario(), this.getScenario(), null, "scenario", null, 0, 1, Robot.class,
+		initEReference(getRobot_Scenarii(), this.getScenario(), null, "scenarii", null, 0, -1, Robot.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRobot_Global(), this.getScenario(), null, "global", null, 1, 1, Robot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getRobot_Initial(), this.getScenario(), null, "initial", null, 0, 1, Robot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScenario_States(), this.getState(), null, "states", null, 0, -1, Scenario.class,
+		initEReference(getScenario_Statements(), this.getStatement(), null, "statements", null, 0, -1, Scenario.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_Actions(), this.getAction(), null, "actions", null, 0, -1, State.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getState_Destination(), this.getAction(), null, "destination", null, 0, 1, State.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(executeStatementEClass, ExecuteStatement.class, "ExecuteStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExecuteStatement_Destination(), this.getScenario(), null, "destination", null, 1, 1,
+				ExecuteStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(printStatementEClass, PrintStatement.class, "PrintStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPrintStatement_Text(), ecorePackage.getEString(), "text", null, 0, 1, PrintStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(controlStatementEClass, ControlStatement.class, "ControlStatement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(forwardStatementEClass, ForwardStatement.class, "ForwardStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

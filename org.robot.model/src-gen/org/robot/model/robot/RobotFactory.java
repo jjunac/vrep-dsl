@@ -40,22 +40,31 @@ public interface RobotFactory extends EFactory {
 	Scenario createScenario();
 
 	/**
-	 * Returns a new object of class '<em>State</em>'.
+	 * Returns a new object of class '<em>Execute Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State</em>'.
+	 * @return a new object of class '<em>Execute Statement</em>'.
 	 * @generated
 	 */
-	State createState();
+	ExecuteStatement createExecuteStatement();
 
 	/**
-	 * Returns a new object of class '<em>Action</em>'.
+	 * Returns a new object of class '<em>Print Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
+	 * @return a new object of class '<em>Print Statement</em>'.
 	 * @generated
 	 */
-	Action createAction();
+	PrintStatement createPrintStatement();
+
+	/**
+	 * Returns a new object of class '<em>Forward Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Forward Statement</em>'.
+	 * @generated
+	 */
+	ForwardStatement createForwardStatement();
 
 	/**
 	 * Returns the package supported by this factory.

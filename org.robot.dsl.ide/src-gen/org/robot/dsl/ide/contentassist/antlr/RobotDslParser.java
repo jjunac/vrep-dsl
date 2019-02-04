@@ -31,27 +31,27 @@ public class RobotDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RobotDslGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getRobotAccess().getGroup(), "rule__Robot__Group__0");
-			builder.put(grammarAccess.getRobotAccess().getGroup_4(), "rule__Robot__Group_4__0");
+			builder.put(grammarAccess.getRobotAccess().getGroup_3(), "rule__Robot__Group_3__0");
+			builder.put(grammarAccess.getRobotAccess().getGroup_3_3(), "rule__Robot__Group_3_3__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup_4(), "rule__Scenario__Group_4__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup_4_3(), "rule__Scenario__Group_4_3__0");
-			builder.put(grammarAccess.getStateAccess().getGroup(), "rule__State__Group__0");
-			builder.put(grammarAccess.getStateAccess().getGroup_4(), "rule__State__Group_4__0");
-			builder.put(grammarAccess.getStateAccess().getGroup_5(), "rule__State__Group_5__0");
-			builder.put(grammarAccess.getStateAccess().getGroup_5_3(), "rule__State__Group_5_3__0");
-			builder.put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
-			builder.put(grammarAccess.getRobotAccess().getNameAssignment_2(), "rule__Robot__NameAssignment_2");
-			builder.put(grammarAccess.getRobotAccess().getScenarioAssignment_4_1(), "rule__Robot__ScenarioAssignment_4_1");
+			builder.put(grammarAccess.getForwardStatementAccess().getGroup(), "rule__ForwardStatement__Group__0");
+			builder.put(grammarAccess.getPrintStatementAccess().getGroup(), "rule__PrintStatement__Group__0");
+			builder.put(grammarAccess.getExecuteStatementAccess().getGroup(), "rule__ExecuteStatement__Group__0");
+			builder.put(grammarAccess.getRobotAccess().getNameAssignment_1(), "rule__Robot__NameAssignment_1");
+			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_3_2(), "rule__Robot__ScenariiAssignment_3_2");
+			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_3_3_1(), "rule__Robot__ScenariiAssignment_3_3_1");
+			builder.put(grammarAccess.getRobotAccess().getGlobalAssignment_5(), "rule__Robot__GlobalAssignment_5");
+			builder.put(grammarAccess.getRobotAccess().getInitialAssignment_7(), "rule__Robot__InitialAssignment_7");
 			builder.put(grammarAccess.getScenarioAccess().getNameAssignment_2(), "rule__Scenario__NameAssignment_2");
-			builder.put(grammarAccess.getScenarioAccess().getStatesAssignment_4_2(), "rule__Scenario__StatesAssignment_4_2");
-			builder.put(grammarAccess.getScenarioAccess().getStatesAssignment_4_3_1(), "rule__Scenario__StatesAssignment_4_3_1");
-			builder.put(grammarAccess.getStateAccess().getNameAssignment_2(), "rule__State__NameAssignment_2");
-			builder.put(grammarAccess.getStateAccess().getDestinationAssignment_4_1(), "rule__State__DestinationAssignment_4_1");
-			builder.put(grammarAccess.getStateAccess().getActionsAssignment_5_2(), "rule__State__ActionsAssignment_5_2");
-			builder.put(grammarAccess.getStateAccess().getActionsAssignment_5_3_1(), "rule__State__ActionsAssignment_5_3_1");
-			builder.put(grammarAccess.getActionAccess().getNameAssignment_2(), "rule__Action__NameAssignment_2");
+			builder.put(grammarAccess.getScenarioAccess().getStatementsAssignment_4_2(), "rule__Scenario__StatementsAssignment_4_2");
+			builder.put(grammarAccess.getScenarioAccess().getStatementsAssignment_4_3_1(), "rule__Scenario__StatementsAssignment_4_3_1");
+			builder.put(grammarAccess.getPrintStatementAccess().getTextAssignment_2(), "rule__PrintStatement__TextAssignment_2");
+			builder.put(grammarAccess.getExecuteStatementAccess().getDestinationAssignment_2(), "rule__ExecuteStatement__DestinationAssignment_2");
 		}
 	}
 	

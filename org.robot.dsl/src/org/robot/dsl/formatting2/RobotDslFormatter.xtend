@@ -16,15 +16,18 @@ class RobotDslFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Robot robot, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		robot.scenario.format
+		for (scenario : robot.scenarii) {
+			scenario.format
+		}
+		robot.global.format
 	}
 
 	def dispatch void format(Scenario scenario, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (state : scenario.states) {
-			state.format
+		for (statement : scenario.statements) {
+			statement.format
 		}
 	}
 	
-	// TODO: implement for State
+	// TODO: implement for 
 }

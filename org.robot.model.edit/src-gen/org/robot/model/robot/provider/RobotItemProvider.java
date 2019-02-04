@@ -8,10 +8,13 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.robot.model.robot.Robot;
+import org.robot.model.robot.RobotFactory;
 import org.robot.model.robot.RobotPackage;
 
 /**
@@ -42,23 +45,54 @@ public class RobotItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScenarioPropertyDescriptor(object);
+			addInitialPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Scenario feature.
+	 * This adds a property descriptor for the Initial feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addScenarioPropertyDescriptor(Object object) {
+	protected void addInitialPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Robot_scenario_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Robot_scenario_feature", "_UI_Robot_type"),
-						RobotPackage.Literals.ROBOT__SCENARIO, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Robot_initial_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Robot_initial_feature", "_UI_Robot_type"),
+						RobotPackage.Literals.ROBOT__INITIAL, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RobotPackage.Literals.ROBOT__SCENARII);
+			childrenFeatures.add(RobotPackage.Literals.ROBOT__GLOBAL);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -105,6 +139,13 @@ public class RobotItemProvider extends NamedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Robot.class)) {
+		case RobotPackage.ROBOT__SCENARII:
+		case RobotPackage.ROBOT__GLOBAL:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -118,6 +159,33 @@ public class RobotItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(
+				createChildParameter(RobotPackage.Literals.ROBOT__SCENARII, RobotFactory.eINSTANCE.createScenario()));
+
+		newChildDescriptors.add(
+				createChildParameter(RobotPackage.Literals.ROBOT__GLOBAL, RobotFactory.eINSTANCE.createScenario()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == RobotPackage.Literals.ROBOT__SCENARII
+				|| childFeature == RobotPackage.Literals.ROBOT__GLOBAL;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

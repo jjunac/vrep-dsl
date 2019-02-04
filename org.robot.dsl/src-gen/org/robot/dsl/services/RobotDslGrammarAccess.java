@@ -27,57 +27,130 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class RobotElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Robot");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cRobotAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRobotKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cScenarioKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cScenarioAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cScenarioScenarioParserRuleCall_4_1_0 = (RuleCall)cScenarioAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRobotKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cScenariiKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cScenariiAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cScenariiScenarioParserRuleCall_3_2_0 = (RuleCall)cScenariiAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
+		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cScenariiAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cScenariiScenarioParserRuleCall_3_3_1_0 = (RuleCall)cScenariiAssignment_3_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Keyword cGlobalKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cGlobalAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cGlobalScenarioParserRuleCall_5_0 = (RuleCall)cGlobalAssignment_5.eContents().get(0);
+		private final Keyword cInitialKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cInitialAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cInitialScenarioCrossReference_7_0 = (CrossReference)cInitialAssignment_7.eContents().get(0);
+		private final RuleCall cInitialScenarioEStringParserRuleCall_7_0_1 = (RuleCall)cInitialScenarioCrossReference_7_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Robot:
-		//	{Robot}
 		//	'Robot'
 		//	name=EString
-		//	'{' ('scenario' scenario=Scenario)?
+		//	'{' ('scenarii' '{' scenarii+=Scenario ("," scenarii+=Scenario)* '}')?
+		//	'global' global=Scenario
+		//	'initial' initial=[Scenario|EString]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Robot} 'Robot' name=EString '{' ('scenario' scenario=Scenario)? '}'
+		//'Robot' name=EString '{' ('scenarii' '{' scenarii+=Scenario ("," scenarii+=Scenario)* '}')? 'global' global=Scenario
+		//'initial' initial=[Scenario|EString] '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{Robot}
-		public Action getRobotAction_0() { return cRobotAction_0; }
-		
 		//'Robot'
-		public Keyword getRobotKeyword_1() { return cRobotKeyword_1; }
+		public Keyword getRobotKeyword_0() { return cRobotKeyword_0; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('scenario' scenario=Scenario)?
-		public Group getGroup_4() { return cGroup_4; }
+		//('scenarii' '{' scenarii+=Scenario ("," scenarii+=Scenario)* '}')?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//'scenario'
-		public Keyword getScenarioKeyword_4_0() { return cScenarioKeyword_4_0; }
+		//'scenarii'
+		public Keyword getScenariiKeyword_3_0() { return cScenariiKeyword_3_0; }
 		
-		//scenario=Scenario
-		public Assignment getScenarioAssignment_4_1() { return cScenarioAssignment_4_1; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
+		
+		//scenarii+=Scenario
+		public Assignment getScenariiAssignment_3_2() { return cScenariiAssignment_3_2; }
 		
 		//Scenario
-		public RuleCall getScenarioScenarioParserRuleCall_4_1_0() { return cScenarioScenarioParserRuleCall_4_1_0; }
+		public RuleCall getScenariiScenarioParserRuleCall_3_2_0() { return cScenariiScenarioParserRuleCall_3_2_0; }
+		
+		//("," scenarii+=Scenario)*
+		public Group getGroup_3_3() { return cGroup_3_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
+		
+		//scenarii+=Scenario
+		public Assignment getScenariiAssignment_3_3_1() { return cScenariiAssignment_3_3_1; }
+		
+		//Scenario
+		public RuleCall getScenariiScenarioParserRuleCall_3_3_1_0() { return cScenariiScenarioParserRuleCall_3_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
+		
+		//'global'
+		public Keyword getGlobalKeyword_4() { return cGlobalKeyword_4; }
+		
+		//global=Scenario
+		public Assignment getGlobalAssignment_5() { return cGlobalAssignment_5; }
+		
+		//Scenario
+		public RuleCall getGlobalScenarioParserRuleCall_5_0() { return cGlobalScenarioParserRuleCall_5_0; }
+		
+		//'initial'
+		public Keyword getInitialKeyword_6() { return cInitialKeyword_6; }
+		
+		//initial=[Scenario|EString]
+		public Assignment getInitialAssignment_7() { return cInitialAssignment_7; }
+		
+		//[Scenario|EString]
+		public CrossReference getInitialScenarioCrossReference_7_0() { return cInitialScenarioCrossReference_7_0; }
+		
+		//EString
+		public RuleCall getInitialScenarioEStringParserRuleCall_7_0_1() { return cInitialScenarioEStringParserRuleCall_7_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
+	public class StatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Statement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cForwardStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cExecuteStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPrintStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Statement:
+		//	ForwardStatement | ExecuteStatement | PrintStatement;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ForwardStatement | ExecuteStatement | PrintStatement
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ForwardStatement
+		public RuleCall getForwardStatementParserRuleCall_0() { return cForwardStatementParserRuleCall_0; }
+		
+		//ExecuteStatement
+		public RuleCall getExecuteStatementParserRuleCall_1() { return cExecuteStatementParserRuleCall_1; }
+		
+		//PrintStatement
+		public RuleCall getPrintStatementParserRuleCall_2() { return cPrintStatementParserRuleCall_2; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.EString");
@@ -107,14 +180,14 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cStatesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cStatementsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cStatesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cStatesStateParserRuleCall_4_2_0 = (RuleCall)cStatesAssignment_4_2.eContents().get(0);
+		private final Assignment cStatementsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cStatementsStatementParserRuleCall_4_2_0 = (RuleCall)cStatementsAssignment_4_2.eContents().get(0);
 		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
 		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cStatesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cStatesStateParserRuleCall_4_3_1_0 = (RuleCall)cStatesAssignment_4_3_1.eContents().get(0);
+		private final Assignment cStatementsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cStatementsStatementParserRuleCall_4_3_1_0 = (RuleCall)cStatementsAssignment_4_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
@@ -122,11 +195,11 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	{Scenario}
 		//	'Scenario'
 		//	name=EString
-		//	'{' ('states' '{' states+=State ("," states+=State)* '}')?
+		//	'{' ('statements' '{' statements+=Statement ("," statements+=Statement)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Scenario} 'Scenario' name=EString '{' ('states' '{' states+=State ("," states+=State)* '}')? '}'
+		//{Scenario} 'Scenario' name=EString '{' ('statements' '{' statements+=Statement ("," statements+=Statement)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Scenario}
@@ -144,32 +217,32 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('states' '{' states+=State ("," states+=State)* '}')?
+		//('statements' '{' statements+=Statement ("," statements+=Statement)* '}')?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'states'
-		public Keyword getStatesKeyword_4_0() { return cStatesKeyword_4_0; }
+		//'statements'
+		public Keyword getStatementsKeyword_4_0() { return cStatementsKeyword_4_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 		
-		//states+=State
-		public Assignment getStatesAssignment_4_2() { return cStatesAssignment_4_2; }
+		//statements+=Statement
+		public Assignment getStatementsAssignment_4_2() { return cStatementsAssignment_4_2; }
 		
-		//State
-		public RuleCall getStatesStateParserRuleCall_4_2_0() { return cStatesStateParserRuleCall_4_2_0; }
+		//Statement
+		public RuleCall getStatementsStatementParserRuleCall_4_2_0() { return cStatementsStatementParserRuleCall_4_2_0; }
 		
-		//("," states+=State)*
+		//("," statements+=Statement)*
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//","
 		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
 		
-		//states+=State
-		public Assignment getStatesAssignment_4_3_1() { return cStatesAssignment_4_3_1; }
+		//statements+=Statement
+		public Assignment getStatementsAssignment_4_3_1() { return cStatementsAssignment_4_3_1; }
 		
-		//State
-		public RuleCall getStatesStateParserRuleCall_4_3_1_0() { return cStatesStateParserRuleCall_4_3_1_0; }
+		//Statement
+		public RuleCall getStatementsStatementParserRuleCall_4_3_1_0() { return cStatementsStatementParserRuleCall_4_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
@@ -177,142 +250,95 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-	public class StateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.State");
+	public class ForwardStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.ForwardStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStateAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDestinationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cDestinationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cDestinationActionCrossReference_4_1_0 = (CrossReference)cDestinationAssignment_4_1.eContents().get(0);
-		private final RuleCall cDestinationActionEStringParserRuleCall_4_1_0_1 = (RuleCall)cDestinationActionCrossReference_4_1_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cActionsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cActionsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cActionsActionParserRuleCall_5_2_0 = (RuleCall)cActionsAssignment_5_2.eContents().get(0);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cActionsAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cActionsActionParserRuleCall_5_3_1_0 = (RuleCall)cActionsAssignment_5_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Action cForwardStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cForwardKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//State:
-		//	{State}
-		//	'State'
-		//	name=EString
-		//	'{' ('destination' destination=[Action|EString])? ('actions' '{' actions+=Action ("," actions+=Action)* '}')?
-		//	'}';
+		//ForwardStatement:
+		//	{ForwardStatement}
+		//	'forward';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{State} 'State' name=EString '{' ('destination' destination=[Action|EString])? ('actions' '{' actions+=Action (","
-		//actions+=Action)* '}')? '}'
+		//{ForwardStatement} 'forward'
 		public Group getGroup() { return cGroup; }
 		
-		//{State}
-		public Action getStateAction_0() { return cStateAction_0; }
+		//{ForwardStatement}
+		public Action getForwardStatementAction_0() { return cForwardStatementAction_0; }
 		
-		//'State'
-		public Keyword getStateKeyword_1() { return cStateKeyword_1; }
-		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//('destination' destination=[Action|EString])?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'destination'
-		public Keyword getDestinationKeyword_4_0() { return cDestinationKeyword_4_0; }
-		
-		//destination=[Action|EString]
-		public Assignment getDestinationAssignment_4_1() { return cDestinationAssignment_4_1; }
-		
-		//[Action|EString]
-		public CrossReference getDestinationActionCrossReference_4_1_0() { return cDestinationActionCrossReference_4_1_0; }
-		
-		//EString
-		public RuleCall getDestinationActionEStringParserRuleCall_4_1_0_1() { return cDestinationActionEStringParserRuleCall_4_1_0_1; }
-		
-		//('actions' '{' actions+=Action ("," actions+=Action)* '}')?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'actions'
-		public Keyword getActionsKeyword_5_0() { return cActionsKeyword_5_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
-		
-		//actions+=Action
-		public Assignment getActionsAssignment_5_2() { return cActionsAssignment_5_2; }
-		
-		//Action
-		public RuleCall getActionsActionParserRuleCall_5_2_0() { return cActionsActionParserRuleCall_5_2_0; }
-		
-		//("," actions+=Action)*
-		public Group getGroup_5_3() { return cGroup_5_3; }
-		
-		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
-		
-		//actions+=Action
-		public Assignment getActionsAssignment_5_3_1() { return cActionsAssignment_5_3_1; }
-		
-		//Action
-		public RuleCall getActionsActionParserRuleCall_5_3_1_0() { return cActionsActionParserRuleCall_5_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		//'forward'
+		public Keyword getForwardKeyword_1() { return cForwardKeyword_1; }
 	}
-	public class ActionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Action");
+	public class PrintStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.PrintStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cActionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cActionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Action cPrintStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cPrintKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextEStringParserRuleCall_2_0 = (RuleCall)cTextAssignment_2.eContents().get(0);
 		
-		//Action:
-		//	{Action}
-		//	'Action'
-		//	name=EString;
+		//PrintStatement:
+		//	{PrintStatement}
+		//	'print' text=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Action} 'Action' name=EString
+		//{PrintStatement} 'print' text=EString
 		public Group getGroup() { return cGroup; }
 		
-		//{Action}
-		public Action getActionAction_0() { return cActionAction_0; }
+		//{PrintStatement}
+		public Action getPrintStatementAction_0() { return cPrintStatementAction_0; }
 		
-		//'Action'
-		public Keyword getActionKeyword_1() { return cActionKeyword_1; }
+		//'print'
+		public Keyword getPrintKeyword_1() { return cPrintKeyword_1; }
 		
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//text=EString
+		public Assignment getTextAssignment_2() { return cTextAssignment_2; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		public RuleCall getTextEStringParserRuleCall_2_0() { return cTextEStringParserRuleCall_2_0; }
+	}
+	public class ExecuteStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.ExecuteStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cExecuteStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cExecuteKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDestinationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cDestinationScenarioCrossReference_2_0 = (CrossReference)cDestinationAssignment_2.eContents().get(0);
+		private final RuleCall cDestinationScenarioEStringParserRuleCall_2_0_1 = (RuleCall)cDestinationScenarioCrossReference_2_0.eContents().get(1);
+		
+		//ExecuteStatement:
+		//	{ExecuteStatement}
+		//	'execute' destination=[Scenario|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ExecuteStatement} 'execute' destination=[Scenario|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{ExecuteStatement}
+		public Action getExecuteStatementAction_0() { return cExecuteStatementAction_0; }
+		
+		//'execute'
+		public Keyword getExecuteKeyword_1() { return cExecuteKeyword_1; }
+		
+		//destination=[Scenario|EString]
+		public Assignment getDestinationAssignment_2() { return cDestinationAssignment_2; }
+		
+		//[Scenario|EString]
+		public CrossReference getDestinationScenarioCrossReference_2_0() { return cDestinationScenarioCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getDestinationScenarioEStringParserRuleCall_2_0_1() { return cDestinationScenarioEStringParserRuleCall_2_0_1; }
 	}
 	
 	
 	private final RobotElements pRobot;
+	private final StatementElements pStatement;
 	private final EStringElements pEString;
 	private final ScenarioElements pScenario;
-	private final StateElements pState;
-	private final ActionElements pAction;
+	private final ForwardStatementElements pForwardStatement;
+	private final PrintStatementElements pPrintStatement;
+	private final ExecuteStatementElements pExecuteStatement;
 	
 	private final Grammar grammar;
 	
@@ -324,10 +350,12 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pRobot = new RobotElements();
+		this.pStatement = new StatementElements();
 		this.pEString = new EStringElements();
 		this.pScenario = new ScenarioElements();
-		this.pState = new StateElements();
-		this.pAction = new ActionElements();
+		this.pForwardStatement = new ForwardStatementElements();
+		this.pPrintStatement = new PrintStatementElements();
+		this.pExecuteStatement = new ExecuteStatementElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -358,10 +386,11 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Robot:
-	//	{Robot}
 	//	'Robot'
 	//	name=EString
-	//	'{' ('scenario' scenario=Scenario)?
+	//	'{' ('scenarii' '{' scenarii+=Scenario ("," scenarii+=Scenario)* '}')?
+	//	'global' global=Scenario
+	//	'initial' initial=[Scenario|EString]
 	//	'}';
 	public RobotElements getRobotAccess() {
 		return pRobot;
@@ -369,6 +398,16 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRobotRule() {
 		return getRobotAccess().getRule();
+	}
+	
+	//Statement:
+	//	ForwardStatement | ExecuteStatement | PrintStatement;
+	public StatementElements getStatementAccess() {
+		return pStatement;
+	}
+	
+	public ParserRule getStatementRule() {
+		return getStatementAccess().getRule();
 	}
 	
 	//EString:
@@ -385,7 +424,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Scenario}
 	//	'Scenario'
 	//	name=EString
-	//	'{' ('states' '{' states+=State ("," states+=State)* '}')?
+	//	'{' ('statements' '{' statements+=Statement ("," statements+=Statement)* '}')?
 	//	'}';
 	public ScenarioElements getScenarioAccess() {
 		return pScenario;
@@ -395,30 +434,37 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getScenarioAccess().getRule();
 	}
 	
-	//State:
-	//	{State}
-	//	'State'
-	//	name=EString
-	//	'{' ('destination' destination=[Action|EString])? ('actions' '{' actions+=Action ("," actions+=Action)* '}')?
-	//	'}';
-	public StateElements getStateAccess() {
-		return pState;
+	//ForwardStatement:
+	//	{ForwardStatement}
+	//	'forward';
+	public ForwardStatementElements getForwardStatementAccess() {
+		return pForwardStatement;
 	}
 	
-	public ParserRule getStateRule() {
-		return getStateAccess().getRule();
+	public ParserRule getForwardStatementRule() {
+		return getForwardStatementAccess().getRule();
 	}
 	
-	//Action:
-	//	{Action}
-	//	'Action'
-	//	name=EString;
-	public ActionElements getActionAccess() {
-		return pAction;
+	//PrintStatement:
+	//	{PrintStatement}
+	//	'print' text=EString;
+	public PrintStatementElements getPrintStatementAccess() {
+		return pPrintStatement;
 	}
 	
-	public ParserRule getActionRule() {
-		return getActionAccess().getRule();
+	public ParserRule getPrintStatementRule() {
+		return getPrintStatementAccess().getRule();
+	}
+	
+	//ExecuteStatement:
+	//	{ExecuteStatement}
+	//	'execute' destination=[Scenario|EString];
+	public ExecuteStatementElements getExecuteStatementAccess() {
+		return pExecuteStatement;
+	}
+	
+	public ParserRule getExecuteStatementRule() {
+		return getExecuteStatementAccess().getRule();
 	}
 	
 	//terminal ID:

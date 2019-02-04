@@ -3,8 +3,9 @@ package coppelia;
 public class remoteApi
 {
     static{
-        // System.setProperty("java.library.path", "/home/jj/src/vrep-dsl/fr.unice.polytech.deantoni.vrep.polybot/bin");
-        System.load("/home/jj/src/vrep-dsl/fr.unice.polytech.deantoni.vrep.polybot/bin/libremoteApiJava.so");
+    	System.loadLibrary("remoteApiJava");
+//         System.setProperty("java.library.path", "/home/jj/src/vrep-dsl/fr.unice.polytech.deantoni.vrep.polybot/bin");
+//        System.load("/home/jj/src/vrep-dsl/org.robot.k3project/vrepLibs/Linux/64Bit/libremoteApiJava.so");
     }
 
     public native int simxStart(final String connectionAddress, int connectionPort, boolean waitUntilConnected, boolean doNotReconnectOnceDisconnected, int timeOutInMs, int commThreadCycleInMs);

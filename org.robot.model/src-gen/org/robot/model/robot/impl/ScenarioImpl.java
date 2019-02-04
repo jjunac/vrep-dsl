@@ -5,16 +5,18 @@ package org.robot.model.robot.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
-import org.robot.model.robot.State;
+import org.robot.model.robot.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,21 +26,21 @@ import org.robot.model.robot.State;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.robot.model.robot.impl.ScenarioImpl#getStates <em>States</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.ScenarioImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStates()
+	 * @see #getStatements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<State> states;
+	protected EList<Statement> statements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,11 +66,12 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<State> getStates() {
-		if (states == null) {
-			states = new EObjectContainmentEList<State>(State.class, this, RobotPackage.SCENARIO__STATES);
+	public EList<Statement> getStatements() {
+		if (statements == null) {
+			statements = new EObjectContainmentEList<Statement>(Statement.class, this,
+					RobotPackage.SCENARIO__STATEMENTS);
 		}
-		return states;
+		return statements;
 	}
 
 	/**
@@ -79,8 +82,8 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RobotPackage.SCENARIO__STATES:
-			return ((InternalEList<?>) getStates()).basicRemove(otherEnd, msgs);
+		case RobotPackage.SCENARIO__STATEMENTS:
+			return ((InternalEList<?>) getStatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -93,8 +96,8 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RobotPackage.SCENARIO__STATES:
-			return getStates();
+		case RobotPackage.SCENARIO__STATEMENTS:
+			return getStatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,9 +111,9 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RobotPackage.SCENARIO__STATES:
-			getStates().clear();
-			getStates().addAll((Collection<? extends State>) newValue);
+		case RobotPackage.SCENARIO__STATEMENTS:
+			getStatements().clear();
+			getStatements().addAll((Collection<? extends Statement>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,8 +127,8 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RobotPackage.SCENARIO__STATES:
-			getStates().clear();
+		case RobotPackage.SCENARIO__STATEMENTS:
+			getStatements().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -139,8 +142,8 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RobotPackage.SCENARIO__STATES:
-			return states != null && !states.isEmpty();
+		case RobotPackage.SCENARIO__STATEMENTS:
+			return statements != null && !statements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

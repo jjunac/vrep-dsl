@@ -77,8 +77,18 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseState(State object) {
-			return createStateAdapter();
+		public Adapter caseStatement(Statement object) {
+			return createStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseExecuteStatement(ExecuteStatement object) {
+			return createExecuteStatementAdapter();
+		}
+
+		@Override
+		public Adapter casePrintStatement(PrintStatement object) {
+			return createPrintStatementAdapter();
 		}
 
 		@Override
@@ -87,8 +97,13 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseAction(Action object) {
-			return createActionAdapter();
+		public Adapter caseControlStatement(ControlStatement object) {
+			return createControlStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseForwardStatement(ForwardStatement object) {
+			return createForwardStatementAdapter();
 		}
 
 		@Override
@@ -139,16 +154,44 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.State <em>State</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.robot.model.robot.State
+	 * @see org.robot.model.robot.Statement
 	 * @generated
 	 */
-	public Adapter createStateAdapter() {
+	public Adapter createStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ExecuteStatement <em>Execute Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.ExecuteStatement
+	 * @generated
+	 */
+	public Adapter createExecuteStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.PrintStatement <em>Print Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.PrintStatement
+	 * @generated
+	 */
+	public Adapter createPrintStatementAdapter() {
 		return null;
 	}
 
@@ -167,16 +210,30 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Action <em>Action</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ControlStatement <em>Control Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.robot.model.robot.Action
+	 * @see org.robot.model.robot.ControlStatement
 	 * @generated
 	 */
-	public Adapter createActionAdapter() {
+	public Adapter createControlStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ForwardStatement <em>Forward Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.ForwardStatement
+	 * @generated
+	 */
+	public Adapter createForwardStatementAdapter() {
 		return null;
 	}
 
