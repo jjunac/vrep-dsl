@@ -31,7 +31,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "org.robot.dsl.RobotDsl"
-			fileExtensions = "robot"
+			fileExtensions = "mydsl"
 			referencedResource = "platform:/resource/org.robot.model/model/robot.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}

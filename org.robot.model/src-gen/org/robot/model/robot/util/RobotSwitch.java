@@ -84,34 +84,34 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RobotPackage.STATEMENT: {
-			Statement statement = (Statement) theEObject;
-			T result = caseStatement(statement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RobotPackage.EXECUTE_STATEMENT: {
-			ExecuteStatement executeStatement = (ExecuteStatement) theEObject;
-			T result = caseExecuteStatement(executeStatement);
-			if (result == null)
-				result = caseStatement(executeStatement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RobotPackage.PRINT_STATEMENT: {
-			PrintStatement printStatement = (PrintStatement) theEObject;
-			T result = casePrintStatement(printStatement);
-			if (result == null)
-				result = caseStatement(printStatement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case RobotPackage.NAMED_ELEMENT: {
 			NamedElement namedElement = (NamedElement) theEObject;
 			T result = caseNamedElement(namedElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.BALL_AHEAD_CONDITION: {
+			BallAheadCondition ballAheadCondition = (BallAheadCondition) theEObject;
+			T result = caseBallAheadCondition(ballAheadCondition);
+			if (result == null)
+				result = caseCondition(ballAheadCondition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.CONDITION: {
+			Condition condition = (Condition) theEObject;
+			T result = caseCondition(condition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.CONDITIONAL_STATEMENT: {
+			ConditionalStatement conditionalStatement = (ConditionalStatement) theEObject;
+			T result = caseConditionalStatement(conditionalStatement);
+			if (result == null)
+				result = caseStatement(conditionalStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -125,6 +125,15 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RobotPackage.EXECUTE_STATEMENT: {
+			ExecuteStatement executeStatement = (ExecuteStatement) theEObject;
+			T result = caseExecuteStatement(executeStatement);
+			if (result == null)
+				result = caseStatement(executeStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case RobotPackage.FORWARD_STATEMENT: {
 			ForwardStatement forwardStatement = (ForwardStatement) theEObject;
 			T result = caseForwardStatement(forwardStatement);
@@ -132,6 +141,33 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = caseControlStatement(forwardStatement);
 			if (result == null)
 				result = caseStatement(forwardStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.PRINT_STATEMENT: {
+			PrintStatement printStatement = (PrintStatement) theEObject;
+			T result = casePrintStatement(printStatement);
+			if (result == null)
+				result = caseStatement(printStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.STATEMENT: {
+			Statement statement = (Statement) theEObject;
+			T result = caseStatement(statement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.UNTIL_STATEMENT: {
+			UntilStatement untilStatement = (UntilStatement) theEObject;
+			T result = caseUntilStatement(untilStatement);
+			if (result == null)
+				result = caseConditionalStatement(untilStatement);
+			if (result == null)
+				result = caseStatement(untilStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -172,51 +208,6 @@ public class RobotSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStatement(Statement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Execute Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Execute Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExecuteStatement(ExecuteStatement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Print Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Print Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePrintStatement(PrintStatement object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -228,6 +219,51 @@ public class RobotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ball Ahead Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ball Ahead Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBallAheadCondition(BallAheadCondition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCondition(Condition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionalStatement(ConditionalStatement object) {
 		return null;
 	}
 
@@ -247,6 +283,21 @@ public class RobotSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Execute Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Execute Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExecuteStatement(ExecuteStatement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Forward Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -258,6 +309,51 @@ public class RobotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseForwardStatement(ForwardStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Print Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Print Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrintStatement(PrintStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatement(Statement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Until Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Until Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUntilStatement(UntilStatement object) {
 		return null;
 	}
 

@@ -8,26 +8,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.robot.model.robot.RobotPackage;
-import org.robot.model.robot.State;
-
 /**
- * This is the item provider adapter for a {@link org.robot.model.robot.State} object.
+ * This is the item provider adapter for a {@link org.robot.model.robot.UntilStatement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StateItemProvider extends NamedElementItemProvider {
+public class UntilStatementItemProvider extends ConditionalStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateItemProvider(AdapterFactory adapterFactory) {
+	public UntilStatementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,50 +38,19 @@ public class StateItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addActionsPropertyDescriptor(object);
-			addDestinationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_State_actions_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_State_actions_feature", "_UI_State_type"),
-						RobotPackage.Literals.STATE__ACTIONS, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Destination feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDestinationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_State_destination_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_State_destination_feature",
-								"_UI_State_type"),
-						RobotPackage.Literals.STATE__DESTINATION, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns State.gif.
+	 * This returns UntilStatement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/State"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UntilStatement"));
 	}
 
 	/**
@@ -106,9 +71,7 @@ public class StateItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((State) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_State_type")
-				: getString("_UI_State_type") + " " + label;
+		return getString("_UI_UntilStatement_type");
 	}
 
 	/**

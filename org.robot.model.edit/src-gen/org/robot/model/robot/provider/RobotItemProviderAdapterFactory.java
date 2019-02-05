@@ -119,6 +119,52 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.BallAheadCondition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BallAheadConditionItemProvider ballAheadConditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.BallAheadCondition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBallAheadConditionAdapter() {
+		if (ballAheadConditionItemProvider == null) {
+			ballAheadConditionItemProvider = new BallAheadConditionItemProvider(this);
+		}
+
+		return ballAheadConditionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.Condition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConditionItemProvider conditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.Condition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConditionAdapter() {
+		if (conditionItemProvider == null) {
+			conditionItemProvider = new ConditionItemProvider(this);
+		}
+
+		return conditionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.ExecuteStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +185,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 		}
 
 		return executeStatementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.ForwardStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForwardStatementItemProvider forwardStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.ForwardStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForwardStatementAdapter() {
+		if (forwardStatementItemProvider == null) {
+			forwardStatementItemProvider = new ForwardStatementItemProvider(this);
+		}
+
+		return forwardStatementItemProvider;
 	}
 
 	/**
@@ -165,26 +234,26 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.ForwardStatement} instances.
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.UntilStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ForwardStatementItemProvider forwardStatementItemProvider;
+	protected UntilStatementItemProvider untilStatementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.robot.model.robot.ForwardStatement}.
+	 * This creates an adapter for a {@link org.robot.model.robot.UntilStatement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createForwardStatementAdapter() {
-		if (forwardStatementItemProvider == null) {
-			forwardStatementItemProvider = new ForwardStatementItemProvider(this);
+	public Adapter createUntilStatementAdapter() {
+		if (untilStatementItemProvider == null) {
+			untilStatementItemProvider = new UntilStatementItemProvider(this);
 		}
 
-		return forwardStatementItemProvider;
+		return untilStatementItemProvider;
 	}
 
 	/**
@@ -290,12 +359,18 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			robotItemProvider.dispose();
 		if (scenarioItemProvider != null)
 			scenarioItemProvider.dispose();
+		if (ballAheadConditionItemProvider != null)
+			ballAheadConditionItemProvider.dispose();
+		if (conditionItemProvider != null)
+			conditionItemProvider.dispose();
 		if (executeStatementItemProvider != null)
 			executeStatementItemProvider.dispose();
-		if (printStatementItemProvider != null)
-			printStatementItemProvider.dispose();
 		if (forwardStatementItemProvider != null)
 			forwardStatementItemProvider.dispose();
+		if (printStatementItemProvider != null)
+			printStatementItemProvider.dispose();
+		if (untilStatementItemProvider != null)
+			untilStatementItemProvider.dispose();
 	}
 
 }

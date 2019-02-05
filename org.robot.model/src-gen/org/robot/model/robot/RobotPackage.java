@@ -64,7 +64,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 5;
+	int NAMED_ELEMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,6 +204,62 @@ public interface RobotPackage extends EPackage {
 	int SCENARIO_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.ConditionImpl <em>Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.ConditionImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 4;
+
+	/**
+	 * The number of structural features of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.BallAheadConditionImpl <em>Ball Ahead Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.BallAheadConditionImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getBallAheadCondition()
+	 * @generated
+	 */
+	int BALL_AHEAD_CONDITION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Ball Ahead Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BALL_AHEAD_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Ball Ahead Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BALL_AHEAD_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementImpl <em>Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,7 +267,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 2;
+	int STATEMENT = 10;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -232,78 +288,50 @@ public interface RobotPackage extends EPackage {
 	int STATEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.robot.model.robot.impl.ExecuteStatementImpl <em>Execute Statement</em>}' class.
+	 * The meta object id for the '{@link org.robot.model.robot.impl.ConditionalStatementImpl <em>Conditional Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.robot.model.robot.impl.ExecuteStatementImpl
-	 * @see org.robot.model.robot.impl.RobotPackageImpl#getExecuteStatement()
+	 * @see org.robot.model.robot.impl.ConditionalStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getConditionalStatement()
 	 * @generated
 	 */
-	int EXECUTE_STATEMENT = 3;
+	int CONDITIONAL_STATEMENT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Destination</b></em>' reference.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTE_STATEMENT__DESTINATION = STATEMENT_FEATURE_COUNT + 0;
+	int CONDITIONAL_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Execute Statement</em>' class.
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+	int CONDITIONAL_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Execute Statement</em>' class.
+	 * The number of structural features of the '<em>Conditional Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTE_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+	int CONDITIONAL_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.robot.model.robot.impl.PrintStatementImpl <em>Print Statement</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.robot.model.robot.impl.PrintStatementImpl
-	 * @see org.robot.model.robot.impl.RobotPackageImpl#getPrintStatement()
-	 * @generated
-	 */
-	int PRINT_STATEMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * The number of operations of the '<em>Conditional Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRINT_STATEMENT__TEXT = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Print Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Print Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+	int CONDITIONAL_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.ControlStatementImpl <em>Control Statement</em>}' class.
@@ -334,6 +362,43 @@ public interface RobotPackage extends EPackage {
 	int CONTROL_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.ExecuteStatementImpl <em>Execute Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.ExecuteStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getExecuteStatement()
+	 * @generated
+	 */
+	int EXECUTE_STATEMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Destination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_STATEMENT__DESTINATION = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Execute Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Execute Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.ForwardStatementImpl <em>Forward Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -341,7 +406,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getForwardStatement()
 	 * @generated
 	 */
-	int FORWARD_STATEMENT = 7;
+	int FORWARD_STATEMENT = 8;
 
 	/**
 	 * The number of structural features of the '<em>Forward Statement</em>' class.
@@ -360,6 +425,89 @@ public interface RobotPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORWARD_STATEMENT_OPERATION_COUNT = CONTROL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.PrintStatementImpl <em>Print Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.PrintStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getPrintStatement()
+	 * @generated
+	 */
+	int PRINT_STATEMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT__TEXT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Print Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Print Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.UntilStatementImpl <em>Until Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.UntilStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getUntilStatement()
+	 * @generated
+	 */
+	int UNTIL_STATEMENT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT__CONDITION = CONDITIONAL_STATEMENT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT__STATEMENTS = CONDITIONAL_STATEMENT__STATEMENTS;
+
+	/**
+	 * The number of structural features of the '<em>Until Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT_FEATURE_COUNT = CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Until Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT_OPERATION_COUNT = CONDITIONAL_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Robot <em>Robot</em>}'.
@@ -426,14 +574,87 @@ public interface RobotPackage extends EPackage {
 	EReference getScenario_Statements();
 
 	/**
-	 * Returns the meta object for class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
+	 * Returns the meta object for class '{@link org.robot.model.robot.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Statement</em>'.
-	 * @see org.robot.model.robot.Statement
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see org.robot.model.robot.NamedElement
 	 * @generated
 	 */
-	EClass getStatement();
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.robot.model.robot.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.robot.model.robot.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.BallAheadCondition <em>Ball Ahead Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ball Ahead Condition</em>'.
+	 * @see org.robot.model.robot.BallAheadCondition
+	 * @generated
+	 */
+	EClass getBallAheadCondition();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Condition</em>'.
+	 * @see org.robot.model.robot.Condition
+	 * @generated
+	 */
+	EClass getCondition();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.ConditionalStatement <em>Conditional Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conditional Statement</em>'.
+	 * @see org.robot.model.robot.ConditionalStatement
+	 * @generated
+	 */
+	EClass getConditionalStatement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.robot.model.robot.ConditionalStatement#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see org.robot.model.robot.ConditionalStatement#getCondition()
+	 * @see #getConditionalStatement()
+	 * @generated
+	 */
+	EReference getConditionalStatement_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.robot.model.robot.ConditionalStatement#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
+	 * @see org.robot.model.robot.ConditionalStatement#getStatements()
+	 * @see #getConditionalStatement()
+	 * @generated
+	 */
+	EReference getConditionalStatement_Statements();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.ControlStatement <em>Control Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control Statement</em>'.
+	 * @see org.robot.model.robot.ControlStatement
+	 * @generated
+	 */
+	EClass getControlStatement();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.ExecuteStatement <em>Execute Statement</em>}'.
@@ -457,6 +678,16 @@ public interface RobotPackage extends EPackage {
 	EReference getExecuteStatement_Destination();
 
 	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.ForwardStatement <em>Forward Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Forward Statement</em>'.
+	 * @see org.robot.model.robot.ForwardStatement
+	 * @generated
+	 */
+	EClass getForwardStatement();
+
+	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.PrintStatement <em>Print Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,45 +709,24 @@ public interface RobotPackage extends EPackage {
 	EAttribute getPrintStatement_Text();
 
 	/**
-	 * Returns the meta object for class '{@link org.robot.model.robot.NamedElement <em>Named Element</em>}'.
+	 * Returns the meta object for class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see org.robot.model.robot.NamedElement
+	 * @return the meta object for class '<em>Statement</em>'.
+	 * @see org.robot.model.robot.Statement
 	 * @generated
 	 */
-	EClass getNamedElement();
+	EClass getStatement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.robot.model.robot.NamedElement#getName <em>Name</em>}'.
+	 * Returns the meta object for class '{@link org.robot.model.robot.UntilStatement <em>Until Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.robot.model.robot.NamedElement#getName()
-	 * @see #getNamedElement()
+	 * @return the meta object for class '<em>Until Statement</em>'.
+	 * @see org.robot.model.robot.UntilStatement
 	 * @generated
 	 */
-	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for class '{@link org.robot.model.robot.ControlStatement <em>Control Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Control Statement</em>'.
-	 * @see org.robot.model.robot.ControlStatement
-	 * @generated
-	 */
-	EClass getControlStatement();
-
-	/**
-	 * Returns the meta object for class '{@link org.robot.model.robot.ForwardStatement <em>Forward Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Forward Statement</em>'.
-	 * @see org.robot.model.robot.ForwardStatement
-	 * @generated
-	 */
-	EClass getForwardStatement();
+	EClass getUntilStatement();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -594,14 +804,78 @@ public interface RobotPackage extends EPackage {
 		EReference SCENARIO__STATEMENTS = eINSTANCE.getScenario_Statements();
 
 		/**
-		 * The meta object literal for the '{@link org.robot.model.robot.impl.StatementImpl <em>Statement</em>}' class.
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.robot.model.robot.impl.StatementImpl
-		 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatement()
+		 * @see org.robot.model.robot.impl.NamedElementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getNamedElement()
 		 * @generated
 		 */
-		EClass STATEMENT = eINSTANCE.getStatement();
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.BallAheadConditionImpl <em>Ball Ahead Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.BallAheadConditionImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getBallAheadCondition()
+		 * @generated
+		 */
+		EClass BALL_AHEAD_CONDITION = eINSTANCE.getBallAheadCondition();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.ConditionImpl <em>Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.ConditionImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getCondition()
+		 * @generated
+		 */
+		EClass CONDITION = eINSTANCE.getCondition();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.ConditionalStatementImpl <em>Conditional Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.ConditionalStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getConditionalStatement()
+		 * @generated
+		 */
+		EClass CONDITIONAL_STATEMENT = eINSTANCE.getConditionalStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STATEMENT__CONDITION = eINSTANCE.getConditionalStatement_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STATEMENT__STATEMENTS = eINSTANCE.getConditionalStatement_Statements();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.ControlStatementImpl <em>Control Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.ControlStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getControlStatement()
+		 * @generated
+		 */
+		EClass CONTROL_STATEMENT = eINSTANCE.getControlStatement();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.ExecuteStatementImpl <em>Execute Statement</em>}' class.
@@ -622,6 +896,16 @@ public interface RobotPackage extends EPackage {
 		EReference EXECUTE_STATEMENT__DESTINATION = eINSTANCE.getExecuteStatement_Destination();
 
 		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.ForwardStatementImpl <em>Forward Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.ForwardStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getForwardStatement()
+		 * @generated
+		 */
+		EClass FORWARD_STATEMENT = eINSTANCE.getForwardStatement();
+
+		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.PrintStatementImpl <em>Print Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -640,42 +924,24 @@ public interface RobotPackage extends EPackage {
 		EAttribute PRINT_STATEMENT__TEXT = eINSTANCE.getPrintStatement_Text();
 
 		/**
-		 * The meta object literal for the '{@link org.robot.model.robot.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.StatementImpl <em>Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.robot.model.robot.impl.NamedElementImpl
-		 * @see org.robot.model.robot.impl.RobotPackageImpl#getNamedElement()
+		 * @see org.robot.model.robot.impl.StatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatement()
 		 * @generated
 		 */
-		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+		EClass STATEMENT = eINSTANCE.getStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.UntilStatementImpl <em>Until Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.UntilStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getUntilStatement()
 		 * @generated
 		 */
-		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-		/**
-		 * The meta object literal for the '{@link org.robot.model.robot.impl.ControlStatementImpl <em>Control Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.robot.model.robot.impl.ControlStatementImpl
-		 * @see org.robot.model.robot.impl.RobotPackageImpl#getControlStatement()
-		 * @generated
-		 */
-		EClass CONTROL_STATEMENT = eINSTANCE.getControlStatement();
-
-		/**
-		 * The meta object literal for the '{@link org.robot.model.robot.impl.ForwardStatementImpl <em>Forward Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.robot.model.robot.impl.ForwardStatementImpl
-		 * @see org.robot.model.robot.impl.RobotPackageImpl#getForwardStatement()
-		 * @generated
-		 */
-		EClass FORWARD_STATEMENT = eINSTANCE.getForwardStatement();
+		EClass UNTIL_STATEMENT = eINSTANCE.getUntilStatement();
 
 	}
 

@@ -77,23 +77,23 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStatement(Statement object) {
-			return createStatementAdapter();
-		}
-
-		@Override
-		public Adapter caseExecuteStatement(ExecuteStatement object) {
-			return createExecuteStatementAdapter();
-		}
-
-		@Override
-		public Adapter casePrintStatement(PrintStatement object) {
-			return createPrintStatementAdapter();
-		}
-
-		@Override
 		public Adapter caseNamedElement(NamedElement object) {
 			return createNamedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseBallAheadCondition(BallAheadCondition object) {
+			return createBallAheadConditionAdapter();
+		}
+
+		@Override
+		public Adapter caseCondition(Condition object) {
+			return createConditionAdapter();
+		}
+
+		@Override
+		public Adapter caseConditionalStatement(ConditionalStatement object) {
+			return createConditionalStatementAdapter();
 		}
 
 		@Override
@@ -102,8 +102,28 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseExecuteStatement(ExecuteStatement object) {
+			return createExecuteStatementAdapter();
+		}
+
+		@Override
 		public Adapter caseForwardStatement(ForwardStatement object) {
 			return createForwardStatementAdapter();
+		}
+
+		@Override
+		public Adapter casePrintStatement(PrintStatement object) {
+			return createPrintStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseStatement(Statement object) {
+			return createStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseUntilStatement(UntilStatement object) {
+			return createUntilStatementAdapter();
 		}
 
 		@Override
@@ -154,48 +174,6 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.robot.model.robot.Statement
-	 * @generated
-	 */
-	public Adapter createStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ExecuteStatement <em>Execute Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.robot.model.robot.ExecuteStatement
-	 * @generated
-	 */
-	public Adapter createExecuteStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.PrintStatement <em>Print Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.robot.model.robot.PrintStatement
-	 * @generated
-	 */
-	public Adapter createPrintStatementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -206,6 +184,48 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.BallAheadCondition <em>Ball Ahead Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.BallAheadCondition
+	 * @generated
+	 */
+	public Adapter createBallAheadConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.Condition
+	 * @generated
+	 */
+	public Adapter createConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ConditionalStatement <em>Conditional Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.ConditionalStatement
+	 * @generated
+	 */
+	public Adapter createConditionalStatementAdapter() {
 		return null;
 	}
 
@@ -224,6 +244,20 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ExecuteStatement <em>Execute Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.ExecuteStatement
+	 * @generated
+	 */
+	public Adapter createExecuteStatementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ForwardStatement <em>Forward Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -234,6 +268,48 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createForwardStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.PrintStatement <em>Print Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.PrintStatement
+	 * @generated
+	 */
+	public Adapter createPrintStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.Statement
+	 * @generated
+	 */
+	public Adapter createStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.UntilStatement <em>Until Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.UntilStatement
+	 * @generated
+	 */
+	public Adapter createUntilStatementAdapter() {
 		return null;
 	}
 

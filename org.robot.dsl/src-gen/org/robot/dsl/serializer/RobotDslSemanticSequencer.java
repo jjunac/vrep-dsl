@@ -15,12 +15,14 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.robot.dsl.services.RobotDslGrammarAccess;
+import org.robot.model.robot.BallAheadCondition;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
 import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
+import org.robot.model.robot.UntilStatement;
 
 @SuppressWarnings("all")
 public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -36,6 +38,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RobotPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case RobotPackage.BALL_AHEAD_CONDITION:
+				sequence_BallAheadCondition(context, (BallAheadCondition) semanticObject); 
+				return; 
 			case RobotPackage.EXECUTE_STATEMENT:
 				sequence_ExecuteStatement(context, (ExecuteStatement) semanticObject); 
 				return; 
@@ -51,10 +56,26 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case RobotPackage.SCENARIO:
 				sequence_Scenario(context, (Scenario) semanticObject); 
 				return; 
+			case RobotPackage.UNTIL_STATEMENT:
+				sequence_UntilStatement(context, (UntilStatement) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Condition returns BallAheadCondition
+	 *     BallAheadCondition returns BallAheadCondition
+	 *
+	 * Constraint:
+	 *     {BallAheadCondition}
+	 */
+	protected void sequence_BallAheadCondition(ISerializationContext context, BallAheadCondition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -127,6 +148,20 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (name=EString (statements+=Statement statements+=Statement*)?)
 	 */
 	protected void sequence_Scenario(ISerializationContext context, Scenario semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns UntilStatement
+	 *     ConditionalStatement returns UntilStatement
+	 *     UntilStatement returns UntilStatement
+	 *
+	 * Constraint:
+	 *     (condition=Condition statements+=Statement statements+=Statement*)
+	 */
+	protected void sequence_UntilStatement(ISerializationContext context, UntilStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

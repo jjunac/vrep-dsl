@@ -15,6 +15,11 @@ public abstract class StatementAspect {
   public static Scenario exec(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.ConditionalStatementAspect
+    		if (_self instanceof org.robot.model.robot.ControlStatement){
+    			result = org.robot.k3project.ConditionalStatementAspect.exec((org.robot.model.robot.ControlStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.ConditionalStatementAspect
     	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.ControlStatementAspect
     		if (_self instanceof org.robot.model.robot.ControlStatement){
     			result = org.robot.k3project.ControlStatementAspect.exec((org.robot.model.robot.ControlStatement)_self);
@@ -35,6 +40,11 @@ public abstract class StatementAspect {
     			result = org.robot.k3project.PrintStatementAspect.exec((org.robot.model.robot.PrintStatement)_self);
     		} else
     		// EndInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.PrintStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.UntilStatementAspect
+    		if (_self instanceof org.robot.model.robot.UntilStatement){
+    			result = org.robot.k3project.UntilStatementAspect.exec((org.robot.model.robot.UntilStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.UntilStatementAspect
     // #DispatchPointCut_before# Scenario exec()
     if (_self instanceof org.robot.model.robot.Statement){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {

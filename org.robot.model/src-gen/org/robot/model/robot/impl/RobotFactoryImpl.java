@@ -59,12 +59,18 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 			return createRobot();
 		case RobotPackage.SCENARIO:
 			return createScenario();
+		case RobotPackage.BALL_AHEAD_CONDITION:
+			return createBallAheadCondition();
+		case RobotPackage.CONDITION:
+			return createCondition();
 		case RobotPackage.EXECUTE_STATEMENT:
 			return createExecuteStatement();
-		case RobotPackage.PRINT_STATEMENT:
-			return createPrintStatement();
 		case RobotPackage.FORWARD_STATEMENT:
 			return createForwardStatement();
+		case RobotPackage.PRINT_STATEMENT:
+			return createPrintStatement();
+		case RobotPackage.UNTIL_STATEMENT:
+			return createUntilStatement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,9 +101,39 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BallAheadCondition createBallAheadCondition() {
+		BallAheadConditionImpl ballAheadCondition = new BallAheadConditionImpl();
+		return ballAheadCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition createCondition() {
+		ConditionImpl condition = new ConditionImpl();
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExecuteStatement createExecuteStatement() {
 		ExecuteStatementImpl executeStatement = new ExecuteStatementImpl();
 		return executeStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ForwardStatement createForwardStatement() {
+		ForwardStatementImpl forwardStatement = new ForwardStatementImpl();
+		return forwardStatement;
 	}
 
 	/**
@@ -115,9 +151,9 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ForwardStatement createForwardStatement() {
-		ForwardStatementImpl forwardStatement = new ForwardStatementImpl();
-		return forwardStatement;
+	public UntilStatement createUntilStatement() {
+		UntilStatementImpl untilStatement = new UntilStatementImpl();
+		return untilStatement;
 	}
 
 	/**

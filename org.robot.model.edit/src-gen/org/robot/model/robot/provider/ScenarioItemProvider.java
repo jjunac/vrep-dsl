@@ -146,10 +146,13 @@ public class ScenarioItemProvider extends NamedElementItemProvider {
 				RobotFactory.eINSTANCE.createExecuteStatement()));
 
 		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
+				RobotFactory.eINSTANCE.createForwardStatement()));
+
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
 				RobotFactory.eINSTANCE.createPrintStatement()));
 
 		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
-				RobotFactory.eINSTANCE.createForwardStatement()));
+				RobotFactory.eINSTANCE.createUntilStatement()));
 	}
 
 }

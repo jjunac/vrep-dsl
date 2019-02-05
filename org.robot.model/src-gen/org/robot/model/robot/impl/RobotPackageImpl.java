@@ -9,6 +9,9 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.robot.model.robot.BallAheadCondition;
+import org.robot.model.robot.Condition;
+import org.robot.model.robot.ConditionalStatement;
 import org.robot.model.robot.ControlStatement;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
@@ -19,6 +22,7 @@ import org.robot.model.robot.RobotFactory;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
+import org.robot.model.robot.UntilStatement;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,28 +50,28 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass statementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass executeStatementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass printStatementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ballAheadConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionalStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,7 +85,35 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass executeStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass forwardStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass printStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass untilStatementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -206,8 +238,71 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStatement() {
-		return statementEClass;
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute) namedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBallAheadCondition() {
+		return ballAheadConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCondition() {
+		return conditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConditionalStatement() {
+		return conditionalStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalStatement_Condition() {
+		return (EReference) conditionalStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalStatement_Statements() {
+		return (EReference) conditionalStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getControlStatement() {
+		return controlStatementEClass;
 	}
 
 	/**
@@ -233,6 +328,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getForwardStatement() {
+		return forwardStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPrintStatement() {
 		return printStatementEClass;
 	}
@@ -251,8 +355,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNamedElement() {
-		return namedElementEClass;
+	public EClass getStatement() {
+		return statementEClass;
 	}
 
 	/**
@@ -260,26 +364,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute) namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getControlStatement() {
-		return controlStatementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getForwardStatement() {
-		return forwardStatementEClass;
+	public EClass getUntilStatement() {
+		return untilStatementEClass;
 	}
 
 	/**
@@ -319,20 +405,30 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__STATEMENTS);
 
-		statementEClass = createEClass(STATEMENT);
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		ballAheadConditionEClass = createEClass(BALL_AHEAD_CONDITION);
+
+		conditionEClass = createEClass(CONDITION);
+
+		conditionalStatementEClass = createEClass(CONDITIONAL_STATEMENT);
+		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__CONDITION);
+		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__STATEMENTS);
+
+		controlStatementEClass = createEClass(CONTROL_STATEMENT);
 
 		executeStatementEClass = createEClass(EXECUTE_STATEMENT);
 		createEReference(executeStatementEClass, EXECUTE_STATEMENT__DESTINATION);
 
+		forwardStatementEClass = createEClass(FORWARD_STATEMENT);
+
 		printStatementEClass = createEClass(PRINT_STATEMENT);
 		createEAttribute(printStatementEClass, PRINT_STATEMENT__TEXT);
 
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+		statementEClass = createEClass(STATEMENT);
 
-		controlStatementEClass = createEClass(CONTROL_STATEMENT);
-
-		forwardStatementEClass = createEClass(FORWARD_STATEMENT);
+		untilStatementEClass = createEClass(UNTIL_STATEMENT);
 	}
 
 	/**
@@ -366,10 +462,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		// Add supertypes to classes
 		robotEClass.getESuperTypes().add(this.getNamedElement());
 		scenarioEClass.getESuperTypes().add(this.getNamedElement());
-		executeStatementEClass.getESuperTypes().add(this.getStatement());
-		printStatementEClass.getESuperTypes().add(this.getStatement());
+		ballAheadConditionEClass.getESuperTypes().add(this.getCondition());
+		conditionalStatementEClass.getESuperTypes().add(this.getStatement());
 		controlStatementEClass.getESuperTypes().add(this.getStatement());
+		executeStatementEClass.getESuperTypes().add(this.getStatement());
 		forwardStatementEClass.getESuperTypes().add(this.getControlStatement());
+		printStatementEClass.getESuperTypes().add(this.getStatement());
+		untilStatementEClass.getESuperTypes().add(this.getConditionalStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(robotEClass, Robot.class, "Robot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -389,7 +488,27 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ballAheadConditionEClass, BallAheadCondition.class, "BallAheadCondition", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(conditionalStatementEClass, ConditionalStatement.class, "ConditionalStatement", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConditionalStatement_Condition(), this.getCondition(), null, "condition", null, 1, 1,
+				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalStatement_Statements(), this.getStatement(), null, "statements", null, 1, -1,
+				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controlStatementEClass, ControlStatement.class, "ControlStatement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(executeStatementEClass, ExecuteStatement.class, "ExecuteStatement", !IS_ABSTRACT, !IS_INTERFACE,
@@ -398,20 +517,18 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 				ExecuteStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(forwardStatementEClass, ForwardStatement.class, "ForwardStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(printStatementEClass, PrintStatement.class, "PrintStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrintStatement_Text(), ecorePackage.getEString(), "text", null, 0, 1, PrintStatement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(controlStatementEClass, ControlStatement.class, "ControlStatement", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(forwardStatementEClass, ForwardStatement.class, "ForwardStatement", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(untilStatementEClass, UntilStatement.class, "UntilStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource

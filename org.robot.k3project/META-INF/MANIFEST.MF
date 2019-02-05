@@ -13,4 +13,3 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version
  org.eclipse.emf.common;bundle-version="2.8.0";visibility:=reexport,
  org.robot.model;bundle-version="0.1.0"
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7

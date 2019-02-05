@@ -40,6 +40,24 @@ public interface RobotFactory extends EFactory {
 	Scenario createScenario();
 
 	/**
+	 * Returns a new object of class '<em>Ball Ahead Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ball Ahead Condition</em>'.
+	 * @generated
+	 */
+	BallAheadCondition createBallAheadCondition();
+
+	/**
+	 * Returns a new object of class '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition</em>'.
+	 * @generated
+	 */
+	Condition createCondition();
+
+	/**
 	 * Returns a new object of class '<em>Execute Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,6 +65,15 @@ public interface RobotFactory extends EFactory {
 	 * @generated
 	 */
 	ExecuteStatement createExecuteStatement();
+
+	/**
+	 * Returns a new object of class '<em>Forward Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Forward Statement</em>'.
+	 * @generated
+	 */
+	ForwardStatement createForwardStatement();
 
 	/**
 	 * Returns a new object of class '<em>Print Statement</em>'.
@@ -58,13 +85,13 @@ public interface RobotFactory extends EFactory {
 	PrintStatement createPrintStatement();
 
 	/**
-	 * Returns a new object of class '<em>Forward Statement</em>'.
+	 * Returns a new object of class '<em>Until Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Forward Statement</em>'.
+	 * @return a new object of class '<em>Until Statement</em>'.
 	 * @generated
 	 */
-	ForwardStatement createForwardStatement();
+	UntilStatement createUntilStatement();
 
 	/**
 	 * Returns the package supported by this factory.
