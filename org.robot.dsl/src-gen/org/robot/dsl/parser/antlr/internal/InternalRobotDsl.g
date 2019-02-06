@@ -104,20 +104,45 @@ ruleRobot returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getRobotAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='scenarii'
+			otherlv_3='connect_to'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getRobotAccess().getScenariiKeyword_3_0());
-			}
-			otherlv_4='{'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getRobotAccess().getLeftCurlyBracketKeyword_3_1());
+				newLeafNode(otherlv_3, grammarAccess.getRobotAccess().getConnect_toKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRobotAccess().getScenariiScenarioParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getRobotAccess().getConnectionConnectionParserRuleCall_3_1_0());
 					}
-					lv_scenarii_5_0=ruleScenario
+					lv_connection_4_0=ruleConnection
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRobotRule());
+						}
+						set(
+							$current,
+							"connection",
+							lv_connection_4_0,
+							"org.robot.dsl.RobotDsl.Connection");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_5='scenarii'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getRobotAccess().getScenariiKeyword_4_0());
+			}
+			otherlv_6='{'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getRobotAccess().getLeftCurlyBracketKeyword_4_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRobotAccess().getScenariiScenarioParserRuleCall_4_2_0());
+					}
+					lv_scenarii_7_0=ruleScenario
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRobotRule());
@@ -125,7 +150,7 @@ ruleRobot returns [EObject current=null]
 						add(
 							$current,
 							"scenarii",
-							lv_scenarii_5_0,
+							lv_scenarii_7_0,
 							"org.robot.dsl.RobotDsl.Scenario");
 						afterParserOrEnumRuleCall();
 					}
@@ -134,9 +159,9 @@ ruleRobot returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRobotAccess().getScenariiScenarioParserRuleCall_3_3_0());
+						newCompositeNode(grammarAccess.getRobotAccess().getScenariiScenarioParserRuleCall_4_3_0());
 					}
-					lv_scenarii_6_0=ruleScenario
+					lv_scenarii_8_0=ruleScenario
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRobotRule());
@@ -144,27 +169,27 @@ ruleRobot returns [EObject current=null]
 						add(
 							$current,
 							"scenarii",
-							lv_scenarii_6_0,
+							lv_scenarii_8_0,
 							"org.robot.dsl.RobotDsl.Scenario");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_7='}'
+			otherlv_9='}'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getRobotAccess().getRightCurlyBracketKeyword_3_4());
+				newLeafNode(otherlv_9, grammarAccess.getRobotAccess().getRightCurlyBracketKeyword_4_4());
 			}
 		)?
-		otherlv_8='global'
+		otherlv_10='global'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getRobotAccess().getGlobalKeyword_4());
+			newLeafNode(otherlv_10, grammarAccess.getRobotAccess().getGlobalKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRobotAccess().getGlobalScenarioParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getRobotAccess().getGlobalScenarioParserRuleCall_6_0());
 				}
-				lv_global_9_0=ruleScenario
+				lv_global_11_0=ruleScenario
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRobotRule());
@@ -172,15 +197,15 @@ ruleRobot returns [EObject current=null]
 					set(
 						$current,
 						"global",
-						lv_global_9_0,
+						lv_global_11_0,
 						"org.robot.dsl.RobotDsl.Scenario");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_10='initial'
+		otherlv_12='initial'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getRobotAccess().getInitialKeyword_6());
+			newLeafNode(otherlv_12, grammarAccess.getRobotAccess().getInitialKeyword_7());
 		}
 		(
 			(
@@ -190,7 +215,7 @@ ruleRobot returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRobotAccess().getInitialScenarioCrossReference_7_0());
+					newCompositeNode(grammarAccess.getRobotAccess().getInitialScenarioCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -198,9 +223,9 @@ ruleRobot returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_12='}'
+		otherlv_14='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getRobotAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_14, grammarAccess.getRobotAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -236,6 +261,73 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
 		}
+	)
+;
+
+// Entry rule entryRuleConnection
+entryRuleConnection returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConnectionRule()); }
+	iv_ruleConnection=ruleConnection
+	{ $current=$iv_ruleConnection.current; }
+	EOF;
+
+// Rule Connection
+ruleConnection returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getConnectionAccess().getConnectionAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectionAccess().getIpEStringParserRuleCall_1_0());
+				}
+				lv_ip_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectionRule());
+					}
+					set(
+						$current,
+						"ip",
+						lv_ip_1_0,
+						"org.robot.dsl.RobotDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getConnectionAccess().getColonKeyword_2());
+		}
+		(
+			(
+				lv_port_3_0=RULE_INT
+				{
+					newLeafNode(lv_port_3_0, grammarAccess.getConnectionAccess().getPortINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConnectionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"port",
+						lv_port_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
 	)
 ;
 

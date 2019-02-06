@@ -40,6 +40,15 @@ public interface RobotFactory extends EFactory {
 	Scenario createScenario();
 
 	/**
+	 * Returns a new object of class '<em>Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connection</em>'.
+	 * @generated
+	 */
+	Connection createConnection();
+
+	/**
 	 * Returns a new object of class '<em>Ball Ahead Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

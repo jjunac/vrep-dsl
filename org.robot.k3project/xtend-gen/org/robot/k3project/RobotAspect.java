@@ -2,6 +2,7 @@ package org.robot.k3project;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
+import org.robot.k3project.ConnectionAspect;
 import org.robot.k3project.RobotAspectRobotAspectProperties;
 import org.robot.k3project.ScenarioAspect;
 import org.robot.model.robot.Robot;
@@ -21,7 +22,7 @@ public class RobotAspect {
   }
   
   protected static void _privk3_exec(final RobotAspectRobotAspectProperties _self_, final Robot _self) {
-    PolyRob.createSingleton("127.0.0.1", 19997);
+    ConnectionAspect.connect(_self.getConnection());
     ScenarioAspect.exec(_self.getGlobal());
     Scenario next = ScenarioAspect.exec(_self.getInitial());
     while ((next != null)) {

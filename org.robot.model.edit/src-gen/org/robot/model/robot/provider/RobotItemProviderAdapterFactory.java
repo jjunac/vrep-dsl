@@ -119,6 +119,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.Connection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectionItemProvider connectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.Connection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConnectionAdapter() {
+		if (connectionItemProvider == null) {
+			connectionItemProvider = new ConnectionItemProvider(this);
+		}
+
+		return connectionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.BallAheadCondition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,6 +382,8 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			robotItemProvider.dispose();
 		if (scenarioItemProvider != null)
 			scenarioItemProvider.dispose();
+		if (connectionItemProvider != null)
+			connectionItemProvider.dispose();
 		if (ballAheadConditionItemProvider != null)
 			ballAheadConditionItemProvider.dispose();
 		if (conditionItemProvider != null)

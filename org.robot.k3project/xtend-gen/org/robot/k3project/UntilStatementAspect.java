@@ -2,6 +2,7 @@ package org.robot.k3project;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.function.Consumer;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.robot.k3project.ConditionAspect;
 import org.robot.k3project.ConditionalStatementAspect;
 import org.robot.k3project.StatementAspect;
@@ -24,12 +25,19 @@ public class UntilStatementAspect extends ConditionalStatementAspect {
   }
   
   protected static Scenario _privk3_exec(final UntilStatementAspectUntilStatementAspectProperties _self_, final UntilStatement _self) {
-    while ((!ConditionAspect.exec(_self.getCondition()))) {
-      final Consumer<Statement> _function = (Statement it) -> {
-        StatementAspect.exec(it);
-      };
-      _self.getStatements().forEach(_function);
+    try {
+      while ((!ConditionAspect.exec(_self.getCondition()))) {
+        {
+          final Consumer<Statement> _function = (Statement it) -> {
+            StatementAspect.exec(it);
+          };
+          _self.getStatements().forEach(_function);
+          Thread.sleep(1000);
+        }
+      }
+      return null;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    return null;
   }
 }

@@ -78,6 +78,7 @@ public class RobotItemProvider extends NamedElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RobotPackage.Literals.ROBOT__SCENARII);
 			childrenFeatures.add(RobotPackage.Literals.ROBOT__GLOBAL);
+			childrenFeatures.add(RobotPackage.Literals.ROBOT__CONNECTION);
 		}
 		return childrenFeatures;
 	}
@@ -143,6 +144,7 @@ public class RobotItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(Robot.class)) {
 		case RobotPackage.ROBOT__SCENARII:
 		case RobotPackage.ROBOT__GLOBAL:
+		case RobotPackage.ROBOT__CONNECTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -165,6 +167,9 @@ public class RobotItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(RobotPackage.Literals.ROBOT__GLOBAL, RobotFactory.eINSTANCE.createScenario()));
+
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.ROBOT__CONNECTION,
+				RobotFactory.eINSTANCE.createConnection()));
 	}
 
 	/**

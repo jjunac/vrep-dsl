@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.robot.model.robot.Robot#getScenarii <em>Scenarii</em>}</li>
  *   <li>{@link org.robot.model.robot.Robot#getGlobal <em>Global</em>}</li>
  *   <li>{@link org.robot.model.robot.Robot#getInitial <em>Initial</em>}</li>
+ *   <li>{@link org.robot.model.robot.Robot#getConnection <em>Connection</em>}</li>
  * </ul>
  *
  * @see org.robot.model.robot.RobotPackage#getRobot()
@@ -90,5 +91,31 @@ public interface Robot extends NamedElement {
 	 * @generated
 	 */
 	void setInitial(Scenario value);
+
+	/**
+	 * Returns the value of the '<em><b>Connection</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connection</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connection</em>' containment reference.
+	 * @see #setConnection(Connection)
+	 * @see org.robot.model.robot.RobotPackage#getRobot_Connection()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Connection getConnection();
+
+	/**
+	 * Sets the value of the '{@link org.robot.model.robot.Robot#getConnection <em>Connection</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Connection</em>' containment reference.
+	 * @see #getConnection()
+	 * @generated
+	 */
+	void setConnection(Connection value);
 
 } // Robot

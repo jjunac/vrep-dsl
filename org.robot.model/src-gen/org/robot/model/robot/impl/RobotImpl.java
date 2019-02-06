@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.robot.model.robot.Connection;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
@@ -32,6 +33,7 @@ import org.robot.model.robot.Scenario;
  *   <li>{@link org.robot.model.robot.impl.RobotImpl#getScenarii <em>Scenarii</em>}</li>
  *   <li>{@link org.robot.model.robot.impl.RobotImpl#getGlobal <em>Global</em>}</li>
  *   <li>{@link org.robot.model.robot.impl.RobotImpl#getInitial <em>Initial</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.RobotImpl#getConnection <em>Connection</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * @ordered
 	 */
 	protected Scenario initial;
+
+	/**
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Connection connection;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,6 +203,56 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Connection getConnection() {
+		return connection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConnection(Connection newConnection, NotificationChain msgs) {
+		Connection oldConnection = connection;
+		connection = newConnection;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RobotPackage.ROBOT__CONNECTION, oldConnection, newConnection);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnection(Connection newConnection) {
+		if (newConnection != connection) {
+			NotificationChain msgs = null;
+			if (connection != null)
+				msgs = ((InternalEObject) connection).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - RobotPackage.ROBOT__CONNECTION, null, msgs);
+			if (newConnection != null)
+				msgs = ((InternalEObject) newConnection).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - RobotPackage.ROBOT__CONNECTION, null, msgs);
+			msgs = basicSetConnection(newConnection, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__CONNECTION, newConnection,
+					newConnection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -198,6 +260,8 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 			return ((InternalEList<?>) getScenarii()).basicRemove(otherEnd, msgs);
 		case RobotPackage.ROBOT__GLOBAL:
 			return basicSetGlobal(null, msgs);
+		case RobotPackage.ROBOT__CONNECTION:
+			return basicSetConnection(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -218,6 +282,8 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 			if (resolve)
 				return getInitial();
 			return basicGetInitial();
+		case RobotPackage.ROBOT__CONNECTION:
+			return getConnection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,6 +307,9 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 		case RobotPackage.ROBOT__INITIAL:
 			setInitial((Scenario) newValue);
 			return;
+		case RobotPackage.ROBOT__CONNECTION:
+			setConnection((Connection) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -262,6 +331,9 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 		case RobotPackage.ROBOT__INITIAL:
 			setInitial((Scenario) null);
 			return;
+		case RobotPackage.ROBOT__CONNECTION:
+			setConnection((Connection) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,6 +352,8 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 			return global != null;
 		case RobotPackage.ROBOT__INITIAL:
 			return initial != null;
+		case RobotPackage.ROBOT__CONNECTION:
+			return connection != null;
 		}
 		return super.eIsSet(featureID);
 	}

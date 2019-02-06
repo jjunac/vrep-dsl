@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.robot.model.robot.BallAheadCondition;
 import org.robot.model.robot.Condition;
 import org.robot.model.robot.ConditionalStatement;
+import org.robot.model.robot.Connection;
 import org.robot.model.robot.ControlStatement;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
@@ -51,6 +52,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,6 +228,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRobot_Connection() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getScenario() {
 		return scenarioEClass;
 	}
@@ -249,6 +266,33 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 */
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute) namedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConnection() {
+		return connectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConnection_Ip() {
+		return (EAttribute) connectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConnection_Port() {
+		return (EAttribute) connectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -401,12 +445,17 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		createEReference(robotEClass, ROBOT__SCENARII);
 		createEReference(robotEClass, ROBOT__GLOBAL);
 		createEReference(robotEClass, ROBOT__INITIAL);
+		createEReference(robotEClass, ROBOT__CONNECTION);
 
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__STATEMENTS);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		connectionEClass = createEClass(CONNECTION);
+		createEAttribute(connectionEClass, CONNECTION__IP);
+		createEAttribute(connectionEClass, CONNECTION__PORT);
 
 		ballAheadConditionEClass = createEClass(BALL_AHEAD_CONDITION);
 
@@ -481,6 +530,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEReference(getRobot_Initial(), this.getScenario(), null, "initial", null, 0, 1, Robot.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getRobot_Connection(), this.getConnection(), null, "connection", null, 0, 1, Robot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -491,6 +543,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(connectionEClass, Connection.class, "Connection", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConnection_Ip(), ecorePackage.getEString(), "ip", null, 1, 1, Connection.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnection_Port(), ecorePackage.getEInt(), "port", null, 1, 1, Connection.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ballAheadConditionEClass, BallAheadCondition.class, "BallAheadCondition", !IS_ABSTRACT,

@@ -140,13 +140,22 @@ public interface RobotPackage extends EPackage {
 	int ROBOT__INITIAL = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Connection</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT__CONNECTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Robot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROBOT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ROBOT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Robot</em>' class.
@@ -204,6 +213,52 @@ public interface RobotPackage extends EPackage {
 	int SCENARIO_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.ConnectionImpl <em>Connection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.ConnectionImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getConnection()
+	 * @generated
+	 */
+	int CONNECTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Ip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__IP = 0;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__PORT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Connection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Connection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.ConditionImpl <em>Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,7 +266,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 4;
+	int CONDITION = 5;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -239,7 +294,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getBallAheadCondition()
 	 * @generated
 	 */
-	int BALL_AHEAD_CONDITION = 3;
+	int BALL_AHEAD_CONDITION = 4;
 
 	/**
 	 * The number of structural features of the '<em>Ball Ahead Condition</em>' class.
@@ -267,7 +322,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 10;
+	int STATEMENT = 11;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -295,7 +350,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getConditionalStatement()
 	 * @generated
 	 */
-	int CONDITIONAL_STATEMENT = 5;
+	int CONDITIONAL_STATEMENT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -341,7 +396,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getControlStatement()
 	 * @generated
 	 */
-	int CONTROL_STATEMENT = 6;
+	int CONTROL_STATEMENT = 7;
 
 	/**
 	 * The number of structural features of the '<em>Control Statement</em>' class.
@@ -369,7 +424,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getExecuteStatement()
 	 * @generated
 	 */
-	int EXECUTE_STATEMENT = 7;
+	int EXECUTE_STATEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Destination</b></em>' reference.
@@ -406,7 +461,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getForwardStatement()
 	 * @generated
 	 */
-	int FORWARD_STATEMENT = 8;
+	int FORWARD_STATEMENT = 9;
 
 	/**
 	 * The number of structural features of the '<em>Forward Statement</em>' class.
@@ -434,7 +489,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getPrintStatement()
 	 * @generated
 	 */
-	int PRINT_STATEMENT = 9;
+	int PRINT_STATEMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -471,7 +526,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getUntilStatement()
 	 * @generated
 	 */
-	int UNTIL_STATEMENT = 11;
+	int UNTIL_STATEMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -553,6 +608,17 @@ public interface RobotPackage extends EPackage {
 	EReference getRobot_Initial();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.robot.model.robot.Robot#getConnection <em>Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Connection</em>'.
+	 * @see org.robot.model.robot.Robot#getConnection()
+	 * @see #getRobot()
+	 * @generated
+	 */
+	EReference getRobot_Connection();
+
+	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Scenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -593,6 +659,38 @@ public interface RobotPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.Connection <em>Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Connection</em>'.
+	 * @see org.robot.model.robot.Connection
+	 * @generated
+	 */
+	EClass getConnection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.robot.model.robot.Connection#getIp <em>Ip</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ip</em>'.
+	 * @see org.robot.model.robot.Connection#getIp()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EAttribute getConnection_Ip();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.robot.model.robot.Connection#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port</em>'.
+	 * @see org.robot.model.robot.Connection#getPort()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EAttribute getConnection_Port();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.BallAheadCondition <em>Ball Ahead Condition</em>}'.
@@ -786,6 +884,14 @@ public interface RobotPackage extends EPackage {
 		EReference ROBOT__INITIAL = eINSTANCE.getRobot_Initial();
 
 		/**
+		 * The meta object literal for the '<em><b>Connection</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROBOT__CONNECTION = eINSTANCE.getRobot_Connection();
+
+		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.ScenarioImpl <em>Scenario</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -820,6 +926,32 @@ public interface RobotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.ConnectionImpl <em>Connection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.ConnectionImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getConnection()
+		 * @generated
+		 */
+		EClass CONNECTION = eINSTANCE.getConnection();
+
+		/**
+		 * The meta object literal for the '<em><b>Ip</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTION__IP = eINSTANCE.getConnection_Ip();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTION__PORT = eINSTANCE.getConnection_Port();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.BallAheadConditionImpl <em>Ball Ahead Condition</em>}' class.

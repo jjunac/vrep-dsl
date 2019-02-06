@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.robot.dsl.services.RobotDslGrammarAccess;
 import org.robot.model.robot.BallAheadCondition;
+import org.robot.model.robot.Connection;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
 import org.robot.model.robot.PrintStatement;
@@ -40,6 +41,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			switch (semanticObject.eClass().getClassifierID()) {
 			case RobotPackage.BALL_AHEAD_CONDITION:
 				sequence_BallAheadCondition(context, (BallAheadCondition) semanticObject); 
+				return; 
+			case RobotPackage.CONNECTION:
+				sequence_Connection(context, (Connection) semanticObject); 
 				return; 
 			case RobotPackage.EXECUTE_STATEMENT:
 				sequence_ExecuteStatement(context, (ExecuteStatement) semanticObject); 
@@ -74,6 +78,27 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_BallAheadCondition(ISerializationContext context, BallAheadCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Connection returns Connection
+	 *
+	 * Constraint:
+	 *     (ip=EString port=INT)
+	 */
+	protected void sequence_Connection(ISerializationContext context, Connection semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONNECTION__IP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONNECTION__IP));
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONNECTION__PORT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONNECTION__PORT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConnectionAccess().getIpEStringParserRuleCall_1_0(), semanticObject.getIp());
+		feeder.accept(grammarAccess.getConnectionAccess().getPortINTTerminalRuleCall_3_0(), semanticObject.getPort());
+		feeder.finish();
 	}
 	
 	
@@ -133,7 +158,7 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Robot returns Robot
 	 *
 	 * Constraint:
-	 *     (name=EString (scenarii+=Scenario scenarii+=Scenario*)? global=Scenario initial=[Scenario|EString])
+	 *     (name=EString connection=Connection? (scenarii+=Scenario scenarii+=Scenario*)? global=Scenario initial=[Scenario|EString])
 	 */
 	protected void sequence_Robot(ISerializationContext context, Robot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

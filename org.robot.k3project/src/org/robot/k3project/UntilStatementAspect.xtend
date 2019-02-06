@@ -11,6 +11,7 @@ class UntilStatementAspect extends ConditionalStatementAspect {
 	def Scenario exec() {
 		while (!_self.condition.exec) {
 			_self.statements.forEach[exec]
+			Thread.sleep(1000);
 		}
 		return null
 	}

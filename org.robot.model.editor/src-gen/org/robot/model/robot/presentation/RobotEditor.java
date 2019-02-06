@@ -153,7 +153,6 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**

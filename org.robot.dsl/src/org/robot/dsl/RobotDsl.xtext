@@ -8,6 +8,7 @@ Robot returns Robot:
 	'Robot'
 	name=EString
 	'{'
+		( 'connect_to' connection=Connection )?
 		('scenarii' '{' scenarii+=Scenario ( scenarii+=Scenario)* '}' )?
 		'global' global=Scenario
 		'initial' initial=[Scenario | EString]
@@ -15,6 +16,11 @@ Robot returns Robot:
 
 EString returns ecore::EString:
 	STRING | ID;
+
+Connection returns Connection:
+	{Connection}
+	ip=EString ':' port=INT
+;
 
 Scenario returns Scenario:
 	{Scenario}

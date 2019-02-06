@@ -32,33 +32,37 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cScenariiKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cScenariiAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cScenariiScenarioParserRuleCall_3_2_0 = (RuleCall)cScenariiAssignment_3_2.eContents().get(0);
-		private final Assignment cScenariiAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cScenariiScenarioParserRuleCall_3_3_0 = (RuleCall)cScenariiAssignment_3_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
-		private final Keyword cGlobalKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cGlobalAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cGlobalScenarioParserRuleCall_5_0 = (RuleCall)cGlobalAssignment_5.eContents().get(0);
-		private final Keyword cInitialKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cInitialAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cInitialScenarioCrossReference_7_0 = (CrossReference)cInitialAssignment_7.eContents().get(0);
-		private final RuleCall cInitialScenarioEStringParserRuleCall_7_0_1 = (RuleCall)cInitialScenarioCrossReference_7_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cConnect_toKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cConnectionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cConnectionConnectionParserRuleCall_3_1_0 = (RuleCall)cConnectionAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cScenariiKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cScenariiAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cScenariiScenarioParserRuleCall_4_2_0 = (RuleCall)cScenariiAssignment_4_2.eContents().get(0);
+		private final Assignment cScenariiAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cScenariiScenarioParserRuleCall_4_3_0 = (RuleCall)cScenariiAssignment_4_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Keyword cGlobalKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cGlobalAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cGlobalScenarioParserRuleCall_6_0 = (RuleCall)cGlobalAssignment_6.eContents().get(0);
+		private final Keyword cInitialKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cInitialAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cInitialScenarioCrossReference_8_0 = (CrossReference)cInitialAssignment_8.eContents().get(0);
+		private final RuleCall cInitialScenarioEStringParserRuleCall_8_0_1 = (RuleCall)cInitialScenarioCrossReference_8_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Robot:
 		//	'Robot'
 		//	name=EString
-		//	'{' ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
+		//	'{' ('connect_to' connection=Connection)? ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
 		//	'global' global=Scenario
 		//	'initial' initial=[Scenario|EString]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Robot' name=EString '{' ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')? 'global' global=Scenario 'initial'
-		//initial=[Scenario|EString] '}'
+		//'Robot' name=EString '{' ('connect_to' connection=Connection)? ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario*
+		//'}')? 'global' global=Scenario 'initial' initial=[Scenario|EString] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Robot'
@@ -73,53 +77,65 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
+		//('connect_to' connection=Connection)?
 		public Group getGroup_3() { return cGroup_3; }
 		
+		//'connect_to'
+		public Keyword getConnect_toKeyword_3_0() { return cConnect_toKeyword_3_0; }
+		
+		//connection=Connection
+		public Assignment getConnectionAssignment_3_1() { return cConnectionAssignment_3_1; }
+		
+		//Connection
+		public RuleCall getConnectionConnectionParserRuleCall_3_1_0() { return cConnectionConnectionParserRuleCall_3_1_0; }
+		
+		//('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'scenarii'
-		public Keyword getScenariiKeyword_3_0() { return cScenariiKeyword_3_0; }
+		public Keyword getScenariiKeyword_4_0() { return cScenariiKeyword_4_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 		
 		//scenarii+=Scenario
-		public Assignment getScenariiAssignment_3_2() { return cScenariiAssignment_3_2; }
+		public Assignment getScenariiAssignment_4_2() { return cScenariiAssignment_4_2; }
 		
 		//Scenario
-		public RuleCall getScenariiScenarioParserRuleCall_3_2_0() { return cScenariiScenarioParserRuleCall_3_2_0; }
+		public RuleCall getScenariiScenarioParserRuleCall_4_2_0() { return cScenariiScenarioParserRuleCall_4_2_0; }
 		
 		//scenarii+=Scenario*
-		public Assignment getScenariiAssignment_3_3() { return cScenariiAssignment_3_3; }
+		public Assignment getScenariiAssignment_4_3() { return cScenariiAssignment_4_3; }
 		
 		//Scenario
-		public RuleCall getScenariiScenarioParserRuleCall_3_3_0() { return cScenariiScenarioParserRuleCall_3_3_0; }
+		public RuleCall getScenariiScenarioParserRuleCall_4_3_0() { return cScenariiScenarioParserRuleCall_4_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
 		
 		//'global'
-		public Keyword getGlobalKeyword_4() { return cGlobalKeyword_4; }
+		public Keyword getGlobalKeyword_5() { return cGlobalKeyword_5; }
 		
 		//global=Scenario
-		public Assignment getGlobalAssignment_5() { return cGlobalAssignment_5; }
+		public Assignment getGlobalAssignment_6() { return cGlobalAssignment_6; }
 		
 		//Scenario
-		public RuleCall getGlobalScenarioParserRuleCall_5_0() { return cGlobalScenarioParserRuleCall_5_0; }
+		public RuleCall getGlobalScenarioParserRuleCall_6_0() { return cGlobalScenarioParserRuleCall_6_0; }
 		
 		//'initial'
-		public Keyword getInitialKeyword_6() { return cInitialKeyword_6; }
+		public Keyword getInitialKeyword_7() { return cInitialKeyword_7; }
 		
 		//initial=[Scenario|EString]
-		public Assignment getInitialAssignment_7() { return cInitialAssignment_7; }
+		public Assignment getInitialAssignment_8() { return cInitialAssignment_8; }
 		
 		//[Scenario|EString]
-		public CrossReference getInitialScenarioCrossReference_7_0() { return cInitialScenarioCrossReference_7_0; }
+		public CrossReference getInitialScenarioCrossReference_8_0() { return cInitialScenarioCrossReference_8_0; }
 		
 		//EString
-		public RuleCall getInitialScenarioEStringParserRuleCall_7_0_1() { return cInitialScenarioEStringParserRuleCall_7_0_1; }
+		public RuleCall getInitialScenarioEStringParserRuleCall_8_0_1() { return cInitialScenarioEStringParserRuleCall_8_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.EString");
@@ -139,6 +155,41 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
+	public class ConnectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Connection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cConnectionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cIpAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIpEStringParserRuleCall_1_0 = (RuleCall)cIpAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPortAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPortINTTerminalRuleCall_3_0 = (RuleCall)cPortAssignment_3.eContents().get(0);
+		
+		//Connection:
+		//	{Connection} ip=EString ':' port=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Connection} ip=EString ':' port=INT
+		public Group getGroup() { return cGroup; }
+		
+		//{Connection}
+		public Action getConnectionAction_0() { return cConnectionAction_0; }
+		
+		//ip=EString
+		public Assignment getIpAssignment_1() { return cIpAssignment_1; }
+		
+		//EString
+		public RuleCall getIpEStringParserRuleCall_1_0() { return cIpEStringParserRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//port=INT
+		public Assignment getPortAssignment_3() { return cPortAssignment_3; }
+		
+		//INT
+		public RuleCall getPortINTTerminalRuleCall_3_0() { return cPortINTTerminalRuleCall_3_0; }
 	}
 	public class ScenarioElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Scenario");
@@ -407,6 +458,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final RobotElements pRobot;
 	private final EStringElements pEString;
+	private final ConnectionElements pConnection;
 	private final ScenarioElements pScenario;
 	private final ConditionElements pCondition;
 	private final BallAheadConditionElements pBallAheadCondition;
@@ -428,6 +480,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pRobot = new RobotElements();
 		this.pEString = new EStringElements();
+		this.pConnection = new ConnectionElements();
 		this.pScenario = new ScenarioElements();
 		this.pCondition = new ConditionElements();
 		this.pBallAheadCondition = new BallAheadConditionElements();
@@ -469,7 +522,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Robot:
 	//	'Robot'
 	//	name=EString
-	//	'{' ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
+	//	'{' ('connect_to' connection=Connection)? ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
 	//	'global' global=Scenario
 	//	'initial' initial=[Scenario|EString]
 	//	'}';
@@ -489,6 +542,16 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEStringRule() {
 		return getEStringAccess().getRule();
+	}
+	
+	//Connection:
+	//	{Connection} ip=EString ':' port=INT;
+	public ConnectionElements getConnectionAccess() {
+		return pConnection;
+	}
+	
+	public ParserRule getConnectionRule() {
+		return getConnectionAccess().getRule();
 	}
 	
 	//Scenario:

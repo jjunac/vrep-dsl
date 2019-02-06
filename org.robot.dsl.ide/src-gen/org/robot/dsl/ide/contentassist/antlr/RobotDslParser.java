@@ -35,6 +35,8 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getRobotAccess().getGroup(), "rule__Robot__Group__0");
 			builder.put(grammarAccess.getRobotAccess().getGroup_3(), "rule__Robot__Group_3__0");
+			builder.put(grammarAccess.getRobotAccess().getGroup_4(), "rule__Robot__Group_4__0");
+			builder.put(grammarAccess.getConnectionAccess().getGroup(), "rule__Connection__Group__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup_4(), "rule__Scenario__Group_4__0");
 			builder.put(grammarAccess.getBallAheadConditionAccess().getGroup(), "rule__BallAheadCondition__Group__0");
@@ -43,10 +45,13 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExecuteStatementAccess().getGroup(), "rule__ExecuteStatement__Group__0");
 			builder.put(grammarAccess.getUntilStatementAccess().getGroup(), "rule__UntilStatement__Group__0");
 			builder.put(grammarAccess.getRobotAccess().getNameAssignment_1(), "rule__Robot__NameAssignment_1");
-			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_3_2(), "rule__Robot__ScenariiAssignment_3_2");
-			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_3_3(), "rule__Robot__ScenariiAssignment_3_3");
-			builder.put(grammarAccess.getRobotAccess().getGlobalAssignment_5(), "rule__Robot__GlobalAssignment_5");
-			builder.put(grammarAccess.getRobotAccess().getInitialAssignment_7(), "rule__Robot__InitialAssignment_7");
+			builder.put(grammarAccess.getRobotAccess().getConnectionAssignment_3_1(), "rule__Robot__ConnectionAssignment_3_1");
+			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_4_2(), "rule__Robot__ScenariiAssignment_4_2");
+			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_4_3(), "rule__Robot__ScenariiAssignment_4_3");
+			builder.put(grammarAccess.getRobotAccess().getGlobalAssignment_6(), "rule__Robot__GlobalAssignment_6");
+			builder.put(grammarAccess.getRobotAccess().getInitialAssignment_8(), "rule__Robot__InitialAssignment_8");
+			builder.put(grammarAccess.getConnectionAccess().getIpAssignment_1(), "rule__Connection__IpAssignment_1");
+			builder.put(grammarAccess.getConnectionAccess().getPortAssignment_3(), "rule__Connection__PortAssignment_3");
 			builder.put(grammarAccess.getScenarioAccess().getNameAssignment_2(), "rule__Scenario__NameAssignment_2");
 			builder.put(grammarAccess.getScenarioAccess().getStatementsAssignment_4_0(), "rule__Scenario__StatementsAssignment_4_0");
 			builder.put(grammarAccess.getScenarioAccess().getStatementsAssignment_4_1(), "rule__Scenario__StatementsAssignment_4_1");
