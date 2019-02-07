@@ -8,5 +8,9 @@ import org.robot.model.robot.Scenario
 @Aspect(className=Statement)
 abstract class StatementAspect {
 	@Step
-	def Scenario exec();
+	def Scenario step();
+	
+	def Scenario exec() {
+		return _self.step()
+	}
 }

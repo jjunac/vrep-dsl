@@ -7,7 +7,7 @@ import org.robot.model.robot.ForwardStatement
 
 @Aspect(className=ForwardStatement)
 class ForwardStatementAspect extends ControlStatementAspect {
-	def Scenario exec() {
+	def Scenario step() {
 		println("forward")
 		PolyRob.singleton.goStraight(10, 1000);
 		return null

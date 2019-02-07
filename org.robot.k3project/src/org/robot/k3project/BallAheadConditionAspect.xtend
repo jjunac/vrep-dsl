@@ -5,7 +5,7 @@ import org.robot.model.robot.BallAheadCondition
 
 @Aspect(className=BallAheadCondition)
 class BallAheadConditionAspect extends ConditionAspect {
-	def boolean exec() {
+	def boolean eval() {
 		return false
 	}
 }

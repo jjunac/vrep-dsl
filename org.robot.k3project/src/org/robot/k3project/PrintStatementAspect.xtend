@@ -6,7 +6,7 @@ import org.robot.model.robot.PrintStatement
 
 @Aspect(className=PrintStatement)
 class PrintStatementAspect extends StatementAspect {
-	def Scenario exec() {
+	def Scenario step() {
 		println(_self.text)
 		return null
 	}

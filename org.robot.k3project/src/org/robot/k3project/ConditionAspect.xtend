@@ -7,5 +7,5 @@ import org.robot.model.robot.Condition
 @Aspect(className=Condition)
 abstract class ConditionAspect {
 	@Step
-	def boolean exec();
+	def boolean eval();
 }

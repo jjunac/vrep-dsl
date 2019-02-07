@@ -5,7 +5,7 @@ import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
 
 @SuppressWarnings("all")
-public class ScenarioAspectScenarioAspectProperties {
+public class ConditionalStatementAspectConditionalStatementAspectProperties {
   public Iterator<Statement> itStatement;
   
   public Scenario next = null;

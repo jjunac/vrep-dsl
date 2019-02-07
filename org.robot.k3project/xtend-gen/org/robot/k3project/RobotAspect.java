@@ -23,10 +23,18 @@ public class RobotAspect {
   
   protected static void _privk3_exec(final RobotAspectRobotAspectProperties _self_, final Robot _self) {
     ConnectionAspect.connect(_self.getConnection());
-    ScenarioAspect.exec(_self.getGlobal());
-    Scenario next = ScenarioAspect.exec(_self.getInitial());
-    while ((next != null)) {
-      next = ScenarioAspect.exec(next);
+    Scenario sc = _self.getInitial();
+    while ((sc != null)) {
+      {
+        ScenarioAspect.start(sc);
+        while ((!ScenarioAspect.isFinished(sc))) {
+          {
+            ScenarioAspect.exec(_self.getGlobal());
+            ScenarioAspect.step(sc);
+          }
+        }
+        sc = ScenarioAspect.next(sc);
+      }
     }
     PolyRob.getSingleton().stopSimulation();
   }

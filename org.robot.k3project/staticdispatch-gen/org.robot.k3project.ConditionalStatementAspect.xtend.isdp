@@ -1,5 +1,10 @@
 	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.ConditionalStatementAspect
-		if (_self instanceof org.robot.model.robot.ControlStatement){
-			result = org.robot.k3project.ConditionalStatementAspect.exec((org.robot.model.robot.ControlStatement)_self);
+		if (_self instanceof org.robot.model.robot.ConditionalStatement){
+			result = org.robot.k3project.ConditionalStatementAspect.exec((org.robot.model.robot.ConditionalStatement)_self);
 		} else
 		// EndInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.ConditionalStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario step() from org.robot.k3project.ConditionalStatementAspect
+		if (_self instanceof org.robot.model.robot.ConditionalStatement){
+			result = org.robot.k3project.ConditionalStatementAspect.step((org.robot.model.robot.ConditionalStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.StatementAspect#Scenario step() from org.robot.k3project.ConditionalStatementAspect

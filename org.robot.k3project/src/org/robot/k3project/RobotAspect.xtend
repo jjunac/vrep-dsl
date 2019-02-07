@@ -14,10 +14,22 @@ class RobotAspect {
 	@Main
 	def void exec() {
 		_self.connection.connect
-		_self.global.exec
-		var Scenario next = _self.initial.exec
+		
+		var Scenario sc = _self.initial
+		
+		while(sc !== null) {
+			sc.start()
+			
+			while(!sc.isFinished()) {
+				_self.global.exec()
+				sc.step()
+			}
+			sc = sc.next			
+		}
+
+		/*var Scenario next = _self.initial.exec
 		while (next !== null)
-			next = next.exec
+			next = next.exec*/
 		PolyRob.getSingleton().stopSimulation()
 	}
 }
