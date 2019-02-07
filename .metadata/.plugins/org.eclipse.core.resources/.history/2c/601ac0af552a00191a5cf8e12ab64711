@@ -1,0 +1,16 @@
+package org.robot.k3project
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import org.robot.model.robot.UntilStatement
+
+import static extension org.robot.k3project.ConditionAspect.*
+import static extension org.robot.k3project.ConditionalStatementAspect.*
+
+@Aspect(className=UntilStatement)
+class UntilStatementAspect extends ConditionalStatementAspect {
+	
+	overrive boolean mustExecute() {
+		_self.condition.eval()
+	}	
+	
+}

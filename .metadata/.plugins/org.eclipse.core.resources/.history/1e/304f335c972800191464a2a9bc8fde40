@@ -1,0 +1,550 @@
+/**
+ */
+package org.robot.model.robot.statements;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see org.robot.model.robot.statements.StatementsFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface StatementsPackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "statements";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://org/robot/statements";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "statements";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	StatementsPackage eINSTANCE = org.robot.model.robot.statements.impl.StatementsPackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.StatementImpl <em>Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.StatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getStatement()
+	 * @generated
+	 */
+	int STATEMENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.ExecuteStatementImpl <em>Execute Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.ExecuteStatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getExecuteStatement()
+	 * @generated
+	 */
+	int EXECUTE_STATEMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Destination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_STATEMENT__DESTINATION = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Execute Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Execute Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.PrintStatementImpl <em>Print Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.PrintStatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getPrintStatement()
+	 * @generated
+	 */
+	int PRINT_STATEMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT__TEXT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Print Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Print Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.ConditionalStatementImpl <em>Conditional Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.ConditionalStatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getConditionalStatement()
+	 * @generated
+	 */
+	int CONDITIONAL_STATEMENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Conditional Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Conditional Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.ControlStatementImpl <em>Control Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.ControlStatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getControlStatement()
+	 * @generated
+	 */
+	int CONTROL_STATEMENT = 4;
+
+	/**
+	 * The number of structural features of the '<em>Control Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Control Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.ForwardStatementImpl <em>Forward Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.ForwardStatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getForwardStatement()
+	 * @generated
+	 */
+	int FORWARD_STATEMENT = 5;
+
+	/**
+	 * The number of structural features of the '<em>Forward Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_STATEMENT_FEATURE_COUNT = CONTROL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Forward Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_STATEMENT_OPERATION_COUNT = CONTROL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.statements.impl.UntilStatementImpl <em>Until Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.statements.impl.UntilStatementImpl
+	 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getUntilStatement()
+	 * @generated
+	 */
+	int UNTIL_STATEMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT__CONDITION = CONDITIONAL_STATEMENT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT__STATEMENTS = CONDITIONAL_STATEMENT__STATEMENTS;
+
+	/**
+	 * The number of structural features of the '<em>Until Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT_FEATURE_COUNT = CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Until Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNTIL_STATEMENT_OPERATION_COUNT = CONDITIONAL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.Statement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Statement</em>'.
+	 * @see org.robot.model.robot.statements.Statement
+	 * @generated
+	 */
+	EClass getStatement();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.ExecuteStatement <em>Execute Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Execute Statement</em>'.
+	 * @see org.robot.model.robot.statements.ExecuteStatement
+	 * @generated
+	 */
+	EClass getExecuteStatement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.robot.model.robot.statements.ExecuteStatement#getDestination <em>Destination</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Destination</em>'.
+	 * @see org.robot.model.robot.statements.ExecuteStatement#getDestination()
+	 * @see #getExecuteStatement()
+	 * @generated
+	 */
+	EReference getExecuteStatement_Destination();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.PrintStatement <em>Print Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Print Statement</em>'.
+	 * @see org.robot.model.robot.statements.PrintStatement
+	 * @generated
+	 */
+	EClass getPrintStatement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.robot.model.robot.statements.PrintStatement#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see org.robot.model.robot.statements.PrintStatement#getText()
+	 * @see #getPrintStatement()
+	 * @generated
+	 */
+	EAttribute getPrintStatement_Text();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.ConditionalStatement <em>Conditional Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conditional Statement</em>'.
+	 * @see org.robot.model.robot.statements.ConditionalStatement
+	 * @generated
+	 */
+	EClass getConditionalStatement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.robot.model.robot.statements.ConditionalStatement#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Condition</em>'.
+	 * @see org.robot.model.robot.statements.ConditionalStatement#getCondition()
+	 * @see #getConditionalStatement()
+	 * @generated
+	 */
+	EReference getConditionalStatement_Condition();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.robot.model.robot.statements.ConditionalStatement#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Statements</em>'.
+	 * @see org.robot.model.robot.statements.ConditionalStatement#getStatements()
+	 * @see #getConditionalStatement()
+	 * @generated
+	 */
+	EReference getConditionalStatement_Statements();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.ControlStatement <em>Control Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control Statement</em>'.
+	 * @see org.robot.model.robot.statements.ControlStatement
+	 * @generated
+	 */
+	EClass getControlStatement();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.ForwardStatement <em>Forward Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Forward Statement</em>'.
+	 * @see org.robot.model.robot.statements.ForwardStatement
+	 * @generated
+	 */
+	EClass getForwardStatement();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.statements.UntilStatement <em>Until Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Until Statement</em>'.
+	 * @see org.robot.model.robot.statements.UntilStatement
+	 * @generated
+	 */
+	EClass getUntilStatement();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	StatementsFactory getStatementsFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.StatementImpl <em>Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.StatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getStatement()
+		 * @generated
+		 */
+		EClass STATEMENT = eINSTANCE.getStatement();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.ExecuteStatementImpl <em>Execute Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.ExecuteStatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getExecuteStatement()
+		 * @generated
+		 */
+		EClass EXECUTE_STATEMENT = eINSTANCE.getExecuteStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Destination</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTE_STATEMENT__DESTINATION = eINSTANCE.getExecuteStatement_Destination();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.PrintStatementImpl <em>Print Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.PrintStatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getPrintStatement()
+		 * @generated
+		 */
+		EClass PRINT_STATEMENT = eINSTANCE.getPrintStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRINT_STATEMENT__TEXT = eINSTANCE.getPrintStatement_Text();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.ConditionalStatementImpl <em>Conditional Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.ConditionalStatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getConditionalStatement()
+		 * @generated
+		 */
+		EClass CONDITIONAL_STATEMENT = eINSTANCE.getConditionalStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STATEMENT__CONDITION = eINSTANCE.getConditionalStatement_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STATEMENT__STATEMENTS = eINSTANCE.getConditionalStatement_Statements();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.ControlStatementImpl <em>Control Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.ControlStatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getControlStatement()
+		 * @generated
+		 */
+		EClass CONTROL_STATEMENT = eINSTANCE.getControlStatement();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.ForwardStatementImpl <em>Forward Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.ForwardStatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getForwardStatement()
+		 * @generated
+		 */
+		EClass FORWARD_STATEMENT = eINSTANCE.getForwardStatement();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.statements.impl.UntilStatementImpl <em>Until Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.statements.impl.UntilStatementImpl
+		 * @see org.robot.model.robot.statements.impl.StatementsPackageImpl#getUntilStatement()
+		 * @generated
+		 */
+		EClass UNTIL_STATEMENT = eINSTANCE.getUntilStatement();
+
+	}
+
+} //StatementsPackage

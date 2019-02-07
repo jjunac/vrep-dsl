@@ -1,0 +1,5 @@
+	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.statements.ControlStatementAspect
+		if (_self instanceof org.robot.model.robot.statements.ControlStatement){
+			result = org.robot.k3project.statements.ControlStatementAspect.exec((org.robot.model.robot.statements.ControlStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.StatementAspect#Scenario exec() from org.robot.k3project.statements.ControlStatementAspect

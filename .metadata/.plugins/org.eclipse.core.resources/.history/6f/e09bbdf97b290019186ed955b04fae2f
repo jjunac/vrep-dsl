@@ -1,0 +1,15 @@
+package org.robot.k3project.statements
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import org.robot.model.robot.Scenario
+import org.robot.vrep.robot.PolyRob
+import org.robot.model.robot.statements.ForwardStatement
+
+@Aspect(className=ForwardStatement)
+class ForwardStatementAspect extends ControlStatementAspect {
+	def Scenario exec() {
+		println("forward")
+		PolyRob.singleton.goStraight(10, 1000);
+		return null
+	}
+}

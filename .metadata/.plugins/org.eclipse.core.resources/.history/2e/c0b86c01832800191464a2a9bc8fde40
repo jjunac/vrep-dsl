@@ -1,0 +1,15 @@
+package org.robot.k3project
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import org.robot.model.robot.ForwardStatement
+import org.robot.model.robot.Scenario
+
+import static extension org.robot.k3project.ControlStatementAspect.*
+
+@Aspect(className=ForwardStatement)
+class ForwardStatementAspect extends ControlStatementAspect {
+	override Scenario exec() {
+		println("forward")
+		return null
+	}
+}

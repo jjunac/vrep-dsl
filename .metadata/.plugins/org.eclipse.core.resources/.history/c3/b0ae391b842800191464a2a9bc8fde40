@@ -1,0 +1,16 @@
+package org.robot.k3project
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import org.robot.model.robot.Robot
+import fr.inria.diverse.k3.al.annotationprocessor.Main
+
+import static extension org.robot.k3project.ScenarioAspect.*
+
+@Aspect(className=Robot)
+class RobotAspect {
+	@Main
+	def void exec() {
+		_self.global.exec();
+		_self.initial.exec();
+	}
+}

@@ -1,0 +1,8 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	org.robot.model.robot.Scenario = org.robot.k3project.ScenarioAspect
+	org.robot.model.robot.statements.ForwardStatement = org.robot.k3project.statements.ForwardStatementAspect
+	org.robot.model.robot.Robot = org.robot.k3project.RobotAspect
+	org.robot.model.robot.statements.ControlStatement = org.robot.k3project.statements.ControlStatementAspect, org.robot.k3project.statements.ConditionalStatementAspect
+	org.robot.model.robot.statements.ExecuteStatement = org.robot.k3project.statements.ExecuteStatementAspect, org.robot.k3project.statements.UntilStatementAspect
+	org.robot.model.robot.statements.Statement = org.robot.k3project.statements.StatementAspect
+	org.robot.model.robot.statements.PrintStatement = org.robot.k3project.statements.PrintStatementAspect

@@ -1,0 +1,16 @@
+/**
+ */
+package org.robot.model.robot.statements;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Forward Statement</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see org.robot.model.robot.statements.StatementsPackage#getForwardStatement()
+ * @model
+ * @generated
+ */
+public interface ForwardStatement extends ControlStatement {
+} // ForwardStatement

@@ -1,0 +1,203 @@
+/**
+ */
+package org.robot.model.robot.statements.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.robot.model.robot.conditions.Condition;
+
+import org.robot.model.robot.statements.ConditionalStatement;
+import org.robot.model.robot.statements.Statement;
+import org.robot.model.robot.statements.StatementsPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Conditional Statement</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.robot.model.robot.statements.impl.ConditionalStatementImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link org.robot.model.robot.statements.impl.ConditionalStatementImpl#getStatements <em>Statements</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public abstract class ConditionalStatementImpl extends StatementImpl implements ConditionalStatement {
+	/**
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected Condition condition;
+
+	/**
+	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Statement> statements;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConditionalStatementImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StatementsPackage.Literals.CONDITIONAL_STATEMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition getCondition() {
+		if (condition != null && condition.eIsProxy()) {
+			InternalEObject oldCondition = (InternalEObject) condition;
+			condition = (Condition) eResolveProxy(oldCondition);
+			if (condition != oldCondition) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							StatementsPackage.CONDITIONAL_STATEMENT__CONDITION, oldCondition, condition));
+			}
+		}
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition basicGetCondition() {
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCondition(Condition newCondition) {
+		Condition oldCondition = condition;
+		condition = newCondition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StatementsPackage.CONDITIONAL_STATEMENT__CONDITION,
+					oldCondition, condition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Statement> getStatements() {
+		if (statements == null) {
+			statements = new EObjectResolvingEList<Statement>(Statement.class, this,
+					StatementsPackage.CONDITIONAL_STATEMENT__STATEMENTS);
+		}
+		return statements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case StatementsPackage.CONDITIONAL_STATEMENT__CONDITION:
+			if (resolve)
+				return getCondition();
+			return basicGetCondition();
+		case StatementsPackage.CONDITIONAL_STATEMENT__STATEMENTS:
+			return getStatements();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case StatementsPackage.CONDITIONAL_STATEMENT__CONDITION:
+			setCondition((Condition) newValue);
+			return;
+		case StatementsPackage.CONDITIONAL_STATEMENT__STATEMENTS:
+			getStatements().clear();
+			getStatements().addAll((Collection<? extends Statement>) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case StatementsPackage.CONDITIONAL_STATEMENT__CONDITION:
+			setCondition((Condition) null);
+			return;
+		case StatementsPackage.CONDITIONAL_STATEMENT__STATEMENTS:
+			getStatements().clear();
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case StatementsPackage.CONDITIONAL_STATEMENT__CONDITION:
+			return condition != null;
+		case StatementsPackage.CONDITIONAL_STATEMENT__STATEMENTS:
+			return statements != null && !statements.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //ConditionalStatementImpl

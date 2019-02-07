@@ -1,0 +1,37 @@
+/**
+ */
+package org.robot.model.robot.statements.impl;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.robot.model.robot.statements.StatementsPackage;
+import org.robot.model.robot.statements.UntilStatement;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Until Statement</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class UntilStatementImpl extends ConditionalStatementImpl implements UntilStatement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UntilStatementImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StatementsPackage.Literals.UNTIL_STATEMENT;
+	}
+
+} //UntilStatementImpl

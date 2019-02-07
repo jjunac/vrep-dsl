@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.robot.model/src-gen" creationIcons="false"
+    editDirectory="/org.robot.model.edit/src-gen" editorDirectory="/org.robot.model.editor/src-gen"
+    modelPluginID="org.robot.model" modelName="Robot" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>robot.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Robot" basePackage="org.robot.model" disposableProviderFactory="true"
+      ecorePackage="robot.ecore#/">
+    <genClasses ecoreClass="robot.ecore#//Robot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//Robot/scenarii"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//Robot/global"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robot.ecore#//Robot/initial"/>
+    </genClasses>
+    <genClasses ecoreClass="robot.ecore#//Scenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//Scenario/statements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="robot.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//NamedElement/name"/>
+    </genClasses>
+    <nestedGenPackages prefix="Conditions" disposableProviderFactory="true" ecorePackage="robot.ecore#//conditions">
+      <genClasses ecoreClass="robot.ecore#//conditions/Condition"/>
+      <genClasses ecoreClass="robot.ecore#//conditions/BallAheadCondition"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Statements" disposableProviderFactory="true" ecorePackage="robot.ecore#//statements">
+      <genClasses image="false" ecoreClass="robot.ecore#//statements/Statement"/>
+      <genClasses ecoreClass="robot.ecore#//statements/ExecuteStatement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference robot.ecore#//statements/ExecuteStatement/destination"/>
+      </genClasses>
+      <genClasses ecoreClass="robot.ecore#//statements/PrintStatement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//statements/PrintStatement/text"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="robot.ecore#//statements/ConditionalStatement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference robot.ecore#//statements/ConditionalStatement/condition"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference robot.ecore#//statements/ConditionalStatement/statements"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="robot.ecore#//statements/ControlStatement"/>
+      <genClasses ecoreClass="robot.ecore#//statements/ForwardStatement"/>
+      <genClasses ecoreClass="robot.ecore#//statements/UntilStatement"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,5 @@
+	// BeginInjectInto org.robot.k3project.ControlStatementAspect#Scenario exec() from org.robot.k3project.ForwardStatementAspect
+		if (_self instanceof org.robot.model.robot.ForwardStatement){
+			result = org.robot.k3project.ForwardStatementAspect.exec((org.robot.model.robot.ForwardStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.ControlStatementAspect#Scenario exec() from org.robot.k3project.ForwardStatementAspect

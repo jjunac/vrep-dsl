@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="robot" nsURI="http://org/robot" nsPrefix="robot">
+  <eClassifiers xsi:type="ecore:EClass" name="Robot" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarii" upperBound="-1"
+        eType="#//Scenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="global" lowerBound="1"
+        eType="#//Scenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="#//Scenario"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//statements/Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="conditions" nsURI="http://org/robot/conditions" nsPrefix="conditions">
+    <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BallAheadCondition" eSuperTypes="#//conditions/Condition"/>
+  </eSubpackages>
+  <eSubpackages name="statements" nsURI="http://org/robot/statements" nsPrefix="statements">
+    <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecuteStatement" eSuperTypes="#//statements/Statement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
+          eType="#//Scenario"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrintStatement" eSuperTypes="#//statements/Statement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalStatement" abstract="true"
+        eSuperTypes="#//statements/Statement">
+      <eStructuralFeatures xsi:type="ecore:EReference"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlStatement" abstract="true"
+        eSuperTypes="#//statements/Statement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ForwardStatement" eSuperTypes="#//statements/ControlStatement"/>
+  </eSubpackages>
+</ecore:EPackage>
