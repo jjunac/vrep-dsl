@@ -44,3 +44,7 @@
 /.ConnectionAspectConnectionAspectProperties.java._trace
 /.ConditionalStatementAspectConditionalStatementAspectContext.java._trace
 /.ConditionalStatementAspectConditionalStatementAspectProperties.java._trace
+/.ListenerVisitor.java._trace
+/.StatementBlockAspect.java._trace
+/.StatementBlockAspectStatementBlockAspectContext.java._trace
+/.StatementBlockAspectStatementBlockAspectProperties.java._trace

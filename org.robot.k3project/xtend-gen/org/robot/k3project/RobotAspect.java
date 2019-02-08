@@ -2,9 +2,11 @@ package org.robot.k3project;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.robot.k3project.ConnectionAspect;
 import org.robot.k3project.RobotAspectRobotAspectProperties;
 import org.robot.k3project.ScenarioAspect;
+import org.robot.k3project.StatementBlockAspect;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.Scenario;
 import org.robot.vrep.robot.PolyRob;
@@ -22,20 +24,31 @@ public class RobotAspect {
   }
   
   protected static void _privk3_exec(final RobotAspectRobotAspectProperties _self_, final Robot _self) {
-    ConnectionAspect.connect(_self.getConnection());
-    Scenario sc = _self.getInitial();
-    while ((sc != null)) {
-      {
-        ScenarioAspect.start(sc);
-        while ((!ScenarioAspect.isFinished(sc))) {
-          {
-            ScenarioAspect.exec(_self.getGlobal());
-            ScenarioAspect.step(sc);
+    try {
+      ConnectionAspect.connect(_self.getConnection());
+      Scenario sc = _self.getInitial();
+      while ((sc != null)) {
+        {
+          ScenarioAspect.enter(sc);
+          Scenario next = null;
+          while ((!ScenarioAspect.isFinished(sc))) {
+            {
+              StatementBlockAspect.exec(_self.getGlobal());
+              next = ScenarioAspect.step(sc);
+              Thread.sleep(1000);
+            }
           }
+          ScenarioAspect.exit(sc);
+          sc = next;
         }
-        sc = ScenarioAspect.next(sc);
       }
+      PolyRob _singleton = PolyRob.getSingleton();
+      boolean _tripleNotEquals = (_singleton != null);
+      if (_tripleNotEquals) {
+        PolyRob.getSingleton().stopSimulation();
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    PolyRob.getSingleton().stopSimulation();
   }
 }

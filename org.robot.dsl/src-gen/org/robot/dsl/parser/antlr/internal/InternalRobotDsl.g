@@ -187,9 +187,9 @@ ruleRobot returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRobotAccess().getGlobalScenarioParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getRobotAccess().getGlobalStatementBlockParserRuleCall_6_0());
 				}
-				lv_global_11_0=ruleScenario
+				lv_global_11_0=ruleStatementBlock
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRobotRule());
@@ -198,7 +198,7 @@ ruleRobot returns [EObject current=null]
 						$current,
 						"global",
 						lv_global_11_0,
-						"org.robot.dsl.RobotDsl.Scenario");
+						"org.robot.dsl.RobotDsl.StatementBlock");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -377,25 +377,70 @@ ruleScenario returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getScenarioAccess().getStatementBlockStatementBlockParserRuleCall_3_0());
+				}
+				lv_statementBlock_3_0=ruleStatementBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getScenarioRule());
+					}
+					set(
+						$current,
+						"statementBlock",
+						lv_statementBlock_3_0,
+						"org.robot.dsl.RobotDsl.StatementBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleStatementBlock
+entryRuleStatementBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStatementBlockRule()); }
+	iv_ruleStatementBlock=ruleStatementBlock
+	{ $current=$iv_ruleStatementBlock.current; }
+	EOF;
+
+// Rule StatementBlock
+ruleStatementBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getStatementBlockAccess().getStatementBlockAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getScenarioAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_1, grammarAccess.getStatementBlockAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getScenarioAccess().getStatementsStatementParserRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getStatementBlockAccess().getStatementsStatementParserRuleCall_2_0_0());
 					}
-					lv_statements_4_0=ruleStatement
+					lv_statements_2_0=ruleStatement
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getScenarioRule());
+							$current = createModelElementForParent(grammarAccess.getStatementBlockRule());
 						}
 						add(
 							$current,
 							"statements",
-							lv_statements_4_0,
+							lv_statements_2_0,
 							"org.robot.dsl.RobotDsl.Statement");
 						afterParserOrEnumRuleCall();
 					}
@@ -404,26 +449,26 @@ ruleScenario returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getScenarioAccess().getStatementsStatementParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getStatementBlockAccess().getStatementsStatementParserRuleCall_2_1_0());
 					}
-					lv_statements_5_0=ruleStatement
+					lv_statements_3_0=ruleStatement
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getScenarioRule());
+							$current = createModelElementForParent(grammarAccess.getStatementBlockRule());
 						}
 						add(
 							$current,
 							"statements",
-							lv_statements_5_0,
+							lv_statements_3_0,
 							"org.robot.dsl.RobotDsl.Statement");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
 		)?
-		otherlv_6='}'
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getScenarioAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getStatementBlockAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -733,52 +778,25 @@ ruleUntilStatement returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getUntilStatementAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUntilStatementAccess().getStatementsStatementParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getUntilStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0());
 				}
-				lv_statements_4_0=ruleStatement
+				lv_statementBlock_3_0=ruleStatementBlock
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUntilStatementRule());
 					}
-					add(
+					set(
 						$current,
-						"statements",
-						lv_statements_4_0,
-						"org.robot.dsl.RobotDsl.Statement");
+						"statementBlock",
+						lv_statementBlock_3_0,
+						"org.robot.dsl.RobotDsl.StatementBlock");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getUntilStatementAccess().getStatementsStatementParserRuleCall_5_0());
-				}
-				lv_statements_5_0=ruleStatement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getUntilStatementRule());
-					}
-					add(
-						$current,
-						"statements",
-						lv_statements_5_0,
-						"org.robot.dsl.RobotDsl.Statement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_6='}'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getUntilStatementAccess().getRightCurlyBracketKeyword_6());
-		}
 	)
 ;
 

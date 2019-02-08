@@ -7,10 +7,24 @@ import org.robot.model.robot.Scenario
 
 @Aspect(className=Statement)
 abstract class StatementAspect {
-	@Step
-	def Scenario step();
 	
-	def Scenario exec() {
-		return _self.step()
+	boolean firstStep = true
+	
+	def void enter() {
+		_self_.firstStep = true
 	}
+	
+	def Scenario step() {
+		_self_.firstStep = false
+		return _self.doStep()		
+	}
+	
+	@Step
+	def Scenario doStep();
+	
+	def boolean isFinished() {
+		return !_self_.firstStep
+	}
+	
+	def void exit() {}
 }

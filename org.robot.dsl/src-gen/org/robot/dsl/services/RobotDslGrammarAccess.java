@@ -45,7 +45,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		private final Keyword cGlobalKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cGlobalAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cGlobalScenarioParserRuleCall_6_0 = (RuleCall)cGlobalAssignment_6.eContents().get(0);
+		private final RuleCall cGlobalStatementBlockParserRuleCall_6_0 = (RuleCall)cGlobalAssignment_6.eContents().get(0);
 		private final Keyword cInitialKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cInitialAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final CrossReference cInitialScenarioCrossReference_8_0 = (CrossReference)cInitialAssignment_8.eContents().get(0);
@@ -56,13 +56,13 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'Robot'
 		//	name=EString
 		//	'{' ('connect_to' connection=Connection)? ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
-		//	'global' global=Scenario
+		//	'global' global=StatementBlock
 		//	'initial' initial=[Scenario|EString]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Robot' name=EString '{' ('connect_to' connection=Connection)? ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario*
-		//'}')? 'global' global=Scenario 'initial' initial=[Scenario|EString] '}'
+		//'}')? 'global' global=StatementBlock 'initial' initial=[Scenario|EString] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Robot'
@@ -116,11 +116,11 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'global'
 		public Keyword getGlobalKeyword_5() { return cGlobalKeyword_5; }
 		
-		//global=Scenario
+		//global=StatementBlock
 		public Assignment getGlobalAssignment_6() { return cGlobalAssignment_6; }
 		
-		//Scenario
-		public RuleCall getGlobalScenarioParserRuleCall_6_0() { return cGlobalScenarioParserRuleCall_6_0; }
+		//StatementBlock
+		public RuleCall getGlobalStatementBlockParserRuleCall_6_0() { return cGlobalStatementBlockParserRuleCall_6_0; }
 		
 		//'initial'
 		public Keyword getInitialKeyword_7() { return cInitialKeyword_7; }
@@ -198,23 +198,17 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cScenarioKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cStatementsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cStatementsStatementParserRuleCall_4_0_0 = (RuleCall)cStatementsAssignment_4_0.eContents().get(0);
-		private final Assignment cStatementsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cStatementsStatementParserRuleCall_4_1_0 = (RuleCall)cStatementsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStatementBlockAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementBlockStatementBlockParserRuleCall_3_0 = (RuleCall)cStatementBlockAssignment_3.eContents().get(0);
 		
 		//Scenario:
 		//	{Scenario}
 		//	'Scenario'
 		//	name=EString
-		//	'{' (statements+=Statement statements+=Statement*)?
-		//	'}';
+		//	statementBlock=StatementBlock;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Scenario} 'Scenario' name=EString '{' (statements+=Statement statements+=Statement*)? '}'
+		//{Scenario} 'Scenario' name=EString statementBlock=StatementBlock
 		public Group getGroup() { return cGroup; }
 		
 		//{Scenario}
@@ -229,26 +223,56 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 		
+		//statementBlock=StatementBlock
+		public Assignment getStatementBlockAssignment_3() { return cStatementBlockAssignment_3; }
+		
+		//StatementBlock
+		public RuleCall getStatementBlockStatementBlockParserRuleCall_3_0() { return cStatementBlockStatementBlockParserRuleCall_3_0; }
+	}
+	public class StatementBlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.StatementBlock");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStatementBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cStatementsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cStatementsStatementParserRuleCall_2_0_0 = (RuleCall)cStatementsAssignment_2_0.eContents().get(0);
+		private final Assignment cStatementsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cStatementsStatementParserRuleCall_2_1_0 = (RuleCall)cStatementsAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//StatementBlock:
+		//	{StatementBlock}
+		//	'{' (statements+=Statement statements+=Statement*)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{StatementBlock} '{' (statements+=Statement statements+=Statement*)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{StatementBlock}
+		public Action getStatementBlockAction_0() { return cStatementBlockAction_0; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//(statements+=Statement statements+=Statement*)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//statements+=Statement
-		public Assignment getStatementsAssignment_4_0() { return cStatementsAssignment_4_0; }
+		public Assignment getStatementsAssignment_2_0() { return cStatementsAssignment_2_0; }
 		
 		//Statement
-		public RuleCall getStatementsStatementParserRuleCall_4_0_0() { return cStatementsStatementParserRuleCall_4_0_0; }
+		public RuleCall getStatementsStatementParserRuleCall_2_0_0() { return cStatementsStatementParserRuleCall_2_0_0; }
 		
 		//statements+=Statement*
-		public Assignment getStatementsAssignment_4_1() { return cStatementsAssignment_4_1; }
+		public Assignment getStatementsAssignment_2_1() { return cStatementsAssignment_2_1; }
 		
 		//Statement
-		public RuleCall getStatementsStatementParserRuleCall_4_1_0() { return cStatementsStatementParserRuleCall_4_1_0; }
+		public RuleCall getStatementsStatementParserRuleCall_2_1_0() { return cStatementsStatementParserRuleCall_2_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Condition");
@@ -406,22 +430,16 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cUntilKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cConditionConditionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cStatementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cStatementsStatementParserRuleCall_4_0 = (RuleCall)cStatementsAssignment_4.eContents().get(0);
-		private final Assignment cStatementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStatementsStatementParserRuleCall_5_0 = (RuleCall)cStatementsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cStatementBlockAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementBlockStatementBlockParserRuleCall_3_0 = (RuleCall)cStatementBlockAssignment_3.eContents().get(0);
 		
 		//UntilStatement:
 		//	{UntilStatement}
 		//	'until' condition=Condition
-		//	'{'
-		//	statements+=Statement statements+=Statement*
-		//	'}';
+		//	statementBlock=StatementBlock;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{UntilStatement} 'until' condition=Condition '{' statements+=Statement statements+=Statement* '}'
+		//{UntilStatement} 'until' condition=Condition statementBlock=StatementBlock
 		public Group getGroup() { return cGroup; }
 		
 		//{UntilStatement}
@@ -436,23 +454,11 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Condition
 		public RuleCall getConditionConditionParserRuleCall_2_0() { return cConditionConditionParserRuleCall_2_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//statementBlock=StatementBlock
+		public Assignment getStatementBlockAssignment_3() { return cStatementBlockAssignment_3; }
 		
-		//statements+=Statement
-		public Assignment getStatementsAssignment_4() { return cStatementsAssignment_4; }
-		
-		//Statement
-		public RuleCall getStatementsStatementParserRuleCall_4_0() { return cStatementsStatementParserRuleCall_4_0; }
-		
-		//statements+=Statement*
-		public Assignment getStatementsAssignment_5() { return cStatementsAssignment_5; }
-		
-		//Statement
-		public RuleCall getStatementsStatementParserRuleCall_5_0() { return cStatementsStatementParserRuleCall_5_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		//StatementBlock
+		public RuleCall getStatementBlockStatementBlockParserRuleCall_3_0() { return cStatementBlockStatementBlockParserRuleCall_3_0; }
 	}
 	
 	
@@ -460,6 +466,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final EStringElements pEString;
 	private final ConnectionElements pConnection;
 	private final ScenarioElements pScenario;
+	private final StatementBlockElements pStatementBlock;
 	private final ConditionElements pCondition;
 	private final BallAheadConditionElements pBallAheadCondition;
 	private final StatementElements pStatement;
@@ -482,6 +489,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEString = new EStringElements();
 		this.pConnection = new ConnectionElements();
 		this.pScenario = new ScenarioElements();
+		this.pStatementBlock = new StatementBlockElements();
 		this.pCondition = new ConditionElements();
 		this.pBallAheadCondition = new BallAheadConditionElements();
 		this.pStatement = new StatementElements();
@@ -523,7 +531,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'Robot'
 	//	name=EString
 	//	'{' ('connect_to' connection=Connection)? ('scenarii' '{' scenarii+=Scenario scenarii+=Scenario* '}')?
-	//	'global' global=Scenario
+	//	'global' global=StatementBlock
 	//	'initial' initial=[Scenario|EString]
 	//	'}';
 	public RobotElements getRobotAccess() {
@@ -558,14 +566,25 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Scenario}
 	//	'Scenario'
 	//	name=EString
-	//	'{' (statements+=Statement statements+=Statement*)?
-	//	'}';
+	//	statementBlock=StatementBlock;
 	public ScenarioElements getScenarioAccess() {
 		return pScenario;
 	}
 	
 	public ParserRule getScenarioRule() {
 		return getScenarioAccess().getRule();
+	}
+	
+	//StatementBlock:
+	//	{StatementBlock}
+	//	'{' (statements+=Statement statements+=Statement*)?
+	//	'}';
+	public StatementBlockElements getStatementBlockAccess() {
+		return pStatementBlock;
+	}
+	
+	public ParserRule getStatementBlockRule() {
+		return getStatementBlockAccess().getRule();
 	}
 	
 	//Condition:
@@ -645,9 +664,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	//UntilStatement:
 	//	{UntilStatement}
 	//	'until' condition=Condition
-	//	'{'
-	//	statements+=Statement statements+=Statement*
-	//	'}';
+	//	statementBlock=StatementBlock;
 	public UntilStatementElements getUntilStatementAccess() {
 		return pUntilStatement;
 	}

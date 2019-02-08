@@ -2,25 +2,16 @@
  */
 package org.robot.model.robot.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.robot.model.robot.Condition;
 import org.robot.model.robot.ConditionalStatement;
 import org.robot.model.robot.RobotPackage;
-import org.robot.model.robot.Statement;
+import org.robot.model.robot.StatementBlock;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +22,7 @@ import org.robot.model.robot.Statement;
  * </p>
  * <ul>
  *   <li>{@link org.robot.model.robot.impl.ConditionalStatementImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.robot.model.robot.impl.ConditionalStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.robot.model.robot.impl.ConditionalStatementImpl#getStatementBlock <em>Statement Block</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +39,14 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 	protected Condition condition;
 
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getStatementBlock() <em>Statement Block</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getStatementBlock()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statement> statements;
+	protected StatementBlock statementBlock;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,12 +122,49 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statement> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statement>(Statement.class, this,
-					RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS);
+	public StatementBlock getStatementBlock() {
+		return statementBlock;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStatementBlock(StatementBlock newStatementBlock, NotificationChain msgs) {
+		StatementBlock oldStatementBlock = statementBlock;
+		statementBlock = newStatementBlock;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK, oldStatementBlock, newStatementBlock);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return statements;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatementBlock(StatementBlock newStatementBlock) {
+		if (newStatementBlock != statementBlock) {
+			NotificationChain msgs = null;
+			if (statementBlock != null)
+				msgs = ((InternalEObject) statementBlock).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK, null, msgs);
+			if (newStatementBlock != null)
+				msgs = ((InternalEObject) newStatementBlock).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK, null, msgs);
+			msgs = basicSetStatementBlock(newStatementBlock, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK,
+					newStatementBlock, newStatementBlock));
 	}
 
 	/**
@@ -149,8 +177,8 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 		switch (featureID) {
 		case RobotPackage.CONDITIONAL_STATEMENT__CONDITION:
 			return basicSetCondition(null, msgs);
-		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS:
-			return ((InternalEList<?>) getStatements()).basicRemove(otherEnd, msgs);
+		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK:
+			return basicSetStatementBlock(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -165,8 +193,8 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 		switch (featureID) {
 		case RobotPackage.CONDITIONAL_STATEMENT__CONDITION:
 			return getCondition();
-		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS:
-			return getStatements();
+		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK:
+			return getStatementBlock();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,9 +211,8 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 		case RobotPackage.CONDITIONAL_STATEMENT__CONDITION:
 			setCondition((Condition) newValue);
 			return;
-		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS:
-			getStatements().clear();
-			getStatements().addAll((Collection<? extends Statement>) newValue);
+		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK:
+			setStatementBlock((StatementBlock) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,8 +229,8 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 		case RobotPackage.CONDITIONAL_STATEMENT__CONDITION:
 			setCondition((Condition) null);
 			return;
-		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS:
-			getStatements().clear();
+		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK:
+			setStatementBlock((StatementBlock) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -219,8 +246,8 @@ public abstract class ConditionalStatementImpl extends StatementImpl implements 
 		switch (featureID) {
 		case RobotPackage.CONDITIONAL_STATEMENT__CONDITION:
 			return condition != null;
-		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS:
-			return statements != null && !statements.isEmpty();
+		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK:
+			return statementBlock != null;
 		}
 		return super.eIsSet(featureID);
 	}

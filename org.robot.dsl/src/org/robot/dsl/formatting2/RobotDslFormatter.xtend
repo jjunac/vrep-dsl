@@ -24,9 +24,7 @@ class RobotDslFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Scenario scenario, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (statement : scenario.statements) {
-			statement.format
-		}
+		scenario.statementBlock.format
 	}
 	
 	// TODO: implement for UntilStatement

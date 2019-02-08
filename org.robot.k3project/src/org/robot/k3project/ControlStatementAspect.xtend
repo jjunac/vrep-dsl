@@ -6,5 +6,5 @@ import org.robot.model.robot.ControlStatement
 
 @Aspect(className=ControlStatement)
 abstract class ControlStatementAspect extends StatementAspect {
-	def Scenario step();
+	def Scenario doStep();
 }

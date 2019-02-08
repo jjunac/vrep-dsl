@@ -21,6 +21,7 @@ import org.robot.model.robot.Connection;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
+import org.robot.model.robot.StatementBlock;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +58,7 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * @generated
 	 * @ordered
 	 */
-	protected Scenario global;
+	protected StatementBlock global;
 
 	/**
 	 * The cached value of the '{@link #getInitial() <em>Initial</em>}' reference.
@@ -115,7 +116,7 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scenario getGlobal() {
+	public StatementBlock getGlobal() {
 		return global;
 	}
 
@@ -124,8 +125,8 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGlobal(Scenario newGlobal, NotificationChain msgs) {
-		Scenario oldGlobal = global;
+	public NotificationChain basicSetGlobal(StatementBlock newGlobal, NotificationChain msgs) {
+		StatementBlock oldGlobal = global;
 		global = newGlobal;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotPackage.ROBOT__GLOBAL,
@@ -143,7 +144,7 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGlobal(Scenario newGlobal) {
+	public void setGlobal(StatementBlock newGlobal) {
 		if (newGlobal != global) {
 			NotificationChain msgs = null;
 			if (global != null)
@@ -302,7 +303,7 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 			getScenarii().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		case RobotPackage.ROBOT__GLOBAL:
-			setGlobal((Scenario) newValue);
+			setGlobal((StatementBlock) newValue);
 			return;
 		case RobotPackage.ROBOT__INITIAL:
 			setInitial((Scenario) newValue);
@@ -326,7 +327,7 @@ public class RobotImpl extends NamedElementImpl implements Robot {
 			getScenarii().clear();
 			return;
 		case RobotPackage.ROBOT__GLOBAL:
-			setGlobal((Scenario) null);
+			setGlobal((StatementBlock) null);
 			return;
 		case RobotPackage.ROBOT__INITIAL:
 			setInitial((Scenario) null);

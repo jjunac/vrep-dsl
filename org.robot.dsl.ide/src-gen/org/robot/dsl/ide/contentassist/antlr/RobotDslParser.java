@@ -38,7 +38,8 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRobotAccess().getGroup_4(), "rule__Robot__Group_4__0");
 			builder.put(grammarAccess.getConnectionAccess().getGroup(), "rule__Connection__Group__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
-			builder.put(grammarAccess.getScenarioAccess().getGroup_4(), "rule__Scenario__Group_4__0");
+			builder.put(grammarAccess.getStatementBlockAccess().getGroup(), "rule__StatementBlock__Group__0");
+			builder.put(grammarAccess.getStatementBlockAccess().getGroup_2(), "rule__StatementBlock__Group_2__0");
 			builder.put(grammarAccess.getBallAheadConditionAccess().getGroup(), "rule__BallAheadCondition__Group__0");
 			builder.put(grammarAccess.getForwardStatementAccess().getGroup(), "rule__ForwardStatement__Group__0");
 			builder.put(grammarAccess.getPrintStatementAccess().getGroup(), "rule__PrintStatement__Group__0");
@@ -53,13 +54,13 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConnectionAccess().getIpAssignment_1(), "rule__Connection__IpAssignment_1");
 			builder.put(grammarAccess.getConnectionAccess().getPortAssignment_3(), "rule__Connection__PortAssignment_3");
 			builder.put(grammarAccess.getScenarioAccess().getNameAssignment_2(), "rule__Scenario__NameAssignment_2");
-			builder.put(grammarAccess.getScenarioAccess().getStatementsAssignment_4_0(), "rule__Scenario__StatementsAssignment_4_0");
-			builder.put(grammarAccess.getScenarioAccess().getStatementsAssignment_4_1(), "rule__Scenario__StatementsAssignment_4_1");
+			builder.put(grammarAccess.getScenarioAccess().getStatementBlockAssignment_3(), "rule__Scenario__StatementBlockAssignment_3");
+			builder.put(grammarAccess.getStatementBlockAccess().getStatementsAssignment_2_0(), "rule__StatementBlock__StatementsAssignment_2_0");
+			builder.put(grammarAccess.getStatementBlockAccess().getStatementsAssignment_2_1(), "rule__StatementBlock__StatementsAssignment_2_1");
 			builder.put(grammarAccess.getPrintStatementAccess().getTextAssignment_2(), "rule__PrintStatement__TextAssignment_2");
 			builder.put(grammarAccess.getExecuteStatementAccess().getDestinationAssignment_2(), "rule__ExecuteStatement__DestinationAssignment_2");
 			builder.put(grammarAccess.getUntilStatementAccess().getConditionAssignment_2(), "rule__UntilStatement__ConditionAssignment_2");
-			builder.put(grammarAccess.getUntilStatementAccess().getStatementsAssignment_4(), "rule__UntilStatement__StatementsAssignment_4");
-			builder.put(grammarAccess.getUntilStatementAccess().getStatementsAssignment_5(), "rule__UntilStatement__StatementsAssignment_5");
+			builder.put(grammarAccess.getUntilStatementAccess().getStatementBlockAssignment_3(), "rule__UntilStatement__StatementBlockAssignment_3");
 		}
 	}
 	

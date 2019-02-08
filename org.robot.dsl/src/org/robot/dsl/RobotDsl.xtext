@@ -10,7 +10,7 @@ Robot returns Robot:
 	'{'
 		( 'connect_to' connection=Connection )?
 		('scenarii' '{' scenarii+=Scenario ( scenarii+=Scenario)* '}' )?
-		'global' global=Scenario
+		'global' global=StatementBlock
 		'initial' initial=[Scenario | EString]
 	'}';
 
@@ -26,9 +26,15 @@ Scenario returns Scenario:
 	{Scenario}
 	'Scenario'
 	name=EString
+	statementBlock=StatementBlock
+	;
+
+StatementBlock returns StatementBlock:
+	{StatementBlock} 
 	'{'
 		(statements+=Statement (statements+=Statement)*)?
 	'}';
+
 
 Condition returns Condition:
 	BallAheadCondition;
@@ -64,9 +70,8 @@ ConditionalStatement returns ConditionalStatement:
 UntilStatement returns UntilStatement:
 	{UntilStatement}
 	'until' condition=Condition
-	'{'
-		statements+=Statement (statements+=Statement)*
-	'}';
+	statementBlock=StatementBlock
+	;
 
 
 

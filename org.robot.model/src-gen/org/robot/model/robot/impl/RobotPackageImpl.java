@@ -23,6 +23,7 @@ import org.robot.model.robot.RobotFactory;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
+import org.robot.model.robot.StatementBlock;
 import org.robot.model.robot.UntilStatement;
 
 /**
@@ -122,6 +123,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * @generated
 	 */
 	private EClass untilStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statementBlockEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -246,7 +254,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScenario_Statements() {
+	public EReference getScenario_StatementBlock() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -336,7 +344,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConditionalStatement_Statements() {
+	public EReference getConditionalStatement_StatementBlock() {
 		return (EReference) conditionalStatementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -417,6 +425,24 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStatementBlock() {
+		return statementBlockEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStatementBlock_Statements() {
+		return (EReference) statementBlockEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RobotFactory getRobotFactory() {
 		return (RobotFactory) getEFactoryInstance();
 	}
@@ -448,7 +474,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		createEReference(robotEClass, ROBOT__CONNECTION);
 
 		scenarioEClass = createEClass(SCENARIO);
-		createEReference(scenarioEClass, SCENARIO__STATEMENTS);
+		createEReference(scenarioEClass, SCENARIO__STATEMENT_BLOCK);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -463,7 +489,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 
 		conditionalStatementEClass = createEClass(CONDITIONAL_STATEMENT);
 		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__CONDITION);
-		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__STATEMENTS);
+		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__STATEMENT_BLOCK);
 
 		controlStatementEClass = createEClass(CONTROL_STATEMENT);
 
@@ -478,6 +504,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		statementEClass = createEClass(STATEMENT);
 
 		untilStatementEClass = createEClass(UNTIL_STATEMENT);
+
+		statementBlockEClass = createEClass(STATEMENT_BLOCK);
+		createEReference(statementBlockEClass, STATEMENT_BLOCK__STATEMENTS);
 	}
 
 	/**
@@ -524,9 +553,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEReference(getRobot_Scenarii(), this.getScenario(), null, "scenarii", null, 0, -1, Robot.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRobot_Global(), this.getScenario(), null, "global", null, 1, 1, Robot.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getRobot_Global(), this.getStatementBlock(), null, "global", null, 1, 1, Robot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRobot_Initial(), this.getScenario(), null, "initial", null, 0, 1, Robot.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -536,9 +565,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScenario_Statements(), this.getStatement(), null, "statements", null, 0, -1, Scenario.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_StatementBlock(), this.getStatementBlock(), null, "statementBlock", null, 1, 1,
+				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -563,8 +592,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEReference(getConditionalStatement_Condition(), this.getCondition(), null, "condition", null, 1, 1,
 				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditionalStatement_Statements(), this.getStatement(), null, "statements", null, 1, -1,
-				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+		initEReference(getConditionalStatement_StatementBlock(), this.getStatementBlock(), null, "statementBlock", null,
+				1, 1, ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlStatementEClass, ControlStatement.class, "ControlStatement", IS_ABSTRACT, !IS_INTERFACE,
@@ -589,6 +618,12 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 
 		initEClass(untilStatementEClass, UntilStatement.class, "UntilStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(statementBlockEClass, StatementBlock.class, "StatementBlock", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStatementBlock_Statements(), this.getStatement(), null, "statements", null, 0, -1,
+				StatementBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

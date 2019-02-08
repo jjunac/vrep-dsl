@@ -1,5 +1,5 @@
-	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario step() from org.robot.k3project.ExecuteStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.ExecuteStatementAspect
 		if (_self instanceof org.robot.model.robot.ExecuteStatement){
-			result = org.robot.k3project.ExecuteStatementAspect.step((org.robot.model.robot.ExecuteStatement)_self);
+			result = org.robot.k3project.ExecuteStatementAspect.doStep((org.robot.model.robot.ExecuteStatement)_self);
 		} else
-		// EndInjectInto org.robot.k3project.StatementAspect#Scenario step() from org.robot.k3project.ExecuteStatementAspect
+		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.ExecuteStatementAspect

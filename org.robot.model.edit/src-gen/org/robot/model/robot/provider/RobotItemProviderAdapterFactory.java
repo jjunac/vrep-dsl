@@ -280,6 +280,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.StatementBlock} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StatementBlockItemProvider statementBlockItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.StatementBlock}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStatementBlockAdapter() {
+		if (statementBlockItemProvider == null) {
+			statementBlockItemProvider = new StatementBlockItemProvider(this);
+		}
+
+		return statementBlockItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +419,8 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			printStatementItemProvider.dispose();
 		if (untilStatementItemProvider != null)
 			untilStatementItemProvider.dispose();
+		if (statementBlockItemProvider != null)
+			statementBlockItemProvider.dispose();
 	}
 
 }

@@ -2,8 +2,6 @@
  */
 package org.robot.model.robot;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Scenario</b></em>'.
@@ -13,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.robot.model.robot.Scenario#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.robot.model.robot.Scenario#getStatementBlock <em>Statement Block</em>}</li>
  * </ul>
  *
  * @see org.robot.model.robot.RobotPackage#getScenario()
@@ -22,19 +20,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Scenario extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-	 * The list contents are of type {@link org.robot.model.robot.Statement}.
+	 * Returns the value of the '<em><b>Statement Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Statement Block</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statements</em>' containment reference list.
-	 * @see org.robot.model.robot.RobotPackage#getScenario_Statements()
-	 * @model containment="true"
+	 * @return the value of the '<em>Statement Block</em>' containment reference.
+	 * @see #setStatementBlock(StatementBlock)
+	 * @see org.robot.model.robot.RobotPackage#getScenario_StatementBlock()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Statement> getStatements();
+	StatementBlock getStatementBlock();
+
+	/**
+	 * Sets the value of the '{@link org.robot.model.robot.Scenario#getStatementBlock <em>Statement Block</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Statement Block</em>' containment reference.
+	 * @see #getStatementBlock()
+	 * @generated
+	 */
+	void setStatementBlock(StatementBlock value);
 
 } // Scenario

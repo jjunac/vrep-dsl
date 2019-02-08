@@ -62,7 +62,7 @@ public class ConditionalStatementItemProvider extends StatementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION);
-			childrenFeatures.add(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENTS);
+			childrenFeatures.add(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK);
 		}
 		return childrenFeatures;
 	}
@@ -114,7 +114,7 @@ public class ConditionalStatementItemProvider extends StatementItemProvider {
 
 		switch (notification.getFeatureID(ConditionalStatement.class)) {
 		case RobotPackage.CONDITIONAL_STATEMENT__CONDITION:
-		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENTS:
+		case RobotPackage.CONDITIONAL_STATEMENT__STATEMENT_BLOCK:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -138,17 +138,8 @@ public class ConditionalStatementItemProvider extends StatementItemProvider {
 		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION,
 				RobotFactory.eINSTANCE.createBallAheadCondition()));
 
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENTS,
-				RobotFactory.eINSTANCE.createExecuteStatement()));
-
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENTS,
-				RobotFactory.eINSTANCE.createForwardStatement()));
-
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENTS,
-				RobotFactory.eINSTANCE.createPrintStatement()));
-
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENTS,
-				RobotFactory.eINSTANCE.createUntilStatement()));
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK,
+				RobotFactory.eINSTANCE.createStatementBlock()));
 	}
 
 }

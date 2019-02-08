@@ -186,13 +186,13 @@ public interface RobotPackage extends EPackage {
 	int SCENARIO__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Statement Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__STATEMENTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SCENARIO__STATEMENT_BLOCK = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -362,13 +362,13 @@ public interface RobotPackage extends EPackage {
 	int CONDITIONAL_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Statement Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 1;
+	int CONDITIONAL_STATEMENT__STATEMENT_BLOCK = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Conditional Statement</em>' class.
@@ -538,13 +538,13 @@ public interface RobotPackage extends EPackage {
 	int UNTIL_STATEMENT__CONDITION = CONDITIONAL_STATEMENT__CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Statement Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNTIL_STATEMENT__STATEMENTS = CONDITIONAL_STATEMENT__STATEMENTS;
+	int UNTIL_STATEMENT__STATEMENT_BLOCK = CONDITIONAL_STATEMENT__STATEMENT_BLOCK;
 
 	/**
 	 * The number of structural features of the '<em>Until Statement</em>' class.
@@ -563,6 +563,43 @@ public interface RobotPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNTIL_STATEMENT_OPERATION_COUNT = CONDITIONAL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementBlockImpl <em>Statement Block</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.StatementBlockImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatementBlock()
+	 * @generated
+	 */
+	int STATEMENT_BLOCK = 13;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_BLOCK__STATEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Statement Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_BLOCK_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Statement Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_BLOCK_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Robot <em>Robot</em>}'.
@@ -629,15 +666,15 @@ public interface RobotPackage extends EPackage {
 	EClass getScenario();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.robot.model.robot.Scenario#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.robot.model.robot.Scenario#getStatementBlock <em>Statement Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see org.robot.model.robot.Scenario#getStatements()
+	 * @return the meta object for the containment reference '<em>Statement Block</em>'.
+	 * @see org.robot.model.robot.Scenario#getStatementBlock()
 	 * @see #getScenario()
 	 * @generated
 	 */
-	EReference getScenario_Statements();
+	EReference getScenario_StatementBlock();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.NamedElement <em>Named Element</em>}'.
@@ -734,15 +771,15 @@ public interface RobotPackage extends EPackage {
 	EReference getConditionalStatement_Condition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.robot.model.robot.ConditionalStatement#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.robot.model.robot.ConditionalStatement#getStatementBlock <em>Statement Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see org.robot.model.robot.ConditionalStatement#getStatements()
+	 * @return the meta object for the containment reference '<em>Statement Block</em>'.
+	 * @see org.robot.model.robot.ConditionalStatement#getStatementBlock()
 	 * @see #getConditionalStatement()
 	 * @generated
 	 */
-	EReference getConditionalStatement_Statements();
+	EReference getConditionalStatement_StatementBlock();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.ControlStatement <em>Control Statement</em>}'.
@@ -827,6 +864,27 @@ public interface RobotPackage extends EPackage {
 	EClass getUntilStatement();
 
 	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.StatementBlock <em>Statement Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Statement Block</em>'.
+	 * @see org.robot.model.robot.StatementBlock
+	 * @generated
+	 */
+	EClass getStatementBlock();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.robot.model.robot.StatementBlock#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
+	 * @see org.robot.model.robot.StatementBlock#getStatements()
+	 * @see #getStatementBlock()
+	 * @generated
+	 */
+	EReference getStatementBlock_Statements();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -902,12 +960,12 @@ public interface RobotPackage extends EPackage {
 		EClass SCENARIO = eINSTANCE.getScenario();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Statement Block</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCENARIO__STATEMENTS = eINSTANCE.getScenario_Statements();
+		EReference SCENARIO__STATEMENT_BLOCK = eINSTANCE.getScenario_StatementBlock();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -992,12 +1050,12 @@ public interface RobotPackage extends EPackage {
 		EReference CONDITIONAL_STATEMENT__CONDITION = eINSTANCE.getConditionalStatement_Condition();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Statement Block</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_STATEMENT__STATEMENTS = eINSTANCE.getConditionalStatement_Statements();
+		EReference CONDITIONAL_STATEMENT__STATEMENT_BLOCK = eINSTANCE.getConditionalStatement_StatementBlock();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.ControlStatementImpl <em>Control Statement</em>}' class.
@@ -1074,6 +1132,24 @@ public interface RobotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UNTIL_STATEMENT = eINSTANCE.getUntilStatement();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.StatementBlockImpl <em>Statement Block</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.StatementBlockImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatementBlock()
+		 * @generated
+		 */
+		EClass STATEMENT_BLOCK = eINSTANCE.getStatementBlock();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATEMENT_BLOCK__STATEMENTS = eINSTANCE.getStatementBlock_Statements();
 
 	}
 

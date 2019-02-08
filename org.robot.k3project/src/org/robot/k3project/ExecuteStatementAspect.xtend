@@ -6,7 +6,8 @@ import org.robot.model.robot.ExecuteStatement
 
 @Aspect(className=ExecuteStatement)
 class ExecuteStatementAspect extends StatementAspect {
-	def Scenario step() {
+	def Scenario doStep() {
+		println("goto " + _self.destination.name)
 		return _self.destination
 	}
 }

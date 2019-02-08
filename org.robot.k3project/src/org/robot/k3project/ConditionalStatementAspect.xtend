@@ -1,36 +1,32 @@
 package org.robot.k3project
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-import org.robot.model.robot.Scenario
-import java.util.Iterator
-import org.robot.model.robot.Statement
 import org.robot.model.robot.ConditionalStatement
+
+import static extension org.robot.k3project.StatementBlockAspect.*
+import org.robot.model.robot.Scenario
 
 @Aspect(className=ConditionalStatement)
 abstract class ConditionalStatementAspect extends StatementAspect {
 	
-	Iterator<Statement> itStatement
-	public Scenario next = null
-	
-	def boolean mustExecute();
-	
-	def void start() {
-		_self_.itStatement = _self.statements.iterator()
+	def void enter() {
+		_self.statementBlock.enter()
 	}
 	
-	def Scenario step() {
-		if (_self_.itStatement === null || !_self_.itStatement.hasNext())
-			_self.start()
-		_self_.next = _self_.itStatement.next.step()
-		return _self_.next
+	def Scenario doStep() {
+		if (!_self.shouldSkipBlock())
+			return _self.statementBlock.step()
+		return null
 	}
 	
-	def Scenario exec() {
-		_self.start
-		while(_self.mustExecute() && _self.next !== null) {
-			_self.step()
-		}
-		return _self.next
+	def void exit() {
+		_self.statementBlock.exit()
+	}
+	
+	def boolean shouldSkipBlock();
+	
+	def boolean isFinished() {
+		_self.shouldSkipBlock()
 	}
 	
 }

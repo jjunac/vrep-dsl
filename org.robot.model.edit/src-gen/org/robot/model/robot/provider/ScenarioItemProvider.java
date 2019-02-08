@@ -60,7 +60,7 @@ public class ScenarioItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RobotPackage.Literals.SCENARIO__STATEMENTS);
+			childrenFeatures.add(RobotPackage.Literals.SCENARIO__STATEMENT_BLOCK);
 		}
 		return childrenFeatures;
 	}
@@ -124,7 +124,7 @@ public class ScenarioItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Scenario.class)) {
-		case RobotPackage.SCENARIO__STATEMENTS:
+		case RobotPackage.SCENARIO__STATEMENT_BLOCK:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -142,17 +142,8 @@ public class ScenarioItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
-				RobotFactory.eINSTANCE.createExecuteStatement()));
-
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
-				RobotFactory.eINSTANCE.createForwardStatement()));
-
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
-				RobotFactory.eINSTANCE.createPrintStatement()));
-
-		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENTS,
-				RobotFactory.eINSTANCE.createUntilStatement()));
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.SCENARIO__STATEMENT_BLOCK,
+				RobotFactory.eINSTANCE.createStatementBlock()));
 	}
 
 }

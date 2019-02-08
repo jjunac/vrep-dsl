@@ -73,6 +73,8 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 			return createPrintStatement();
 		case RobotPackage.UNTIL_STATEMENT:
 			return createUntilStatement();
+		case RobotPackage.STATEMENT_BLOCK:
+			return createStatementBlock();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -166,6 +168,16 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	public UntilStatement createUntilStatement() {
 		UntilStatementImpl untilStatement = new UntilStatementImpl();
 		return untilStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatementBlock createStatementBlock() {
+		StatementBlockImpl statementBlock = new StatementBlockImpl();
+		return statementBlock;
 	}
 
 	/**

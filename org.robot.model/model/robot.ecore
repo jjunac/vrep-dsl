@@ -5,14 +5,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenarii" upperBound="-1"
         eType="#//Scenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="global" lowerBound="1"
-        eType="#//Scenario" containment="true"/>
+        eType="#//StatementBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initial" eType="#//Scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connection" eType="#//Connection"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementBlock" lowerBound="1"
+        eType="#//StatementBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -27,8 +27,8 @@
       eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
         eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" lowerBound="1"
-        upperBound="-1" eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementBlock" lowerBound="1"
+        eType="#//StatementBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlStatement" abstract="true" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExecuteStatement" eSuperTypes="#//Statement">
@@ -41,4 +41,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UntilStatement" eSuperTypes="#//ConditionalStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

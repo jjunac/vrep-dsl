@@ -49,12 +49,12 @@ public interface Robot extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Global</em>' containment reference.
-	 * @see #setGlobal(Scenario)
+	 * @see #setGlobal(StatementBlock)
 	 * @see org.robot.model.robot.RobotPackage#getRobot_Global()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Scenario getGlobal();
+	StatementBlock getGlobal();
 
 	/**
 	 * Sets the value of the '{@link org.robot.model.robot.Robot#getGlobal <em>Global</em>}' containment reference.
@@ -64,7 +64,7 @@ public interface Robot extends NamedElement {
 	 * @see #getGlobal()
 	 * @generated
 	 */
-	void setGlobal(Scenario value);
+	void setGlobal(StatementBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Initial</b></em>' reference.

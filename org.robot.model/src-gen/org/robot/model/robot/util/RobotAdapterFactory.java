@@ -132,6 +132,11 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseStatementBlock(StatementBlock object) {
+			return createStatementBlockAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -329,6 +334,20 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUntilStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.StatementBlock <em>Statement Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.StatementBlock
+	 * @generated
+	 */
+	public Adapter createStatementBlockAdapter() {
 		return null;
 	}
 

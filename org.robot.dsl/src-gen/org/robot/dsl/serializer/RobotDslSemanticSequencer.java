@@ -23,6 +23,7 @@ import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
+import org.robot.model.robot.StatementBlock;
 import org.robot.model.robot.UntilStatement;
 
 @SuppressWarnings("all")
@@ -59,6 +60,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case RobotPackage.SCENARIO:
 				sequence_Scenario(context, (Scenario) semanticObject); 
+				return; 
+			case RobotPackage.STATEMENT_BLOCK:
+				sequence_StatementBlock(context, (StatementBlock) semanticObject); 
 				return; 
 			case RobotPackage.UNTIL_STATEMENT:
 				sequence_UntilStatement(context, (UntilStatement) semanticObject); 
@@ -158,7 +162,7 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Robot returns Robot
 	 *
 	 * Constraint:
-	 *     (name=EString connection=Connection? (scenarii+=Scenario scenarii+=Scenario*)? global=Scenario initial=[Scenario|EString])
+	 *     (name=EString connection=Connection? (scenarii+=Scenario scenarii+=Scenario*)? global=StatementBlock initial=[Scenario|EString])
 	 */
 	protected void sequence_Robot(ISerializationContext context, Robot semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -170,9 +174,30 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Scenario returns Scenario
 	 *
 	 * Constraint:
-	 *     (name=EString (statements+=Statement statements+=Statement*)?)
+	 *     (name=EString statementBlock=StatementBlock)
 	 */
 	protected void sequence_Scenario(ISerializationContext context, Scenario semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.SCENARIO__STATEMENT_BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.SCENARIO__STATEMENT_BLOCK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getScenarioAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getScenarioAccess().getStatementBlockStatementBlockParserRuleCall_3_0(), semanticObject.getStatementBlock());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StatementBlock returns StatementBlock
+	 *
+	 * Constraint:
+	 *     (statements+=Statement statements+=Statement*)?
+	 */
+	protected void sequence_StatementBlock(ISerializationContext context, StatementBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -184,10 +209,19 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     UntilStatement returns UntilStatement
 	 *
 	 * Constraint:
-	 *     (condition=Condition statements+=Statement statements+=Statement*)
+	 *     (condition=Condition statementBlock=StatementBlock)
 	 */
 	protected void sequence_UntilStatement(ISerializationContext context, UntilStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION));
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUntilStatementAccess().getConditionConditionParserRuleCall_2_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getUntilStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0(), semanticObject.getStatementBlock());
+		feeder.finish();
 	}
 	
 	

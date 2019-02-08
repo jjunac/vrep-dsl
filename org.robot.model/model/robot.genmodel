@@ -17,7 +17,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//Robot/connection"/>
     </genClasses>
     <genClasses ecoreClass="robot.ecore#//Scenario">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//Scenario/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//Scenario/statementBlock"/>
     </genClasses>
     <genClasses image="false" ecoreClass="robot.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//NamedElement/name"/>
@@ -30,7 +30,7 @@
     <genClasses ecoreClass="robot.ecore#//Condition"/>
     <genClasses image="false" ecoreClass="robot.ecore#//ConditionalStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//ConditionalStatement/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//ConditionalStatement/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//ConditionalStatement/statementBlock"/>
     </genClasses>
     <genClasses image="false" ecoreClass="robot.ecore#//ControlStatement"/>
     <genClasses ecoreClass="robot.ecore#//ExecuteStatement">
@@ -42,5 +42,8 @@
     </genClasses>
     <genClasses image="false" ecoreClass="robot.ecore#//Statement"/>
     <genClasses ecoreClass="robot.ecore#//UntilStatement"/>
+    <genClasses ecoreClass="robot.ecore#//StatementBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//StatementBlock/statements"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
