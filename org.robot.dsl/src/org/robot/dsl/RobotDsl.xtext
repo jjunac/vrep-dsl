@@ -37,11 +37,11 @@ StatementBlock returns StatementBlock:
 
 
 Condition returns Condition:
-	BallAheadCondition;
+	ObjectAheadCondition;
 
-BallAheadCondition returns BallAheadCondition:
-	{BallAheadCondition}
-	'ball_ahead'
+ObjectAheadCondition returns ObjectAheadCondition:
+	{ObjectAheadCondition}
+	'object_ahead'
 	;
 
 

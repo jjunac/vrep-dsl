@@ -49,13 +49,13 @@ public interface RobotFactory extends EFactory {
 	Connection createConnection();
 
 	/**
-	 * Returns a new object of class '<em>Ball Ahead Condition</em>'.
+	 * Returns a new object of class '<em>Object Ahead Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Ball Ahead Condition</em>'.
+	 * @return a new object of class '<em>Object Ahead Condition</em>'.
 	 * @generated
 	 */
-	BallAheadCondition createBallAheadCondition();
+	ObjectAheadCondition createObjectAheadCondition();
 
 	/**
 	 * Returns a new object of class '<em>Condition</em>'.

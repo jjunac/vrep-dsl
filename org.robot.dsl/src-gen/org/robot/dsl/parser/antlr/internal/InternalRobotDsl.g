@@ -489,24 +489,24 @@ ruleCondition returns [EObject current=null]
 	leaveRule();
 }:
 	{
-		newCompositeNode(grammarAccess.getConditionAccess().getBallAheadConditionParserRuleCall());
+		newCompositeNode(grammarAccess.getConditionAccess().getObjectAheadConditionParserRuleCall());
 	}
-	this_BallAheadCondition_0=ruleBallAheadCondition
+	this_ObjectAheadCondition_0=ruleObjectAheadCondition
 	{
-		$current = $this_BallAheadCondition_0.current;
+		$current = $this_ObjectAheadCondition_0.current;
 		afterParserOrEnumRuleCall();
 	}
 ;
 
-// Entry rule entryRuleBallAheadCondition
-entryRuleBallAheadCondition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBallAheadConditionRule()); }
-	iv_ruleBallAheadCondition=ruleBallAheadCondition
-	{ $current=$iv_ruleBallAheadCondition.current; }
+// Entry rule entryRuleObjectAheadCondition
+entryRuleObjectAheadCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getObjectAheadConditionRule()); }
+	iv_ruleObjectAheadCondition=ruleObjectAheadCondition
+	{ $current=$iv_ruleObjectAheadCondition.current; }
 	EOF;
 
-// Rule BallAheadCondition
-ruleBallAheadCondition returns [EObject current=null]
+// Rule ObjectAheadCondition
+ruleObjectAheadCondition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -517,13 +517,13 @@ ruleBallAheadCondition returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getBallAheadConditionAccess().getBallAheadConditionAction_0(),
+					grammarAccess.getObjectAheadConditionAccess().getObjectAheadConditionAction_0(),
 					$current);
 			}
 		)
-		otherlv_1='ball_ahead'
+		otherlv_1='object_ahead'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getBallAheadConditionAccess().getBall_aheadKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getObjectAheadConditionAccess().getObject_aheadKeyword_1());
 		}
 	)
 ;

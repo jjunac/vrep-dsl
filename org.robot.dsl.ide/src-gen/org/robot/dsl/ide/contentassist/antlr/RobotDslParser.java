@@ -40,7 +40,7 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 			builder.put(grammarAccess.getStatementBlockAccess().getGroup(), "rule__StatementBlock__Group__0");
 			builder.put(grammarAccess.getStatementBlockAccess().getGroup_2(), "rule__StatementBlock__Group_2__0");
-			builder.put(grammarAccess.getBallAheadConditionAccess().getGroup(), "rule__BallAheadCondition__Group__0");
+			builder.put(grammarAccess.getObjectAheadConditionAccess().getGroup(), "rule__ObjectAheadCondition__Group__0");
 			builder.put(grammarAccess.getForwardStatementAccess().getGroup(), "rule__ForwardStatement__Group__0");
 			builder.put(grammarAccess.getPrintStatementAccess().getGroup(), "rule__PrintStatement__Group__0");
 			builder.put(grammarAccess.getExecuteStatementAccess().getGroup(), "rule__ExecuteStatement__Group__0");

@@ -8,8 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.robot.model.robot.BallAheadCondition;
 import org.robot.model.robot.Condition;
 import org.robot.model.robot.ConditionalStatement;
 import org.robot.model.robot.Connection;
@@ -17,6 +15,7 @@ import org.robot.model.robot.ControlStatement;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
 import org.robot.model.robot.NamedElement;
+import org.robot.model.robot.ObjectAheadCondition;
 import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotFactory;
@@ -66,7 +65,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ballAheadConditionEClass = null;
+	private EClass objectAheadConditionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,8 +307,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBallAheadCondition() {
-		return ballAheadConditionEClass;
+	public EClass getObjectAheadCondition() {
+		return objectAheadConditionEClass;
 	}
 
 	/**
@@ -483,7 +482,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		createEAttribute(connectionEClass, CONNECTION__IP);
 		createEAttribute(connectionEClass, CONNECTION__PORT);
 
-		ballAheadConditionEClass = createEClass(BALL_AHEAD_CONDITION);
+		objectAheadConditionEClass = createEClass(OBJECT_AHEAD_CONDITION);
 
 		conditionEClass = createEClass(CONDITION);
 
@@ -540,7 +539,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		// Add supertypes to classes
 		robotEClass.getESuperTypes().add(this.getNamedElement());
 		scenarioEClass.getESuperTypes().add(this.getNamedElement());
-		ballAheadConditionEClass.getESuperTypes().add(this.getCondition());
+		objectAheadConditionEClass.getESuperTypes().add(this.getCondition());
 		conditionalStatementEClass.getESuperTypes().add(this.getStatement());
 		controlStatementEClass.getESuperTypes().add(this.getStatement());
 		executeStatementEClass.getESuperTypes().add(this.getStatement());
@@ -581,7 +580,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEAttribute(getConnection_Port(), ecorePackage.getEInt(), "port", null, 1, 1, Connection.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(ballAheadConditionEClass, BallAheadCondition.class, "BallAheadCondition", !IS_ABSTRACT,
+		initEClass(objectAheadConditionEClass, ObjectAheadCondition.class, "ObjectAheadCondition", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,

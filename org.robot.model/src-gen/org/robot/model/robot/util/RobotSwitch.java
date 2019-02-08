@@ -98,11 +98,11 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RobotPackage.BALL_AHEAD_CONDITION: {
-			BallAheadCondition ballAheadCondition = (BallAheadCondition) theEObject;
-			T result = caseBallAheadCondition(ballAheadCondition);
+		case RobotPackage.OBJECT_AHEAD_CONDITION: {
+			ObjectAheadCondition objectAheadCondition = (ObjectAheadCondition) theEObject;
+			T result = caseObjectAheadCondition(objectAheadCondition);
 			if (result == null)
-				result = caseCondition(ballAheadCondition);
+				result = caseCondition(objectAheadCondition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -252,17 +252,17 @@ public class RobotSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Ball Ahead Condition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Object Ahead Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Ball Ahead Condition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Object Ahead Condition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBallAheadCondition(BallAheadCondition object) {
+	public T caseObjectAheadCondition(ObjectAheadCondition object) {
 		return null;
 	}
 

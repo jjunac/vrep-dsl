@@ -1,12 +1,12 @@
 ':'=18
 'Robot'=11
 'Scenario'=19
-'ball_ahead'=20
 'connect_to'=13
 'execute'=23
 'forward'=21
 'global'=16
 'initial'=17
+'object_ahead'=20
 'print'=22
 'scenarii'=14
 'until'=24

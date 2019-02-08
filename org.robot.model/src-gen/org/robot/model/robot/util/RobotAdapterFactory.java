@@ -87,8 +87,8 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseBallAheadCondition(BallAheadCondition object) {
-			return createBallAheadConditionAdapter();
+		public Adapter caseObjectAheadCondition(ObjectAheadCondition object) {
+			return createObjectAheadConditionAdapter();
 		}
 
 		@Override
@@ -212,16 +212,16 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.BallAheadCondition <em>Ball Ahead Condition</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.ObjectAheadCondition <em>Object Ahead Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.robot.model.robot.BallAheadCondition
+	 * @see org.robot.model.robot.ObjectAheadCondition
 	 * @generated
 	 */
-	public Adapter createBallAheadConditionAdapter() {
+	public Adapter createObjectAheadConditionAdapter() {
 		return null;
 	}
 

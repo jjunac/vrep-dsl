@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRobotDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Robot'", "'{'", "'connect_to'", "'scenarii'", "'}'", "'global'", "'initial'", "':'", "'Scenario'", "'ball_ahead'", "'forward'", "'print'", "'execute'", "'until'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Robot'", "'{'", "'connect_to'", "'scenarii'", "'}'", "'global'", "'initial'", "':'", "'Scenario'", "'object_ahead'", "'forward'", "'print'", "'execute'", "'until'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1104,30 +1104,30 @@ public class InternalRobotDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalRobotDsl.g:484:1: ruleCondition returns [EObject current=null] : this_BallAheadCondition_0= ruleBallAheadCondition ;
+    // InternalRobotDsl.g:484:1: ruleCondition returns [EObject current=null] : this_ObjectAheadCondition_0= ruleObjectAheadCondition ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
-        EObject this_BallAheadCondition_0 = null;
+        EObject this_ObjectAheadCondition_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRobotDsl.g:490:2: (this_BallAheadCondition_0= ruleBallAheadCondition )
-            // InternalRobotDsl.g:491:2: this_BallAheadCondition_0= ruleBallAheadCondition
+            // InternalRobotDsl.g:490:2: (this_ObjectAheadCondition_0= ruleObjectAheadCondition )
+            // InternalRobotDsl.g:491:2: this_ObjectAheadCondition_0= ruleObjectAheadCondition
             {
 
-            		newCompositeNode(grammarAccess.getConditionAccess().getBallAheadConditionParserRuleCall());
+            		newCompositeNode(grammarAccess.getConditionAccess().getObjectAheadConditionParserRuleCall());
             	
             pushFollow(FOLLOW_2);
-            this_BallAheadCondition_0=ruleBallAheadCondition();
+            this_ObjectAheadCondition_0=ruleObjectAheadCondition();
 
             state._fsp--;
 
 
-            		current = this_BallAheadCondition_0;
+            		current = this_ObjectAheadCondition_0;
             		afterParserOrEnumRuleCall();
             	
 
@@ -1149,25 +1149,25 @@ public class InternalRobotDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleCondition"
 
 
-    // $ANTLR start "entryRuleBallAheadCondition"
-    // InternalRobotDsl.g:502:1: entryRuleBallAheadCondition returns [EObject current=null] : iv_ruleBallAheadCondition= ruleBallAheadCondition EOF ;
-    public final EObject entryRuleBallAheadCondition() throws RecognitionException {
+    // $ANTLR start "entryRuleObjectAheadCondition"
+    // InternalRobotDsl.g:502:1: entryRuleObjectAheadCondition returns [EObject current=null] : iv_ruleObjectAheadCondition= ruleObjectAheadCondition EOF ;
+    public final EObject entryRuleObjectAheadCondition() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleBallAheadCondition = null;
+        EObject iv_ruleObjectAheadCondition = null;
 
 
         try {
-            // InternalRobotDsl.g:502:59: (iv_ruleBallAheadCondition= ruleBallAheadCondition EOF )
-            // InternalRobotDsl.g:503:2: iv_ruleBallAheadCondition= ruleBallAheadCondition EOF
+            // InternalRobotDsl.g:502:61: (iv_ruleObjectAheadCondition= ruleObjectAheadCondition EOF )
+            // InternalRobotDsl.g:503:2: iv_ruleObjectAheadCondition= ruleObjectAheadCondition EOF
             {
-             newCompositeNode(grammarAccess.getBallAheadConditionRule()); 
+             newCompositeNode(grammarAccess.getObjectAheadConditionRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleBallAheadCondition=ruleBallAheadCondition();
+            iv_ruleObjectAheadCondition=ruleObjectAheadCondition();
 
             state._fsp--;
 
-             current =iv_ruleBallAheadCondition; 
+             current =iv_ruleObjectAheadCondition; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1182,12 +1182,12 @@ public class InternalRobotDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleBallAheadCondition"
+    // $ANTLR end "entryRuleObjectAheadCondition"
 
 
-    // $ANTLR start "ruleBallAheadCondition"
-    // InternalRobotDsl.g:509:1: ruleBallAheadCondition returns [EObject current=null] : ( () otherlv_1= 'ball_ahead' ) ;
-    public final EObject ruleBallAheadCondition() throws RecognitionException {
+    // $ANTLR start "ruleObjectAheadCondition"
+    // InternalRobotDsl.g:509:1: ruleObjectAheadCondition returns [EObject current=null] : ( () otherlv_1= 'object_ahead' ) ;
+    public final EObject ruleObjectAheadCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -1196,18 +1196,18 @@ public class InternalRobotDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRobotDsl.g:515:2: ( ( () otherlv_1= 'ball_ahead' ) )
-            // InternalRobotDsl.g:516:2: ( () otherlv_1= 'ball_ahead' )
+            // InternalRobotDsl.g:515:2: ( ( () otherlv_1= 'object_ahead' ) )
+            // InternalRobotDsl.g:516:2: ( () otherlv_1= 'object_ahead' )
             {
-            // InternalRobotDsl.g:516:2: ( () otherlv_1= 'ball_ahead' )
-            // InternalRobotDsl.g:517:3: () otherlv_1= 'ball_ahead'
+            // InternalRobotDsl.g:516:2: ( () otherlv_1= 'object_ahead' )
+            // InternalRobotDsl.g:517:3: () otherlv_1= 'object_ahead'
             {
             // InternalRobotDsl.g:517:3: ()
             // InternalRobotDsl.g:518:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getBallAheadConditionAccess().getBallAheadConditionAction_0(),
+            					grammarAccess.getObjectAheadConditionAccess().getObjectAheadConditionAction_0(),
             					current);
             			
 
@@ -1215,7 +1215,7 @@ public class InternalRobotDslParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,20,FOLLOW_2); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getBallAheadConditionAccess().getBall_aheadKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getObjectAheadConditionAccess().getObject_aheadKeyword_1());
             		
 
             }
@@ -1236,7 +1236,7 @@ public class InternalRobotDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleBallAheadCondition"
+    // $ANTLR end "ruleObjectAheadCondition"
 
 
     // $ANTLR start "entryRuleStatement"

@@ -287,32 +287,32 @@ public interface RobotPackage extends EPackage {
 	int CONDITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.robot.model.robot.impl.BallAheadConditionImpl <em>Ball Ahead Condition</em>}' class.
+	 * The meta object id for the '{@link org.robot.model.robot.impl.ObjectAheadConditionImpl <em>Object Ahead Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.robot.model.robot.impl.BallAheadConditionImpl
-	 * @see org.robot.model.robot.impl.RobotPackageImpl#getBallAheadCondition()
+	 * @see org.robot.model.robot.impl.ObjectAheadConditionImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getObjectAheadCondition()
 	 * @generated
 	 */
-	int BALL_AHEAD_CONDITION = 4;
+	int OBJECT_AHEAD_CONDITION = 4;
 
 	/**
-	 * The number of structural features of the '<em>Ball Ahead Condition</em>' class.
+	 * The number of structural features of the '<em>Object Ahead Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BALL_AHEAD_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int OBJECT_AHEAD_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Ball Ahead Condition</em>' class.
+	 * The number of operations of the '<em>Object Ahead Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BALL_AHEAD_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+	int OBJECT_AHEAD_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementImpl <em>Statement</em>}' class.
@@ -730,14 +730,14 @@ public interface RobotPackage extends EPackage {
 	EAttribute getConnection_Port();
 
 	/**
-	 * Returns the meta object for class '{@link org.robot.model.robot.BallAheadCondition <em>Ball Ahead Condition</em>}'.
+	 * Returns the meta object for class '{@link org.robot.model.robot.ObjectAheadCondition <em>Object Ahead Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ball Ahead Condition</em>'.
-	 * @see org.robot.model.robot.BallAheadCondition
+	 * @return the meta object for class '<em>Object Ahead Condition</em>'.
+	 * @see org.robot.model.robot.ObjectAheadCondition
 	 * @generated
 	 */
-	EClass getBallAheadCondition();
+	EClass getObjectAheadCondition();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Condition <em>Condition</em>}'.
@@ -1012,14 +1012,14 @@ public interface RobotPackage extends EPackage {
 		EAttribute CONNECTION__PORT = eINSTANCE.getConnection_Port();
 
 		/**
-		 * The meta object literal for the '{@link org.robot.model.robot.impl.BallAheadConditionImpl <em>Ball Ahead Condition</em>}' class.
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.ObjectAheadConditionImpl <em>Object Ahead Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.robot.model.robot.impl.BallAheadConditionImpl
-		 * @see org.robot.model.robot.impl.RobotPackageImpl#getBallAheadCondition()
+		 * @see org.robot.model.robot.impl.ObjectAheadConditionImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getObjectAheadCondition()
 		 * @generated
 		 */
-		EClass BALL_AHEAD_CONDITION = eINSTANCE.getBallAheadCondition();
+		EClass OBJECT_AHEAD_CONDITION = eINSTANCE.getObjectAheadCondition();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.ConditionImpl <em>Condition</em>}' class.

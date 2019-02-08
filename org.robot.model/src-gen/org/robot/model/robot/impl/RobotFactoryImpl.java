@@ -61,8 +61,8 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 			return createScenario();
 		case RobotPackage.CONNECTION:
 			return createConnection();
-		case RobotPackage.BALL_AHEAD_CONDITION:
-			return createBallAheadCondition();
+		case RobotPackage.OBJECT_AHEAD_CONDITION:
+			return createObjectAheadCondition();
 		case RobotPackage.CONDITION:
 			return createCondition();
 		case RobotPackage.EXECUTE_STATEMENT:
@@ -115,9 +115,9 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BallAheadCondition createBallAheadCondition() {
-		BallAheadConditionImpl ballAheadCondition = new BallAheadConditionImpl();
-		return ballAheadCondition;
+	public ObjectAheadCondition createObjectAheadCondition() {
+		ObjectAheadConditionImpl objectAheadCondition = new ObjectAheadConditionImpl();
+		return objectAheadCondition;
 	}
 
 	/**

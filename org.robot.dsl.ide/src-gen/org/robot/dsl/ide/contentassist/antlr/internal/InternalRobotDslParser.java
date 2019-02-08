@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRobotDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Robot'", "'{'", "'global'", "'initial'", "'}'", "'connect_to'", "'scenarii'", "':'", "'Scenario'", "'ball_ahead'", "'forward'", "'print'", "'execute'", "'until'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Robot'", "'{'", "'global'", "'initial'", "'}'", "'connect_to'", "'scenarii'", "':'", "'Scenario'", "'object_ahead'", "'forward'", "'print'", "'execute'", "'until'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -498,25 +498,25 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleCondition"
-    // InternalRobotDsl.g:187:1: ruleCondition : ( ruleBallAheadCondition ) ;
+    // InternalRobotDsl.g:187:1: ruleCondition : ( ruleObjectAheadCondition ) ;
     public final void ruleCondition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRobotDsl.g:191:2: ( ( ruleBallAheadCondition ) )
-            // InternalRobotDsl.g:192:2: ( ruleBallAheadCondition )
+            // InternalRobotDsl.g:191:2: ( ( ruleObjectAheadCondition ) )
+            // InternalRobotDsl.g:192:2: ( ruleObjectAheadCondition )
             {
-            // InternalRobotDsl.g:192:2: ( ruleBallAheadCondition )
-            // InternalRobotDsl.g:193:3: ruleBallAheadCondition
+            // InternalRobotDsl.g:192:2: ( ruleObjectAheadCondition )
+            // InternalRobotDsl.g:193:3: ruleObjectAheadCondition
             {
-             before(grammarAccess.getConditionAccess().getBallAheadConditionParserRuleCall()); 
+             before(grammarAccess.getConditionAccess().getObjectAheadConditionParserRuleCall()); 
             pushFollow(FOLLOW_2);
-            ruleBallAheadCondition();
+            ruleObjectAheadCondition();
 
             state._fsp--;
 
-             after(grammarAccess.getConditionAccess().getBallAheadConditionParserRuleCall()); 
+             after(grammarAccess.getConditionAccess().getObjectAheadConditionParserRuleCall()); 
 
             }
 
@@ -538,20 +538,20 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleCondition"
 
 
-    // $ANTLR start "entryRuleBallAheadCondition"
-    // InternalRobotDsl.g:203:1: entryRuleBallAheadCondition : ruleBallAheadCondition EOF ;
-    public final void entryRuleBallAheadCondition() throws RecognitionException {
+    // $ANTLR start "entryRuleObjectAheadCondition"
+    // InternalRobotDsl.g:203:1: entryRuleObjectAheadCondition : ruleObjectAheadCondition EOF ;
+    public final void entryRuleObjectAheadCondition() throws RecognitionException {
         try {
-            // InternalRobotDsl.g:204:1: ( ruleBallAheadCondition EOF )
-            // InternalRobotDsl.g:205:1: ruleBallAheadCondition EOF
+            // InternalRobotDsl.g:204:1: ( ruleObjectAheadCondition EOF )
+            // InternalRobotDsl.g:205:1: ruleObjectAheadCondition EOF
             {
-             before(grammarAccess.getBallAheadConditionRule()); 
+             before(grammarAccess.getObjectAheadConditionRule()); 
             pushFollow(FOLLOW_1);
-            ruleBallAheadCondition();
+            ruleObjectAheadCondition();
 
             state._fsp--;
 
-             after(grammarAccess.getBallAheadConditionRule()); 
+             after(grammarAccess.getObjectAheadConditionRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -565,35 +565,35 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "entryRuleBallAheadCondition"
+    // $ANTLR end "entryRuleObjectAheadCondition"
 
 
-    // $ANTLR start "ruleBallAheadCondition"
-    // InternalRobotDsl.g:212:1: ruleBallAheadCondition : ( ( rule__BallAheadCondition__Group__0 ) ) ;
-    public final void ruleBallAheadCondition() throws RecognitionException {
+    // $ANTLR start "ruleObjectAheadCondition"
+    // InternalRobotDsl.g:212:1: ruleObjectAheadCondition : ( ( rule__ObjectAheadCondition__Group__0 ) ) ;
+    public final void ruleObjectAheadCondition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRobotDsl.g:216:2: ( ( ( rule__BallAheadCondition__Group__0 ) ) )
-            // InternalRobotDsl.g:217:2: ( ( rule__BallAheadCondition__Group__0 ) )
+            // InternalRobotDsl.g:216:2: ( ( ( rule__ObjectAheadCondition__Group__0 ) ) )
+            // InternalRobotDsl.g:217:2: ( ( rule__ObjectAheadCondition__Group__0 ) )
             {
-            // InternalRobotDsl.g:217:2: ( ( rule__BallAheadCondition__Group__0 ) )
-            // InternalRobotDsl.g:218:3: ( rule__BallAheadCondition__Group__0 )
+            // InternalRobotDsl.g:217:2: ( ( rule__ObjectAheadCondition__Group__0 ) )
+            // InternalRobotDsl.g:218:3: ( rule__ObjectAheadCondition__Group__0 )
             {
-             before(grammarAccess.getBallAheadConditionAccess().getGroup()); 
-            // InternalRobotDsl.g:219:3: ( rule__BallAheadCondition__Group__0 )
-            // InternalRobotDsl.g:219:4: rule__BallAheadCondition__Group__0
+             before(grammarAccess.getObjectAheadConditionAccess().getGroup()); 
+            // InternalRobotDsl.g:219:3: ( rule__ObjectAheadCondition__Group__0 )
+            // InternalRobotDsl.g:219:4: rule__ObjectAheadCondition__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__BallAheadCondition__Group__0();
+            rule__ObjectAheadCondition__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBallAheadConditionAccess().getGroup()); 
+             after(grammarAccess.getObjectAheadConditionAccess().getGroup()); 
 
             }
 
@@ -612,7 +612,7 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "ruleBallAheadCondition"
+    // $ANTLR end "ruleObjectAheadCondition"
 
 
     // $ANTLR start "entryRuleStatement"
@@ -3782,23 +3782,23 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__StatementBlock__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__BallAheadCondition__Group__0"
-    // InternalRobotDsl.g:1268:1: rule__BallAheadCondition__Group__0 : rule__BallAheadCondition__Group__0__Impl rule__BallAheadCondition__Group__1 ;
-    public final void rule__BallAheadCondition__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ObjectAheadCondition__Group__0"
+    // InternalRobotDsl.g:1268:1: rule__ObjectAheadCondition__Group__0 : rule__ObjectAheadCondition__Group__0__Impl rule__ObjectAheadCondition__Group__1 ;
+    public final void rule__ObjectAheadCondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRobotDsl.g:1272:1: ( rule__BallAheadCondition__Group__0__Impl rule__BallAheadCondition__Group__1 )
-            // InternalRobotDsl.g:1273:2: rule__BallAheadCondition__Group__0__Impl rule__BallAheadCondition__Group__1
+            // InternalRobotDsl.g:1272:1: ( rule__ObjectAheadCondition__Group__0__Impl rule__ObjectAheadCondition__Group__1 )
+            // InternalRobotDsl.g:1273:2: rule__ObjectAheadCondition__Group__0__Impl rule__ObjectAheadCondition__Group__1
             {
             pushFollow(FOLLOW_16);
-            rule__BallAheadCondition__Group__0__Impl();
+            rule__ObjectAheadCondition__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__BallAheadCondition__Group__1();
+            rule__ObjectAheadCondition__Group__1();
 
             state._fsp--;
 
@@ -3817,12 +3817,12 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BallAheadCondition__Group__0"
+    // $ANTLR end "rule__ObjectAheadCondition__Group__0"
 
 
-    // $ANTLR start "rule__BallAheadCondition__Group__0__Impl"
-    // InternalRobotDsl.g:1280:1: rule__BallAheadCondition__Group__0__Impl : ( () ) ;
-    public final void rule__BallAheadCondition__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ObjectAheadCondition__Group__0__Impl"
+    // InternalRobotDsl.g:1280:1: rule__ObjectAheadCondition__Group__0__Impl : ( () ) ;
+    public final void rule__ObjectAheadCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3833,13 +3833,13 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
             // InternalRobotDsl.g:1285:1: ( () )
             // InternalRobotDsl.g:1286:2: ()
             {
-             before(grammarAccess.getBallAheadConditionAccess().getBallAheadConditionAction_0()); 
+             before(grammarAccess.getObjectAheadConditionAccess().getObjectAheadConditionAction_0()); 
             // InternalRobotDsl.g:1287:2: ()
             // InternalRobotDsl.g:1287:3: 
             {
             }
 
-             after(grammarAccess.getBallAheadConditionAccess().getBallAheadConditionAction_0()); 
+             after(grammarAccess.getObjectAheadConditionAccess().getObjectAheadConditionAction_0()); 
 
             }
 
@@ -3854,21 +3854,21 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BallAheadCondition__Group__0__Impl"
+    // $ANTLR end "rule__ObjectAheadCondition__Group__0__Impl"
 
 
-    // $ANTLR start "rule__BallAheadCondition__Group__1"
-    // InternalRobotDsl.g:1295:1: rule__BallAheadCondition__Group__1 : rule__BallAheadCondition__Group__1__Impl ;
-    public final void rule__BallAheadCondition__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ObjectAheadCondition__Group__1"
+    // InternalRobotDsl.g:1295:1: rule__ObjectAheadCondition__Group__1 : rule__ObjectAheadCondition__Group__1__Impl ;
+    public final void rule__ObjectAheadCondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRobotDsl.g:1299:1: ( rule__BallAheadCondition__Group__1__Impl )
-            // InternalRobotDsl.g:1300:2: rule__BallAheadCondition__Group__1__Impl
+            // InternalRobotDsl.g:1299:1: ( rule__ObjectAheadCondition__Group__1__Impl )
+            // InternalRobotDsl.g:1300:2: rule__ObjectAheadCondition__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__BallAheadCondition__Group__1__Impl();
+            rule__ObjectAheadCondition__Group__1__Impl();
 
             state._fsp--;
 
@@ -3887,25 +3887,25 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BallAheadCondition__Group__1"
+    // $ANTLR end "rule__ObjectAheadCondition__Group__1"
 
 
-    // $ANTLR start "rule__BallAheadCondition__Group__1__Impl"
-    // InternalRobotDsl.g:1306:1: rule__BallAheadCondition__Group__1__Impl : ( 'ball_ahead' ) ;
-    public final void rule__BallAheadCondition__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ObjectAheadCondition__Group__1__Impl"
+    // InternalRobotDsl.g:1306:1: rule__ObjectAheadCondition__Group__1__Impl : ( 'object_ahead' ) ;
+    public final void rule__ObjectAheadCondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRobotDsl.g:1310:1: ( ( 'ball_ahead' ) )
-            // InternalRobotDsl.g:1311:1: ( 'ball_ahead' )
+            // InternalRobotDsl.g:1310:1: ( ( 'object_ahead' ) )
+            // InternalRobotDsl.g:1311:1: ( 'object_ahead' )
             {
-            // InternalRobotDsl.g:1311:1: ( 'ball_ahead' )
-            // InternalRobotDsl.g:1312:2: 'ball_ahead'
+            // InternalRobotDsl.g:1311:1: ( 'object_ahead' )
+            // InternalRobotDsl.g:1312:2: 'object_ahead'
             {
-             before(grammarAccess.getBallAheadConditionAccess().getBall_aheadKeyword_1()); 
+             before(grammarAccess.getObjectAheadConditionAccess().getObject_aheadKeyword_1()); 
             match(input,20,FOLLOW_2); 
-             after(grammarAccess.getBallAheadConditionAccess().getBall_aheadKeyword_1()); 
+             after(grammarAccess.getObjectAheadConditionAccess().getObject_aheadKeyword_1()); 
 
             }
 
@@ -3924,7 +3924,7 @@ public class InternalRobotDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BallAheadCondition__Group__1__Impl"
+    // $ANTLR end "rule__ObjectAheadCondition__Group__1__Impl"
 
 
     // $ANTLR start "rule__ForwardStatement__Group__0"

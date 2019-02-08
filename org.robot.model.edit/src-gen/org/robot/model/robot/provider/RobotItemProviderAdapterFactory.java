@@ -142,26 +142,26 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.BallAheadCondition} instances.
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.ObjectAheadCondition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BallAheadConditionItemProvider ballAheadConditionItemProvider;
+	protected ObjectAheadConditionItemProvider objectAheadConditionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.robot.model.robot.BallAheadCondition}.
+	 * This creates an adapter for a {@link org.robot.model.robot.ObjectAheadCondition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBallAheadConditionAdapter() {
-		if (ballAheadConditionItemProvider == null) {
-			ballAheadConditionItemProvider = new BallAheadConditionItemProvider(this);
+	public Adapter createObjectAheadConditionAdapter() {
+		if (objectAheadConditionItemProvider == null) {
+			objectAheadConditionItemProvider = new ObjectAheadConditionItemProvider(this);
 		}
 
-		return ballAheadConditionItemProvider;
+		return objectAheadConditionItemProvider;
 	}
 
 	/**
@@ -407,8 +407,8 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			scenarioItemProvider.dispose();
 		if (connectionItemProvider != null)
 			connectionItemProvider.dispose();
-		if (ballAheadConditionItemProvider != null)
-			ballAheadConditionItemProvider.dispose();
+		if (objectAheadConditionItemProvider != null)
+			objectAheadConditionItemProvider.dispose();
 		if (conditionItemProvider != null)
 			conditionItemProvider.dispose();
 		if (executeStatementItemProvider != null)

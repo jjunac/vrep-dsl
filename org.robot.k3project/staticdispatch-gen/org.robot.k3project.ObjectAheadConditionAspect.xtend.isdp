@@ -1,0 +1,5 @@
+	// BeginInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.ObjectAheadConditionAspect
+		if (_self instanceof org.robot.model.robot.ObjectAheadCondition){
+			result = org.robot.k3project.ObjectAheadConditionAspect.eval((org.robot.model.robot.ObjectAheadCondition)_self);
+		} else
+		// EndInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.ObjectAheadConditionAspect

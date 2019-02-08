@@ -14,11 +14,11 @@ public abstract class ConditionAspect {
   public static boolean eval(final Condition _self) {
     final org.robot.k3project.ConditionAspectConditionAspectProperties _self_ = org.robot.k3project.ConditionAspectConditionAspectContext.getSelf(_self);
     Object result = null;
-    	// BeginInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.BallAheadConditionAspect
-    		if (_self instanceof org.robot.model.robot.BallAheadCondition){
-    			result = org.robot.k3project.BallAheadConditionAspect.eval((org.robot.model.robot.BallAheadCondition)_self);
+    	// BeginInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.ObjectAheadConditionAspect
+    		if (_self instanceof org.robot.model.robot.ObjectAheadCondition){
+    			result = org.robot.k3project.ObjectAheadConditionAspect.eval((org.robot.model.robot.ObjectAheadCondition)_self);
     		} else
-    		// EndInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.BallAheadConditionAspect
+    		// EndInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.ObjectAheadConditionAspect
     // #DispatchPointCut_before# boolean eval()
     if (_self instanceof org.robot.model.robot.Condition){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {

@@ -276,34 +276,34 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Condition");
-		private final RuleCall cBallAheadConditionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cObjectAheadConditionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Condition:
-		//	BallAheadCondition;
+		//	ObjectAheadCondition;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//BallAheadCondition
-		public RuleCall getBallAheadConditionParserRuleCall() { return cBallAheadConditionParserRuleCall; }
+		//ObjectAheadCondition
+		public RuleCall getObjectAheadConditionParserRuleCall() { return cObjectAheadConditionParserRuleCall; }
 	}
-	public class BallAheadConditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.BallAheadCondition");
+	public class ObjectAheadConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.ObjectAheadCondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cBallAheadConditionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cBall_aheadKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cObjectAheadConditionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cObject_aheadKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//BallAheadCondition:
-		//	{BallAheadCondition}
-		//	'ball_ahead';
+		//ObjectAheadCondition:
+		//	{ObjectAheadCondition}
+		//	'object_ahead';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{BallAheadCondition} 'ball_ahead'
+		//{ObjectAheadCondition} 'object_ahead'
 		public Group getGroup() { return cGroup; }
 		
-		//{BallAheadCondition}
-		public Action getBallAheadConditionAction_0() { return cBallAheadConditionAction_0; }
+		//{ObjectAheadCondition}
+		public Action getObjectAheadConditionAction_0() { return cObjectAheadConditionAction_0; }
 		
-		//'ball_ahead'
-		public Keyword getBall_aheadKeyword_1() { return cBall_aheadKeyword_1; }
+		//'object_ahead'
+		public Keyword getObject_aheadKeyword_1() { return cObject_aheadKeyword_1; }
 	}
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Statement");
@@ -468,7 +468,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ScenarioElements pScenario;
 	private final StatementBlockElements pStatementBlock;
 	private final ConditionElements pCondition;
-	private final BallAheadConditionElements pBallAheadCondition;
+	private final ObjectAheadConditionElements pObjectAheadCondition;
 	private final StatementElements pStatement;
 	private final ForwardStatementElements pForwardStatement;
 	private final PrintStatementElements pPrintStatement;
@@ -491,7 +491,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pScenario = new ScenarioElements();
 		this.pStatementBlock = new StatementBlockElements();
 		this.pCondition = new ConditionElements();
-		this.pBallAheadCondition = new BallAheadConditionElements();
+		this.pObjectAheadCondition = new ObjectAheadConditionElements();
 		this.pStatement = new StatementElements();
 		this.pForwardStatement = new ForwardStatementElements();
 		this.pPrintStatement = new PrintStatementElements();
@@ -588,7 +588,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Condition:
-	//	BallAheadCondition;
+	//	ObjectAheadCondition;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}
@@ -597,15 +597,15 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getConditionAccess().getRule();
 	}
 	
-	//BallAheadCondition:
-	//	{BallAheadCondition}
-	//	'ball_ahead';
-	public BallAheadConditionElements getBallAheadConditionAccess() {
-		return pBallAheadCondition;
+	//ObjectAheadCondition:
+	//	{ObjectAheadCondition}
+	//	'object_ahead';
+	public ObjectAheadConditionElements getObjectAheadConditionAccess() {
+		return pObjectAheadCondition;
 	}
 	
-	public ParserRule getBallAheadConditionRule() {
-		return getBallAheadConditionAccess().getRule();
+	public ParserRule getObjectAheadConditionRule() {
+		return getObjectAheadConditionAccess().getRule();
 	}
 	
 	//Statement:

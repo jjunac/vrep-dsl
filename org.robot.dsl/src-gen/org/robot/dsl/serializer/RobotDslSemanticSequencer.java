@@ -15,10 +15,10 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.robot.dsl.services.RobotDslGrammarAccess;
-import org.robot.model.robot.BallAheadCondition;
 import org.robot.model.robot.Connection;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
+import org.robot.model.robot.ObjectAheadCondition;
 import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
@@ -40,9 +40,6 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RobotPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RobotPackage.BALL_AHEAD_CONDITION:
-				sequence_BallAheadCondition(context, (BallAheadCondition) semanticObject); 
-				return; 
 			case RobotPackage.CONNECTION:
 				sequence_Connection(context, (Connection) semanticObject); 
 				return; 
@@ -51,6 +48,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case RobotPackage.FORWARD_STATEMENT:
 				sequence_ForwardStatement(context, (ForwardStatement) semanticObject); 
+				return; 
+			case RobotPackage.OBJECT_AHEAD_CONDITION:
+				sequence_ObjectAheadCondition(context, (ObjectAheadCondition) semanticObject); 
 				return; 
 			case RobotPackage.PRINT_STATEMENT:
 				sequence_PrintStatement(context, (PrintStatement) semanticObject); 
@@ -71,19 +71,6 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     Condition returns BallAheadCondition
-	 *     BallAheadCondition returns BallAheadCondition
-	 *
-	 * Constraint:
-	 *     {BallAheadCondition}
-	 */
-	protected void sequence_BallAheadCondition(ISerializationContext context, BallAheadCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -134,6 +121,19 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     {ForwardStatement}
 	 */
 	protected void sequence_ForwardStatement(ISerializationContext context, ForwardStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns ObjectAheadCondition
+	 *     ObjectAheadCondition returns ObjectAheadCondition
+	 *
+	 * Constraint:
+	 *     {ObjectAheadCondition}
+	 */
+	protected void sequence_ObjectAheadCondition(ISerializationContext context, ObjectAheadCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
