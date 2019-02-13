@@ -14,12 +14,12 @@ abstract class StatementAspect {
 		_self_.firstStep = true
 	}
 	
+	@Step
 	def Scenario step() {
 		_self_.firstStep = false
 		return _self.doStep()		
 	}
 	
-	@Step
 	def Scenario doStep();
 	
 	def boolean isFinished() {

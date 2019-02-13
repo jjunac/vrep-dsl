@@ -23,17 +23,30 @@ public abstract class StatementAspect {
     };
   }
   
+  @Step
   public static Scenario step(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
     Object result = null;
     // #DispatchPointCut_before# Scenario step()
     if (_self instanceof org.robot.model.robot.Statement){
-    	result = org.robot.k3project.StatementAspect._privk3_step(_self_, (org.robot.model.robot.Statement)_self);
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			addToResult(org.robot.k3project.StatementAspect._privk3_step(_self_, (org.robot.model.robot.Statement)_self));
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {_self}, command, "Statement", "step");
+    	} else {
+    		command.execute();
+    	}
+    	result = command.getResult();
+    	;
     };
     return (org.robot.model.robot.Scenario)result;
   }
   
-  @Step
   @Abstract
   public static Scenario doStep(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
@@ -70,20 +83,7 @@ public abstract class StatementAspect {
     		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
     // #DispatchPointCut_before# Scenario doStep()
     if (_self instanceof org.robot.model.robot.Statement){
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    		@Override
-    		public void execute() {
-    			addToResult(org.robot.k3project.StatementAspect._privk3_doStep(_self_, (org.robot.model.robot.Statement)_self));
-    		}
-    	};
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    	if (stepManager != null) {
-    		stepManager.executeStep(_self, new Object[] {_self}, command, "Statement", "doStep");
-    	} else {
-    		command.execute();
-    	}
-    	result = command.getResult();
-    	;
+    	result = org.robot.k3project.StatementAspect._privk3_doStep(_self_, (org.robot.model.robot.Statement)_self);
     };
     return (org.robot.model.robot.Scenario)result;
   }
