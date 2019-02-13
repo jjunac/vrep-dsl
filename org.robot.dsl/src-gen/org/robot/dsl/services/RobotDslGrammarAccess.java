@@ -312,12 +312,17 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExecuteStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cPrintStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cConditionalStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRightStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Statement:
-		//	ForwardStatement | ExecuteStatement | PrintStatement | ConditionalStatement;
+		//	ForwardStatement
+		//	| ExecuteStatement
+		//	| PrintStatement
+		//	| ConditionalStatement
+		//	| RightStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ForwardStatement | ExecuteStatement | PrintStatement | ConditionalStatement
+		//ForwardStatement | ExecuteStatement | PrintStatement | ConditionalStatement | RightStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ForwardStatement
@@ -331,6 +336,29 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ConditionalStatement
 		public RuleCall getConditionalStatementParserRuleCall_3() { return cConditionalStatementParserRuleCall_3; }
+		
+		//RightStatement
+		public RuleCall getRightStatementParserRuleCall_4() { return cRightStatementParserRuleCall_4; }
+	}
+	public class RightStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.RightStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRightStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cRightKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//RightStatement:
+		//	{RightStatement}
+		//	'right';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{RightStatement} 'right'
+		public Group getGroup() { return cGroup; }
+		
+		//{RightStatement}
+		public Action getRightStatementAction_0() { return cRightStatementAction_0; }
+		
+		//'right'
+		public Keyword getRightKeyword_1() { return cRightKeyword_1; }
 	}
 	public class ForwardStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.ForwardStatement");
@@ -414,14 +442,59 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ConditionalStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.ConditionalStatement");
-		private final RuleCall cUntilStatementParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUntilStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWhileStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ConditionalStatement:
-		//	UntilStatement;
+		//	UntilStatement | WhileStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//UntilStatement | WhileStatement
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//UntilStatement
-		public RuleCall getUntilStatementParserRuleCall() { return cUntilStatementParserRuleCall; }
+		public RuleCall getUntilStatementParserRuleCall_0() { return cUntilStatementParserRuleCall_0; }
+		
+		//WhileStatement
+		public RuleCall getWhileStatementParserRuleCall_1() { return cWhileStatementParserRuleCall_1; }
+	}
+	public class WhileStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.WhileStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cWhileStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cWhileKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionConditionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Assignment cStatementBlockAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementBlockStatementBlockParserRuleCall_3_0 = (RuleCall)cStatementBlockAssignment_3.eContents().get(0);
+		
+		//WhileStatement:
+		//	{WhileStatement}
+		//	'while' condition=Condition
+		//	statementBlock=StatementBlock;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{WhileStatement} 'while' condition=Condition statementBlock=StatementBlock
+		public Group getGroup() { return cGroup; }
+		
+		//{WhileStatement}
+		public Action getWhileStatementAction_0() { return cWhileStatementAction_0; }
+		
+		//'while'
+		public Keyword getWhileKeyword_1() { return cWhileKeyword_1; }
+		
+		//condition=Condition
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
+		
+		//Condition
+		public RuleCall getConditionConditionParserRuleCall_2_0() { return cConditionConditionParserRuleCall_2_0; }
+		
+		//statementBlock=StatementBlock
+		public Assignment getStatementBlockAssignment_3() { return cStatementBlockAssignment_3; }
+		
+		//StatementBlock
+		public RuleCall getStatementBlockStatementBlockParserRuleCall_3_0() { return cStatementBlockStatementBlockParserRuleCall_3_0; }
 	}
 	public class UntilStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.UntilStatement");
@@ -470,10 +543,12 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ConditionElements pCondition;
 	private final ObjectAheadConditionElements pObjectAheadCondition;
 	private final StatementElements pStatement;
+	private final RightStatementElements pRightStatement;
 	private final ForwardStatementElements pForwardStatement;
 	private final PrintStatementElements pPrintStatement;
 	private final ExecuteStatementElements pExecuteStatement;
 	private final ConditionalStatementElements pConditionalStatement;
+	private final WhileStatementElements pWhileStatement;
 	private final UntilStatementElements pUntilStatement;
 	
 	private final Grammar grammar;
@@ -493,10 +568,12 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCondition = new ConditionElements();
 		this.pObjectAheadCondition = new ObjectAheadConditionElements();
 		this.pStatement = new StatementElements();
+		this.pRightStatement = new RightStatementElements();
 		this.pForwardStatement = new ForwardStatementElements();
 		this.pPrintStatement = new PrintStatementElements();
 		this.pExecuteStatement = new ExecuteStatementElements();
 		this.pConditionalStatement = new ConditionalStatementElements();
+		this.pWhileStatement = new WhileStatementElements();
 		this.pUntilStatement = new UntilStatementElements();
 	}
 	
@@ -609,13 +686,28 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Statement:
-	//	ForwardStatement | ExecuteStatement | PrintStatement | ConditionalStatement;
+	//	ForwardStatement
+	//	| ExecuteStatement
+	//	| PrintStatement
+	//	| ConditionalStatement
+	//	| RightStatement;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
 	
 	public ParserRule getStatementRule() {
 		return getStatementAccess().getRule();
+	}
+	
+	//RightStatement:
+	//	{RightStatement}
+	//	'right';
+	public RightStatementElements getRightStatementAccess() {
+		return pRightStatement;
+	}
+	
+	public ParserRule getRightStatementRule() {
+		return getRightStatementAccess().getRule();
 	}
 	
 	//ForwardStatement:
@@ -652,13 +744,25 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ConditionalStatement:
-	//	UntilStatement;
+	//	UntilStatement | WhileStatement;
 	public ConditionalStatementElements getConditionalStatementAccess() {
 		return pConditionalStatement;
 	}
 	
 	public ParserRule getConditionalStatementRule() {
 		return getConditionalStatementAccess().getRule();
+	}
+	
+	//WhileStatement:
+	//	{WhileStatement}
+	//	'while' condition=Condition
+	//	statementBlock=StatementBlock;
+	public WhileStatementElements getWhileStatementAccess() {
+		return pWhileStatement;
+	}
+	
+	public ParserRule getWhileStatementRule() {
+		return getWhileStatementAccess().getRule();
 	}
 	
 	//UntilStatement:

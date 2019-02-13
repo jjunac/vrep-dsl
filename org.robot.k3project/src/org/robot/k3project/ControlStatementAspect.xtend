@@ -6,5 +6,8 @@ import org.robot.model.robot.ControlStatement
 
 @Aspect(className=ControlStatement)
 abstract class ControlStatementAspect extends StatementAspect {
+	
+	protected final int step = 200 
+	
 	def Scenario doStep();
 }

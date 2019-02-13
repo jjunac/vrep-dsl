@@ -53,3 +53,14 @@
 /.ObjectAheadConditionAspect.java._trace
 /.ObjectAheadConditionAspectObjectAheadConditionAspectContext.java._trace
 /.ObjectAheadConditionAspectObjectAheadConditionAspectProperties.java._trace
+/ConnectionAspect.java
+/.RightStatementAspect.java._trace
+/.RightStatementAspectForwardStatementAspectContext.java._trace
+/.RightStatementAspectForwardStatementAspectProperties.java._trace
+/.RightStatementAspectRightStatementAspectContext.java._trace
+/.RightStatementAspectRightStatementAspectProperties.java._trace
+/.WhileStatementAspect.java._trace
+/.WhileStatementAspectUntilStatementAspectContext.java._trace
+/.WhileStatementAspectUntilStatementAspectProperties.java._trace
+/.WhileStatementAspectWhileStatementAspectContext.java._trace
+/.WhileStatementAspectWhileStatementAspectProperties.java._trace

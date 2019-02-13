@@ -122,8 +122,18 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRightStatement(RightStatement object) {
+			return createRightStatementAdapter();
+		}
+
+		@Override
 		public Adapter caseStatement(Statement object) {
 			return createStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseStatementBlock(StatementBlock object) {
+			return createStatementBlockAdapter();
 		}
 
 		@Override
@@ -132,8 +142,8 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStatementBlock(StatementBlock object) {
-			return createStatementBlockAdapter();
+		public Adapter caseWhileStatement(WhileStatement object) {
+			return createWhileStatementAdapter();
 		}
 
 		@Override
@@ -310,6 +320,20 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.RightStatement <em>Right Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.RightStatement
+	 * @generated
+	 */
+	public Adapter createRightStatementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -334,6 +358,20 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUntilStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.WhileStatement <em>While Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.WhileStatement
+	 * @generated
+	 */
+	public Adapter createWhileStatementAdapter() {
 		return null;
 	}
 

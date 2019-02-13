@@ -63,6 +63,11 @@ public abstract class StatementAspect {
     			result = org.robot.k3project.PrintStatementAspect.doStep((org.robot.model.robot.PrintStatement)_self);
     		} else
     		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.PrintStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
+    		if (_self instanceof org.robot.model.robot.RightStatement){
+    			result = org.robot.k3project.RightStatementAspect.doStep((org.robot.model.robot.RightStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
     // #DispatchPointCut_before# Scenario doStep()
     if (_self instanceof org.robot.model.robot.Statement){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {

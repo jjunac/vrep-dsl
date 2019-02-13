@@ -94,6 +94,15 @@ public interface RobotFactory extends EFactory {
 	PrintStatement createPrintStatement();
 
 	/**
+	 * Returns a new object of class '<em>Right Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Right Statement</em>'.
+	 * @generated
+	 */
+	RightStatement createRightStatement();
+
+	/**
 	 * Returns a new object of class '<em>Until Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +110,15 @@ public interface RobotFactory extends EFactory {
 	 * @generated
 	 */
 	UntilStatement createUntilStatement();
+
+	/**
+	 * Returns a new object of class '<em>While Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>While Statement</em>'.
+	 * @generated
+	 */
+	WhileStatement createWhileStatement();
 
 	/**
 	 * Returns a new object of class '<em>Statement Block</em>'.

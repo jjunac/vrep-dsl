@@ -579,6 +579,45 @@ ruleStatement returns [EObject current=null]
 			$current = $this_ConditionalStatement_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getRightStatementParserRuleCall_4());
+		}
+		this_RightStatement_4=ruleRightStatement
+		{
+			$current = $this_RightStatement_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleRightStatement
+entryRuleRightStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRightStatementRule()); }
+	iv_ruleRightStatement=ruleRightStatement
+	{ $current=$iv_ruleRightStatement.current; }
+	EOF;
+
+// Rule RightStatement
+ruleRightStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getRightStatementAccess().getRightStatementAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='right'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRightStatementAccess().getRightKeyword_1());
+		}
 	)
 ;
 
@@ -722,14 +761,93 @@ ruleConditionalStatement returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getConditionalStatementAccess().getUntilStatementParserRuleCall());
-	}
-	this_UntilStatement_0=ruleUntilStatement
-	{
-		$current = $this_UntilStatement_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		{
+			newCompositeNode(grammarAccess.getConditionalStatementAccess().getUntilStatementParserRuleCall_0());
+		}
+		this_UntilStatement_0=ruleUntilStatement
+		{
+			$current = $this_UntilStatement_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionalStatementAccess().getWhileStatementParserRuleCall_1());
+		}
+		this_WhileStatement_1=ruleWhileStatement
+		{
+			$current = $this_WhileStatement_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleWhileStatement
+entryRuleWhileStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWhileStatementRule()); }
+	iv_ruleWhileStatement=ruleWhileStatement
+	{ $current=$iv_ruleWhileStatement.current; }
+	EOF;
+
+// Rule WhileStatement
+ruleWhileStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getWhileStatementAccess().getWhileStatementAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='while'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getWhileStatementAccess().getWhileKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileStatementAccess().getConditionConditionParserRuleCall_2_0());
+				}
+				lv_condition_2_0=ruleCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileStatementRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_2_0,
+						"org.robot.dsl.RobotDsl.Condition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0());
+				}
+				lv_statementBlock_3_0=ruleStatementBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileStatementRule());
+					}
+					set(
+						$current,
+						"statementBlock",
+						lv_statementBlock_3_0,
+						"org.robot.dsl.RobotDsl.StatementBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
 ;
 
 // Entry rule entryRuleUntilStatement

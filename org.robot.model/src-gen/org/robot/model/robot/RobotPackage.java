@@ -322,7 +322,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 11;
+	int STATEMENT = 12;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -519,6 +519,34 @@ public interface RobotPackage extends EPackage {
 	int PRINT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.RightStatementImpl <em>Right Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.RightStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getRightStatement()
+	 * @generated
+	 */
+	int RIGHT_STATEMENT = 11;
+
+	/**
+	 * The number of structural features of the '<em>Right Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT_STATEMENT_FEATURE_COUNT = CONTROL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Right Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT_STATEMENT_OPERATION_COUNT = CONTROL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.UntilStatementImpl <em>Until Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -526,7 +554,54 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getUntilStatement()
 	 * @generated
 	 */
-	int UNTIL_STATEMENT = 12;
+	int UNTIL_STATEMENT = 14;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.WhileStatementImpl <em>While Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.WhileStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getWhileStatement()
+	 * @generated
+	 */
+	int WHILE_STATEMENT = 15;
+
+	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementBlockImpl <em>Statement Block</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.StatementBlockImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatementBlock()
+	 * @generated
+	 */
+	int STATEMENT_BLOCK = 13;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_BLOCK__STATEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Statement Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_BLOCK_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Statement Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_BLOCK_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -565,41 +640,40 @@ public interface RobotPackage extends EPackage {
 	int UNTIL_STATEMENT_OPERATION_COUNT = CONDITIONAL_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementBlockImpl <em>Statement Block</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.robot.model.robot.impl.StatementBlockImpl
-	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatementBlock()
-	 * @generated
-	 */
-	int STATEMENT_BLOCK = 13;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_BLOCK__STATEMENTS = 0;
+	int WHILE_STATEMENT__CONDITION = CONDITIONAL_STATEMENT__CONDITION;
 
 	/**
-	 * The number of structural features of the '<em>Statement Block</em>' class.
+	 * The feature id for the '<em><b>Statement Block</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_BLOCK_FEATURE_COUNT = 1;
+	int WHILE_STATEMENT__STATEMENT_BLOCK = CONDITIONAL_STATEMENT__STATEMENT_BLOCK;
 
 	/**
-	 * The number of operations of the '<em>Statement Block</em>' class.
+	 * The number of structural features of the '<em>While Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_BLOCK_OPERATION_COUNT = 0;
+	int WHILE_STATEMENT_FEATURE_COUNT = CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>While Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT_OPERATION_COUNT = CONDITIONAL_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Robot <em>Robot</em>}'.
@@ -844,6 +918,16 @@ public interface RobotPackage extends EPackage {
 	EAttribute getPrintStatement_Text();
 
 	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.RightStatement <em>Right Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Right Statement</em>'.
+	 * @see org.robot.model.robot.RightStatement
+	 * @generated
+	 */
+	EClass getRightStatement();
+
+	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -862,6 +946,16 @@ public interface RobotPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUntilStatement();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.WhileStatement <em>While Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>While Statement</em>'.
+	 * @see org.robot.model.robot.WhileStatement
+	 * @generated
+	 */
+	EClass getWhileStatement();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.StatementBlock <em>Statement Block</em>}'.
@@ -1114,6 +1208,16 @@ public interface RobotPackage extends EPackage {
 		EAttribute PRINT_STATEMENT__TEXT = eINSTANCE.getPrintStatement_Text();
 
 		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.RightStatementImpl <em>Right Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.RightStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getRightStatement()
+		 * @generated
+		 */
+		EClass RIGHT_STATEMENT = eINSTANCE.getRightStatement();
+
+		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.StatementImpl <em>Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1132,6 +1236,16 @@ public interface RobotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UNTIL_STATEMENT = eINSTANCE.getUntilStatement();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.WhileStatementImpl <em>While Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.WhileStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getWhileStatement()
+		 * @generated
+		 */
+		EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.StatementBlockImpl <em>Statement Block</em>}' class.

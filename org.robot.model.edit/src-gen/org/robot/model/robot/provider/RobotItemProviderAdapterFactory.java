@@ -257,6 +257,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.RightStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RightStatementItemProvider rightStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.RightStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRightStatementAdapter() {
+		if (rightStatementItemProvider == null) {
+			rightStatementItemProvider = new RightStatementItemProvider(this);
+		}
+
+		return rightStatementItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.UntilStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,6 +300,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 		}
 
 		return untilStatementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.WhileStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WhileStatementItemProvider whileStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.WhileStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWhileStatementAdapter() {
+		if (whileStatementItemProvider == null) {
+			whileStatementItemProvider = new WhileStatementItemProvider(this);
+		}
+
+		return whileStatementItemProvider;
 	}
 
 	/**
@@ -417,10 +463,14 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			forwardStatementItemProvider.dispose();
 		if (printStatementItemProvider != null)
 			printStatementItemProvider.dispose();
-		if (untilStatementItemProvider != null)
-			untilStatementItemProvider.dispose();
+		if (rightStatementItemProvider != null)
+			rightStatementItemProvider.dispose();
 		if (statementBlockItemProvider != null)
 			statementBlockItemProvider.dispose();
+		if (untilStatementItemProvider != null)
+			untilStatementItemProvider.dispose();
+		if (whileStatementItemProvider != null)
+			whileStatementItemProvider.dispose();
 	}
 
 }

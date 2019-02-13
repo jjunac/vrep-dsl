@@ -1,5 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	org.robot.model.robot.ForwardStatement = org.robot.k3project.ForwardStatementAspect, org.robot.k3project.ControlStatementAspect, org.robot.k3project.PrintStatementAspect
-	org.robot.model.robot.Scenario = org.robot.k3project.ScenarioAspect
-	org.robot.model.robot.Statement = org.robot.k3project.StatementAspect
-	org.robot.model.robot.Robot = org.robot.k3project.RobotAspect

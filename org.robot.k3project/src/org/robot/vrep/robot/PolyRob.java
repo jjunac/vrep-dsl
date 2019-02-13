@@ -86,7 +86,9 @@ public class PolyRob {
 	}
 
 	public void start() {
+		vrep.simxSynchronous(clientID, true);
 		vrep.simxStartSimulation(clientID, remoteApi.simx_opmode_oneshot);
+		openGrip();
 	}
 
 	public void readNoseSensor() {
@@ -151,7 +153,7 @@ public class PolyRob {
 	 */
 	public void goStraight(int speed, int duration) {
 		goStraight(speed);
-		sleep(duration);
+		stepSimulation(duration);
 		goStraight(0);
 	}
 
@@ -162,7 +164,7 @@ public class PolyRob {
 
 	public void turnRight(int speed, int duration) {
 		turnRight(speed);
-		sleep(duration);
+		stepSimulation(duration);
 		turnRight(0);
 	}
 
@@ -174,7 +176,7 @@ public class PolyRob {
 
 	public void turnLeft(int speed, int duration) {
 		turnLeft(speed);
-		sleep(duration);
+		stepSimulation(duration);
 		turnLeft(0);
 	}
 
@@ -187,7 +189,7 @@ public class PolyRob {
 
 	public void goCurved(int speedLeft, int speedRight, int duration) {
 		goCurved(speedLeft, speedRight);
-		sleep(duration);
+		stepSimulation(duration);
 		goStraight(0);
 	}
 
@@ -200,6 +202,10 @@ public class PolyRob {
 		// Now close the connection to V-REP:
 		vrep.simxStopSimulation(clientID, remoteApi.simx_opmode_blocking);
 		vrep.simxFinish(clientID);
+	}
+	
+	public void pauseSimulation() {
+		vrep.simxPauseSimulation(clientID, remoteApi.simx_opmode_blocking);
 	}
 
 	public Position2D getPosition() {
@@ -275,11 +281,19 @@ public class PolyRob {
 		vrep.simxAddStatusbarMessage(clientID, s, remoteApi.simx_opmode_oneshot);
 	}
 
-	public void sleep(int ms) {
-		try {
-			Thread.sleep(ms);
-		} catch (InterruptedException ex) {
-			Thread.currentThread().interrupt();
-		}
-	}
+    public void stepSimulationOnce() {
+        vrep.simxSynchronousTrigger(clientID);
+    }
+	
+	public void stepSimulation(int ms) {
+        System.out.println("getting in step simulation");
+        long startTime = vrep.simxGetLastCmdTime(clientID);
+        long time;
+        do {
+            stepSimulationOnce();
+            time = vrep.simxGetLastCmdTime(clientID);
+            System.out.println("stepping " + time);
+        }while(time - startTime < ms);
+        
+    }
 }

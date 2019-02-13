@@ -20,11 +20,13 @@ import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
 import org.robot.model.robot.ObjectAheadCondition;
 import org.robot.model.robot.PrintStatement;
+import org.robot.model.robot.RightStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.StatementBlock;
 import org.robot.model.robot.UntilStatement;
+import org.robot.model.robot.WhileStatement;
 
 @SuppressWarnings("all")
 public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -55,6 +57,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case RobotPackage.PRINT_STATEMENT:
 				sequence_PrintStatement(context, (PrintStatement) semanticObject); 
 				return; 
+			case RobotPackage.RIGHT_STATEMENT:
+				sequence_RightStatement(context, (RightStatement) semanticObject); 
+				return; 
 			case RobotPackage.ROBOT:
 				sequence_Robot(context, (Robot) semanticObject); 
 				return; 
@@ -66,6 +71,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case RobotPackage.UNTIL_STATEMENT:
 				sequence_UntilStatement(context, (UntilStatement) semanticObject); 
+				return; 
+			case RobotPackage.WHILE_STATEMENT:
+				sequence_WhileStatement(context, (WhileStatement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -159,6 +167,19 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     Statement returns RightStatement
+	 *     RightStatement returns RightStatement
+	 *
+	 * Constraint:
+	 *     {RightStatement}
+	 */
+	protected void sequence_RightStatement(ISerializationContext context, RightStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Robot returns Robot
 	 *
 	 * Constraint:
@@ -221,6 +242,29 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUntilStatementAccess().getConditionConditionParserRuleCall_2_0(), semanticObject.getCondition());
 		feeder.accept(grammarAccess.getUntilStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0(), semanticObject.getStatementBlock());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns WhileStatement
+	 *     ConditionalStatement returns WhileStatement
+	 *     WhileStatement returns WhileStatement
+	 *
+	 * Constraint:
+	 *     (condition=Condition statementBlock=StatementBlock)
+	 */
+	protected void sequence_WhileStatement(ISerializationContext context, WhileStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION));
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWhileStatementAccess().getConditionConditionParserRuleCall_2_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getWhileStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0(), semanticObject.getStatementBlock());
 		feeder.finish();
 	}
 	

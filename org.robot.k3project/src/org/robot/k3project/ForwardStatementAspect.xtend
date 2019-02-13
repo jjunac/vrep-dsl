@@ -10,7 +10,7 @@ class ForwardStatementAspect extends ControlStatementAspect {
 	
 	def Scenario doStep() {
 		println("forward")
-		PolyRob.singleton.goStraight(10, 1000);
+		PolyRob.singleton.goStraight(10, _self.step);
 		return null
 	}
 	

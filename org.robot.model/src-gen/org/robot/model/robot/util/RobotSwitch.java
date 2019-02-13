@@ -161,9 +161,27 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RobotPackage.RIGHT_STATEMENT: {
+			RightStatement rightStatement = (RightStatement) theEObject;
+			T result = caseRightStatement(rightStatement);
+			if (result == null)
+				result = caseControlStatement(rightStatement);
+			if (result == null)
+				result = caseStatement(rightStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case RobotPackage.STATEMENT: {
 			Statement statement = (Statement) theEObject;
 			T result = caseStatement(statement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.STATEMENT_BLOCK: {
+			StatementBlock statementBlock = (StatementBlock) theEObject;
+			T result = caseStatementBlock(statementBlock);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -179,9 +197,13 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RobotPackage.STATEMENT_BLOCK: {
-			StatementBlock statementBlock = (StatementBlock) theEObject;
-			T result = caseStatementBlock(statementBlock);
+		case RobotPackage.WHILE_STATEMENT: {
+			WhileStatement whileStatement = (WhileStatement) theEObject;
+			T result = caseWhileStatement(whileStatement);
+			if (result == null)
+				result = caseConditionalStatement(whileStatement);
+			if (result == null)
+				result = caseStatement(whileStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -357,6 +379,21 @@ public class RobotSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Right Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Right Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRightStatement(RightStatement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -383,6 +420,21 @@ public class RobotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUntilStatement(UntilStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWhileStatement(WhileStatement object) {
 		return null;
 	}
 

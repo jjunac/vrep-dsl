@@ -46,6 +46,11 @@ public abstract class ConditionalStatementAspect extends StatementAspect {
     			result = org.robot.k3project.UntilStatementAspect.shouldSkipBlock((org.robot.model.robot.UntilStatement)_self);
     		} else
     		// EndInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.UntilStatementAspect
+    	// BeginInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.WhileStatementAspect
+    		if (_self instanceof org.robot.model.robot.WhileStatement){
+    			result = org.robot.k3project.WhileStatementAspect.shouldSkipBlock((org.robot.model.robot.WhileStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.WhileStatementAspect
     // #DispatchPointCut_before# boolean shouldSkipBlock()
     if (_self instanceof org.robot.model.robot.ConditionalStatement){
     	result = org.robot.k3project.ConditionalStatementAspect._privk3_shouldSkipBlock(_self_, (org.robot.model.robot.ConditionalStatement)_self);

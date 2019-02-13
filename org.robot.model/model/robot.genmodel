@@ -40,10 +40,12 @@
     <genClasses ecoreClass="robot.ecore#//PrintStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//PrintStatement/text"/>
     </genClasses>
+    <genClasses ecoreClass="robot.ecore#//RightStatement"/>
     <genClasses image="false" ecoreClass="robot.ecore#//Statement"/>
-    <genClasses ecoreClass="robot.ecore#//UntilStatement"/>
     <genClasses ecoreClass="robot.ecore#//StatementBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//StatementBlock/statements"/>
     </genClasses>
+    <genClasses ecoreClass="robot.ecore#//UntilStatement"/>
+    <genClasses ecoreClass="robot.ecore#//WhileStatement"/>
   </genPackages>
 </genmodel:GenModel>

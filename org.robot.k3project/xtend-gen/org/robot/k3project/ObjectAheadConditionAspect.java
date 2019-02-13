@@ -4,6 +4,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.robot.k3project.ConditionAspect;
 import org.robot.k3project.ObjectAheadConditionAspectObjectAheadConditionAspectProperties;
 import org.robot.model.robot.ObjectAheadCondition;
+import org.robot.vrep.robot.PolyRob;
 
 @Aspect(className = ObjectAheadCondition.class)
 @SuppressWarnings("all")
@@ -19,6 +20,6 @@ public class ObjectAheadConditionAspect extends ConditionAspect {
   }
   
   protected static boolean _privk3_eval(final ObjectAheadConditionAspectObjectAheadConditionAspectProperties _self_, final ObjectAheadCondition _self) {
-    return false;
+    return PolyRob.getSingleton().hasDetectedAnObject();
   }
 }

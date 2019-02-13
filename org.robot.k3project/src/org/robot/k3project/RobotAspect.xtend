@@ -26,7 +26,7 @@ class RobotAspect {
 				_self.global.exec()
 				// TODO do something with shortcircuit
 				next = sc.step()
-				Thread.sleep(1000)				
+				//Thread.sleep(200)				
 			}
 			sc.exit()
 			sc = next

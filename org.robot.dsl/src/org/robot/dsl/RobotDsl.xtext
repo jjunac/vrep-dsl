@@ -46,7 +46,18 @@ ObjectAheadCondition returns ObjectAheadCondition:
 
 
 Statement returns Statement:
-	ForwardStatement | ExecuteStatement | PrintStatement | ConditionalStatement;
+	ForwardStatement 
+	| ExecuteStatement 
+	| PrintStatement 
+	| ConditionalStatement
+	| RightStatement
+	;
+
+RightStatement returns RightStatement:
+	{RightStatement}
+	'right'
+	;
+
 
 ForwardStatement returns ForwardStatement:
 	{ForwardStatement}
@@ -64,8 +75,13 @@ ExecuteStatement returns ExecuteStatement:
 	;
 
 ConditionalStatement returns ConditionalStatement:
-	UntilStatement
-;
+	UntilStatement | WhileStatement ;
+
+WhileStatement returns WhileStatement:
+	{WhileStatement}
+	'while' condition=Condition
+	statementBlock=StatementBlock
+	;
 
 UntilStatement returns UntilStatement:
 	{UntilStatement}

@@ -1,0 +1,5 @@
+	// BeginInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.WhileStatementAspect
+		if (_self instanceof org.robot.model.robot.WhileStatement){
+			result = org.robot.k3project.WhileStatementAspect.shouldSkipBlock((org.robot.model.robot.WhileStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.WhileStatementAspect

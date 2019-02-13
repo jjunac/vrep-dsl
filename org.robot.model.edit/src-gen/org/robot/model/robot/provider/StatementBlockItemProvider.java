@@ -160,7 +160,13 @@ public class StatementBlockItemProvider extends ItemProviderAdapter implements I
 				RobotFactory.eINSTANCE.createPrintStatement()));
 
 		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.STATEMENT_BLOCK__STATEMENTS,
+				RobotFactory.eINSTANCE.createRightStatement()));
+
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.STATEMENT_BLOCK__STATEMENTS,
 				RobotFactory.eINSTANCE.createUntilStatement()));
+
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.STATEMENT_BLOCK__STATEMENTS,
+				RobotFactory.eINSTANCE.createWhileStatement()));
 	}
 
 	/**

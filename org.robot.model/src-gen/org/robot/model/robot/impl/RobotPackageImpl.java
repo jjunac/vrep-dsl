@@ -17,6 +17,7 @@ import org.robot.model.robot.ForwardStatement;
 import org.robot.model.robot.NamedElement;
 import org.robot.model.robot.ObjectAheadCondition;
 import org.robot.model.robot.PrintStatement;
+import org.robot.model.robot.RightStatement;
 import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotFactory;
 import org.robot.model.robot.RobotPackage;
@@ -24,6 +25,7 @@ import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
 import org.robot.model.robot.StatementBlock;
 import org.robot.model.robot.UntilStatement;
+import org.robot.model.robot.WhileStatement;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,6 +116,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass rightStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass statementEClass = null;
 
 	/**
@@ -122,6 +131,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * @generated
 	 */
 	private EClass untilStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass whileStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -406,6 +422,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRightStatement() {
+		return rightStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStatement() {
 		return statementEClass;
 	}
@@ -417,6 +442,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 */
 	public EClass getUntilStatement() {
 		return untilStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWhileStatement() {
+		return whileStatementEClass;
 	}
 
 	/**
@@ -500,12 +534,16 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		printStatementEClass = createEClass(PRINT_STATEMENT);
 		createEAttribute(printStatementEClass, PRINT_STATEMENT__TEXT);
 
-		statementEClass = createEClass(STATEMENT);
+		rightStatementEClass = createEClass(RIGHT_STATEMENT);
 
-		untilStatementEClass = createEClass(UNTIL_STATEMENT);
+		statementEClass = createEClass(STATEMENT);
 
 		statementBlockEClass = createEClass(STATEMENT_BLOCK);
 		createEReference(statementBlockEClass, STATEMENT_BLOCK__STATEMENTS);
+
+		untilStatementEClass = createEClass(UNTIL_STATEMENT);
+
+		whileStatementEClass = createEClass(WHILE_STATEMENT);
 	}
 
 	/**
@@ -545,7 +583,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		executeStatementEClass.getESuperTypes().add(this.getStatement());
 		forwardStatementEClass.getESuperTypes().add(this.getControlStatement());
 		printStatementEClass.getESuperTypes().add(this.getStatement());
+		rightStatementEClass.getESuperTypes().add(this.getControlStatement());
 		untilStatementEClass.getESuperTypes().add(this.getConditionalStatement());
+		whileStatementEClass.getESuperTypes().add(this.getConditionalStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(robotEClass, Robot.class, "Robot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -612,10 +652,10 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEAttribute(getPrintStatement_Text(), ecorePackage.getEString(), "text", null, 0, 1, PrintStatement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(rightStatementEClass, RightStatement.class, "RightStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(untilStatementEClass, UntilStatement.class, "UntilStatement", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(statementBlockEClass, StatementBlock.class, "StatementBlock", !IS_ABSTRACT, !IS_INTERFACE,
@@ -623,6 +663,12 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEReference(getStatementBlock_Statements(), this.getStatement(), null, "statements", null, 0, -1,
 				StatementBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(untilStatementEClass, UntilStatement.class, "UntilStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

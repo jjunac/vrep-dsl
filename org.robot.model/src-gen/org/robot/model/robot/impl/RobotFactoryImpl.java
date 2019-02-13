@@ -71,10 +71,14 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 			return createForwardStatement();
 		case RobotPackage.PRINT_STATEMENT:
 			return createPrintStatement();
-		case RobotPackage.UNTIL_STATEMENT:
-			return createUntilStatement();
+		case RobotPackage.RIGHT_STATEMENT:
+			return createRightStatement();
 		case RobotPackage.STATEMENT_BLOCK:
 			return createStatementBlock();
+		case RobotPackage.UNTIL_STATEMENT:
+			return createUntilStatement();
+		case RobotPackage.WHILE_STATEMENT:
+			return createWhileStatement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -165,9 +169,29 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RightStatement createRightStatement() {
+		RightStatementImpl rightStatement = new RightStatementImpl();
+		return rightStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UntilStatement createUntilStatement() {
 		UntilStatementImpl untilStatement = new UntilStatementImpl();
 		return untilStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WhileStatement createWhileStatement() {
+		WhileStatementImpl whileStatement = new WhileStatementImpl();
+		return whileStatement;
 	}
 
 	/**
