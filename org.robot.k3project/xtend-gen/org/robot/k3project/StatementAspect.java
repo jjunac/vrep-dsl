@@ -47,6 +47,16 @@ public abstract class StatementAspect {
     return (org.robot.model.robot.Scenario)result;
   }
   
+  public static Scenario stepWithoutDebug(final Statement _self) {
+    final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Scenario stepWithoutDebug()
+    if (_self instanceof org.robot.model.robot.Statement){
+    	result = org.robot.k3project.StatementAspect._privk3_stepWithoutDebug(_self_, (org.robot.model.robot.Statement)_self);
+    };
+    return (org.robot.model.robot.Scenario)result;
+  }
+  
   @Abstract
   public static Scenario doStep(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
@@ -139,6 +149,10 @@ public abstract class StatementAspect {
   }
   
   protected static Scenario _privk3_step(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    return StatementAspect.stepWithoutDebug(_self);
+  }
+  
+  protected static Scenario _privk3_stepWithoutDebug(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
     _self_.firstStep = false;
     return StatementAspect.doStep(_self);
   }

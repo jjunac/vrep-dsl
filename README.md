@@ -1,2 +1,8 @@
-# PolyBot
-a vrep simulation scene together with a java abstraction layer on top of the vrep remote API
+## TODO
+- Short circuit with glogal
+- To test shorcut, make control take an optional value
+- Add if for global
+
+
+
+

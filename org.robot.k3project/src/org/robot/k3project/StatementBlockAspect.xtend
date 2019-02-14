@@ -33,7 +33,19 @@ class StatementBlockAspect {
 	}
 	
 	def Scenario step() {
-		_self_.next = _self_.current.step()
+		return _self.step(true)
+	}
+	
+	def Scenario stepWithoutDebug() {
+		return _self.step(false)
+	}
+	
+	private def Scenario step(boolean debug) {
+		_self_.next = null
+		if (debug)
+			_self_.next = _self_.current.step()
+		else
+			_self_.next = _self_.current.stepWithoutDebug()
 		_self_.current.exit()
 		if (_self_.current.isFinished() && _self_.itStatement.hasNext()) {
 			_self_.current = _self_.itStatement.next()
@@ -49,7 +61,7 @@ class StatementBlockAspect {
 	def Scenario exec() {
 		_self.enter()
 		while(!_self.isFinished()) {
-			_self.step()
+			_self.stepWithoutDebug()
 		}
 		_self.exit()
 		return _self_.next

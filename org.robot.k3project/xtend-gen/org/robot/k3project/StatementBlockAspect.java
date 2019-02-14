@@ -39,6 +39,26 @@ public class StatementBlockAspect {
     return (org.robot.model.robot.Scenario)result;
   }
   
+  public static Scenario stepWithoutDebug(final StatementBlock _self) {
+    final org.robot.k3project.StatementBlockAspectStatementBlockAspectProperties _self_ = org.robot.k3project.StatementBlockAspectStatementBlockAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Scenario stepWithoutDebug()
+    if (_self instanceof org.robot.model.robot.StatementBlock){
+    	result = org.robot.k3project.StatementBlockAspect._privk3_stepWithoutDebug(_self_, (org.robot.model.robot.StatementBlock)_self);
+    };
+    return (org.robot.model.robot.Scenario)result;
+  }
+  
+  private static Scenario step(final StatementBlock _self, final boolean debug) {
+    final org.robot.k3project.StatementBlockAspectStatementBlockAspectProperties _self_ = org.robot.k3project.StatementBlockAspectStatementBlockAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Scenario step(boolean)
+    if (_self instanceof org.robot.model.robot.StatementBlock){
+    	result = org.robot.k3project.StatementBlockAspect._privk3_step(_self_, (org.robot.model.robot.StatementBlock)_self,debug);
+    };
+    return (org.robot.model.robot.Scenario)result;
+  }
+  
   public static void exit(final StatementBlock _self) {
     final org.robot.k3project.StatementBlockAspectStatementBlockAspectProperties _self_ = org.robot.k3project.StatementBlockAspectStatementBlockAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void exit()
@@ -128,7 +148,20 @@ public class StatementBlockAspect {
   }
   
   protected static Scenario _privk3_step(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {
-    _self_.next = StatementAspect.step(_self_.current);
+    return StatementBlockAspect.step(_self, true);
+  }
+  
+  protected static Scenario _privk3_stepWithoutDebug(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {
+    return StatementBlockAspect.step(_self, false);
+  }
+  
+  protected static Scenario _privk3_step(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self, final boolean debug) {
+    _self_.next = null;
+    if (debug) {
+      _self_.next = StatementAspect.step(_self_.current);
+    } else {
+      _self_.next = StatementAspect.stepWithoutDebug(_self_.current);
+    }
     StatementAspect.exit(_self_.current);
     if ((StatementAspect.isFinished(_self_.current) && _self_.itStatement.hasNext())) {
       _self_.current = _self_.itStatement.next();
@@ -143,7 +176,7 @@ public class StatementBlockAspect {
   protected static Scenario _privk3_exec(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {
     StatementBlockAspect.enter(_self);
     while ((!StatementBlockAspect.isFinished(_self))) {
-      StatementBlockAspect.step(_self);
+      StatementBlockAspect.stepWithoutDebug(_self);
     }
     StatementBlockAspect.exit(_self);
     return _self_.next;

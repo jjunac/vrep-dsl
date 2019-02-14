@@ -13,9 +13,13 @@ abstract class StatementAspect {
 	def void enter() {
 		_self_.firstStep = true
 	}
-	
+
 	@Step
 	def Scenario step() {
+		return _self.stepWithoutDebug()		
+	}
+	
+	def Scenario stepWithoutDebug() {
 		_self_.firstStep = false
 		return _self.doStep()		
 	}
