@@ -377,6 +377,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getControlStatement_Value() {
+		return (EAttribute) controlStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExecuteStatement() {
 		return executeStatementEClass;
 	}
@@ -525,6 +534,7 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__STATEMENT_BLOCK);
 
 		controlStatementEClass = createEClass(CONTROL_STATEMENT);
+		createEAttribute(controlStatementEClass, CONTROL_STATEMENT__VALUE);
 
 		executeStatementEClass = createEClass(EXECUTE_STATEMENT);
 		createEReference(executeStatementEClass, EXECUTE_STATEMENT__DESTINATION);
@@ -637,6 +647,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 
 		initEClass(controlStatementEClass, ControlStatement.class, "ControlStatement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getControlStatement_Value(), ecorePackage.getEInt(), "value", null, 0, 1, ControlStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executeStatementEClass, ExecuteStatement.class, "ExecuteStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

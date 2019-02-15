@@ -308,25 +308,23 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.Statement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cForwardStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cControlStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExecuteStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cPrintStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cConditionalStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cRightStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Statement:
-		//	ForwardStatement
+		//	ControlStatement
 		//	| ExecuteStatement
 		//	| PrintStatement
-		//	| ConditionalStatement
-		//	| RightStatement;
+		//	| ConditionalStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ForwardStatement | ExecuteStatement | PrintStatement | ConditionalStatement | RightStatement
+		//ControlStatement | ExecuteStatement | PrintStatement | ConditionalStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ForwardStatement
-		public RuleCall getForwardStatementParserRuleCall_0() { return cForwardStatementParserRuleCall_0; }
+		//ControlStatement
+		public RuleCall getControlStatementParserRuleCall_0() { return cControlStatementParserRuleCall_0; }
 		
 		//ExecuteStatement
 		public RuleCall getExecuteStatementParserRuleCall_1() { return cExecuteStatementParserRuleCall_1; }
@@ -336,9 +334,37 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ConditionalStatement
 		public RuleCall getConditionalStatementParserRuleCall_3() { return cConditionalStatementParserRuleCall_3; }
+	}
+	public class ControlStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.ControlStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cRightStatementParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cForwardStatementParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//ControlStatement:
+		//	(RightStatement | ForwardStatement) value=INT?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(RightStatement | ForwardStatement) value=INT?
+		public Group getGroup() { return cGroup; }
+		
+		//RightStatement | ForwardStatement
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//RightStatement
-		public RuleCall getRightStatementParserRuleCall_4() { return cRightStatementParserRuleCall_4; }
+		public RuleCall getRightStatementParserRuleCall_0_0() { return cRightStatementParserRuleCall_0_0; }
+		
+		//ForwardStatement
+		public RuleCall getForwardStatementParserRuleCall_0_1() { return cForwardStatementParserRuleCall_0_1; }
+		
+		//value=INT?
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
 	}
 	public class RightStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.robot.dsl.RobotDsl.RightStatement");
@@ -543,6 +569,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ConditionElements pCondition;
 	private final ObjectAheadConditionElements pObjectAheadCondition;
 	private final StatementElements pStatement;
+	private final ControlStatementElements pControlStatement;
 	private final RightStatementElements pRightStatement;
 	private final ForwardStatementElements pForwardStatement;
 	private final PrintStatementElements pPrintStatement;
@@ -568,6 +595,7 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCondition = new ConditionElements();
 		this.pObjectAheadCondition = new ObjectAheadConditionElements();
 		this.pStatement = new StatementElements();
+		this.pControlStatement = new ControlStatementElements();
 		this.pRightStatement = new RightStatementElements();
 		this.pForwardStatement = new ForwardStatementElements();
 		this.pPrintStatement = new PrintStatementElements();
@@ -686,17 +714,26 @@ public class RobotDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Statement:
-	//	ForwardStatement
+	//	ControlStatement
 	//	| ExecuteStatement
 	//	| PrintStatement
-	//	| ConditionalStatement
-	//	| RightStatement;
+	//	| ConditionalStatement;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
 	
 	public ParserRule getStatementRule() {
 		return getStatementAccess().getRule();
+	}
+	
+	//ControlStatement:
+	//	(RightStatement | ForwardStatement) value=INT?;
+	public ControlStatementElements getControlStatementAccess() {
+		return pControlStatement;
+	}
+	
+	public ParserRule getControlStatementRule() {
+		return getControlStatementAccess().getRule();
 	}
 	
 	//RightStatement:

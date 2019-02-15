@@ -31,6 +31,16 @@ public abstract class ControlStatementAspect extends StatementAspect {
     return (org.robot.model.robot.Scenario)result;
   }
   
+  public static int getFactor(final ControlStatement _self) {
+    final org.robot.k3project.ControlStatementAspectControlStatementAspectProperties _self_ = org.robot.k3project.ControlStatementAspectControlStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# int getFactor()
+    if (_self instanceof org.robot.model.robot.ControlStatement){
+    	result = org.robot.k3project.ControlStatementAspect._privk3_getFactor(_self_, (org.robot.model.robot.ControlStatement)_self);
+    };
+    return (int)result;
+  }
+  
   protected static int step(final ControlStatement _self) {
     final org.robot.k3project.ControlStatementAspectControlStatementAspectProperties _self_ = org.robot.k3project.ControlStatementAspectControlStatementAspectContext.getSelf(_self);
     Object result = null;
@@ -43,6 +53,15 @@ public abstract class ControlStatementAspect extends StatementAspect {
   
   protected static Scenario _privk3_doStep(final ControlStatementAspectControlStatementAspectProperties _self_, final ControlStatement _self) {
     throw new java.lang.RuntimeException("Not implemented");
+  }
+  
+  protected static int _privk3_getFactor(final ControlStatementAspectControlStatementAspectProperties _self_, final ControlStatement _self) {
+    int _value = _self.getValue();
+    boolean _equals = (_value == 0);
+    if (_equals) {
+      return 1;
+    }
+    return _self.getValue();
   }
   
   protected static int _privk3_step(final ControlStatementAspectControlStatementAspectProperties _self_, final ControlStatement _self) {

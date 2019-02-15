@@ -49,8 +49,16 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_ExecuteStatement(context, (ExecuteStatement) semanticObject); 
 				return; 
 			case RobotPackage.FORWARD_STATEMENT:
-				sequence_ForwardStatement(context, (ForwardStatement) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getStatementRule()
+						|| rule == grammarAccess.getControlStatementRule()) {
+					sequence_ControlStatement_ForwardStatement(context, (ForwardStatement) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getForwardStatementRule()) {
+					sequence_ForwardStatement(context, (ForwardStatement) semanticObject); 
+					return; 
+				}
+				else break;
 			case RobotPackage.OBJECT_AHEAD_CONDITION:
 				sequence_ObjectAheadCondition(context, (ObjectAheadCondition) semanticObject); 
 				return; 
@@ -58,8 +66,16 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_PrintStatement(context, (PrintStatement) semanticObject); 
 				return; 
 			case RobotPackage.RIGHT_STATEMENT:
-				sequence_RightStatement(context, (RightStatement) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getStatementRule()
+						|| rule == grammarAccess.getControlStatementRule()) {
+					sequence_ControlStatement_RightStatement(context, (RightStatement) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getRightStatementRule()) {
+					sequence_RightStatement(context, (RightStatement) semanticObject); 
+					return; 
+				}
+				else break;
 			case RobotPackage.ROBOT:
 				sequence_Robot(context, (Robot) semanticObject); 
 				return; 
@@ -103,6 +119,32 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     Statement returns ForwardStatement
+	 *     ControlStatement returns ForwardStatement
+	 *
+	 * Constraint:
+	 *     value=INT?
+	 */
+	protected void sequence_ControlStatement_ForwardStatement(ISerializationContext context, ForwardStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns RightStatement
+	 *     ControlStatement returns RightStatement
+	 *
+	 * Constraint:
+	 *     value=INT?
+	 */
+	protected void sequence_ControlStatement_RightStatement(ISerializationContext context, RightStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns ExecuteStatement
 	 *     ExecuteStatement returns ExecuteStatement
 	 *
@@ -122,7 +164,6 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Statement returns ForwardStatement
 	 *     ForwardStatement returns ForwardStatement
 	 *
 	 * Constraint:
@@ -167,7 +208,6 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Statement returns RightStatement
 	 *     RightStatement returns RightStatement
 	 *
 	 * Constraint:

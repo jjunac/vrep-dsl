@@ -399,13 +399,22 @@ public interface RobotPackage extends EPackage {
 	int CONTROL_STATEMENT = 7;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_STATEMENT__VALUE = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Control Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+	int CONTROL_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Control Statement</em>' class.
@@ -462,6 +471,15 @@ public interface RobotPackage extends EPackage {
 	 * @generated
 	 */
 	int FORWARD_STATEMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_STATEMENT__VALUE = CONTROL_STATEMENT__VALUE;
 
 	/**
 	 * The number of structural features of the '<em>Forward Statement</em>' class.
@@ -527,6 +545,15 @@ public interface RobotPackage extends EPackage {
 	 * @generated
 	 */
 	int RIGHT_STATEMENT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT_STATEMENT__VALUE = CONTROL_STATEMENT__VALUE;
 
 	/**
 	 * The number of structural features of the '<em>Right Statement</em>' class.
@@ -866,6 +893,17 @@ public interface RobotPackage extends EPackage {
 	EClass getControlStatement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.robot.model.robot.ControlStatement#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.robot.model.robot.ControlStatement#getValue()
+	 * @see #getControlStatement()
+	 * @generated
+	 */
+	EAttribute getControlStatement_Value();
+
+	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.ExecuteStatement <em>Execute Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1160,6 +1198,14 @@ public interface RobotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTROL_STATEMENT = eINSTANCE.getControlStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL_STATEMENT__VALUE = eINSTANCE.getControlStatement_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.ExecuteStatementImpl <em>Execute Statement</em>}' class.

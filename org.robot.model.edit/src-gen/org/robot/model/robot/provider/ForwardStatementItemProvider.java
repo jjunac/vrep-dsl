@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.robot.model.robot.ForwardStatement;
 
 /**
  * This is the item provider adapter for a {@link org.robot.model.robot.ForwardStatement} object.
@@ -71,7 +72,8 @@ public class ForwardStatementItemProvider extends ControlStatementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ForwardStatement_type");
+		ForwardStatement forwardStatement = (ForwardStatement) object;
+		return getString("_UI_ForwardStatement_type") + " " + forwardStatement.getValue();
 	}
 
 	/**

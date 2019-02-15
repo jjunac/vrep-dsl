@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.robot.model.robot.RightStatement;
 
 /**
  * This is the item provider adapter for a {@link org.robot.model.robot.RightStatement} object.
@@ -71,7 +72,8 @@ public class RightStatementItemProvider extends ControlStatementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RightStatement_type");
+		RightStatement rightStatement = (RightStatement) object;
+		return getString("_UI_RightStatement_type") + " " + rightStatement.getValue();
 	}
 
 	/**

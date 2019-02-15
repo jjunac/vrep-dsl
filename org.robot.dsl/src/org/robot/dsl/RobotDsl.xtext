@@ -46,11 +46,14 @@ ObjectAheadCondition returns ObjectAheadCondition:
 
 
 Statement returns Statement:
-	ForwardStatement 
+	ControlStatement 
 	| ExecuteStatement 
 	| PrintStatement 
 	| ConditionalStatement
-	| RightStatement
+	;
+
+ControlStatement returns ControlStatement:
+	(RightStatement | ForwardStatement) (value=INT)?
 	;
 
 RightStatement returns RightStatement:

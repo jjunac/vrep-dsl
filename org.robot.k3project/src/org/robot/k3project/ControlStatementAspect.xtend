@@ -10,4 +10,10 @@ abstract class ControlStatementAspect extends StatementAspect {
 	protected final int step = 200 
 	
 	def Scenario doStep();
+	
+	def int getFactor() {
+		if(_self.value == 0)
+			return 1
+		return _self.value
+	}
 }

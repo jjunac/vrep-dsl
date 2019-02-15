@@ -545,11 +545,11 @@ ruleStatement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getForwardStatementParserRuleCall_0());
+			newCompositeNode(grammarAccess.getStatementAccess().getControlStatementParserRuleCall_0());
 		}
-		this_ForwardStatement_0=ruleForwardStatement
+		this_ControlStatement_0=ruleControlStatement
 		{
-			$current = $this_ForwardStatement_0.current;
+			$current = $this_ControlStatement_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -579,15 +579,62 @@ ruleStatement returns [EObject current=null]
 			$current = $this_ConditionalStatement_3.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getStatementAccess().getRightStatementParserRuleCall_4());
-		}
-		this_RightStatement_4=ruleRightStatement
-		{
-			$current = $this_RightStatement_4.current;
-			afterParserOrEnumRuleCall();
-		}
+	)
+;
+
+// Entry rule entryRuleControlStatement
+entryRuleControlStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getControlStatementRule()); }
+	iv_ruleControlStatement=ruleControlStatement
+	{ $current=$iv_ruleControlStatement.current; }
+	EOF;
+
+// Rule ControlStatement
+ruleControlStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getControlStatementAccess().getRightStatementParserRuleCall_0_0());
+			}
+			this_RightStatement_0=ruleRightStatement
+			{
+				$current = $this_RightStatement_0.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getControlStatementAccess().getForwardStatementParserRuleCall_0_1());
+			}
+			this_ForwardStatement_1=ruleForwardStatement
+			{
+				$current = $this_ForwardStatement_1.current;
+				afterParserOrEnumRuleCall();
+			}
+		)
+		(
+			(
+				lv_value_2_0=RULE_INT
+				{
+					newLeafNode(lv_value_2_0, grammarAccess.getControlStatementAccess().getValueINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getControlStatementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)?
 	)
 ;
 

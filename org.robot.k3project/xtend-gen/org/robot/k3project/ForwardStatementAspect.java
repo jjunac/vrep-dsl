@@ -23,7 +23,11 @@ public class ForwardStatementAspect extends ControlStatementAspect {
   
   protected static Scenario _privk3_doStep(final ForwardStatementAspectForwardStatementAspectProperties _self_, final ForwardStatement _self) {
     InputOutput.<String>println("forward");
-    PolyRob.getSingleton().goStraight(10, ControlStatementAspect.step(_self));
+    PolyRob _singleton = PolyRob.getSingleton();
+    int _step = ControlStatementAspect.step(_self);
+    int _factor = ControlStatementAspect.getFactor(_self);
+    int _multiply = (_step * _factor);
+    _singleton.goStraight(10, _multiply);
     return null;
   }
 }

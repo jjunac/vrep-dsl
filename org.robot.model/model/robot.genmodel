@@ -32,7 +32,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//ConditionalStatement/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robot.ecore#//ConditionalStatement/statementBlock"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="robot.ecore#//ControlStatement"/>
+    <genClasses image="false" ecoreClass="robot.ecore#//ControlStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robot.ecore#//ControlStatement/value"/>
+    </genClasses>
     <genClasses ecoreClass="robot.ecore#//ExecuteStatement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robot.ecore#//ExecuteStatement/destination"/>
     </genClasses>
