@@ -29,10 +29,14 @@ public class RobotAspect {
       {
         ScenarioAspect.enter(sc);
         Scenario next = null;
-        while ((!ScenarioAspect.isFinished(sc))) {
+        while (((!ScenarioAspect.isFinished(sc)) && (next == null))) {
           {
-            StatementBlockAspect.exec(_self.getGlobal());
-            next = ScenarioAspect.step(sc);
+            final Scenario shortcut = StatementBlockAspect.exec(_self.getGlobal());
+            if ((shortcut == null)) {
+              next = ScenarioAspect.step(sc);
+            } else {
+              next = shortcut;
+            }
           }
         }
         ScenarioAspect.exit(sc);

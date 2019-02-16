@@ -8,7 +8,7 @@ import org.robot.model.robot.Scenario
 @Aspect(className=Statement)
 abstract class StatementAspect {
 	
-	boolean firstStep = true
+	protected boolean firstStep = true
 	
 	def void enter() {
 		_self_.firstStep = true

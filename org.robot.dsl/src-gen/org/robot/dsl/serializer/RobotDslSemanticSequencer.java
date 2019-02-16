@@ -18,6 +18,7 @@ import org.robot.dsl.services.RobotDslGrammarAccess;
 import org.robot.model.robot.Connection;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
+import org.robot.model.robot.IfStatement;
 import org.robot.model.robot.ObjectAheadCondition;
 import org.robot.model.robot.PrintStatement;
 import org.robot.model.robot.RightStatement;
@@ -25,6 +26,7 @@ import org.robot.model.robot.Robot;
 import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.StatementBlock;
+import org.robot.model.robot.TrueCondition;
 import org.robot.model.robot.UntilStatement;
 import org.robot.model.robot.WhileStatement;
 
@@ -59,6 +61,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					return; 
 				}
 				else break;
+			case RobotPackage.IF_STATEMENT:
+				sequence_IfStatement(context, (IfStatement) semanticObject); 
+				return; 
 			case RobotPackage.OBJECT_AHEAD_CONDITION:
 				sequence_ObjectAheadCondition(context, (ObjectAheadCondition) semanticObject); 
 				return; 
@@ -84,6 +89,9 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case RobotPackage.STATEMENT_BLOCK:
 				sequence_StatementBlock(context, (StatementBlock) semanticObject); 
+				return; 
+			case RobotPackage.TRUE_CONDITION:
+				sequence_TrueCondition(context, (TrueCondition) semanticObject); 
 				return; 
 			case RobotPackage.UNTIL_STATEMENT:
 				sequence_UntilStatement(context, (UntilStatement) semanticObject); 
@@ -176,6 +184,29 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     Statement returns IfStatement
+	 *     ConditionalStatement returns IfStatement
+	 *     IfStatement returns IfStatement
+	 *
+	 * Constraint:
+	 *     (condition=Condition statementBlock=StatementBlock)
+	 */
+	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION));
+			if (transientValues.isValueTransient(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIfStatementAccess().getConditionConditionParserRuleCall_2_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getIfStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0(), semanticObject.getStatementBlock());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Condition returns ObjectAheadCondition
 	 *     ObjectAheadCondition returns ObjectAheadCondition
 	 *
@@ -259,6 +290,19 @@ public class RobotDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (statements+=Statement statements+=Statement*)?
 	 */
 	protected void sequence_StatementBlock(ISerializationContext context, StatementBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns TrueCondition
+	 *     TrueCondition returns TrueCondition
+	 *
+	 * Constraint:
+	 *     {TrueCondition}
+	 */
+	protected void sequence_TrueCondition(ISerializationContext context, TrueCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

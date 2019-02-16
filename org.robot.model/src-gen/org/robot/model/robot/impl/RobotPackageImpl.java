@@ -14,6 +14,7 @@ import org.robot.model.robot.Connection;
 import org.robot.model.robot.ControlStatement;
 import org.robot.model.robot.ExecuteStatement;
 import org.robot.model.robot.ForwardStatement;
+import org.robot.model.robot.IfStatement;
 import org.robot.model.robot.NamedElement;
 import org.robot.model.robot.ObjectAheadCondition;
 import org.robot.model.robot.PrintStatement;
@@ -24,6 +25,7 @@ import org.robot.model.robot.RobotPackage;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
 import org.robot.model.robot.StatementBlock;
+import org.robot.model.robot.TrueCondition;
 import org.robot.model.robot.UntilStatement;
 import org.robot.model.robot.WhileStatement;
 
@@ -74,6 +76,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass trueConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass conditionEClass = null;
 
 	/**
@@ -103,6 +112,13 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * @generated
 	 */
 	private EClass forwardStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,6 +348,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTrueCondition() {
+		return trueConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCondition() {
 		return conditionEClass;
 	}
@@ -406,6 +431,15 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 	 */
 	public EClass getForwardStatement() {
 		return forwardStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIfStatement() {
+		return ifStatementEClass;
 	}
 
 	/**
@@ -527,6 +561,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 
 		objectAheadConditionEClass = createEClass(OBJECT_AHEAD_CONDITION);
 
+		trueConditionEClass = createEClass(TRUE_CONDITION);
+
 		conditionEClass = createEClass(CONDITION);
 
 		conditionalStatementEClass = createEClass(CONDITIONAL_STATEMENT);
@@ -540,6 +576,8 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		createEReference(executeStatementEClass, EXECUTE_STATEMENT__DESTINATION);
 
 		forwardStatementEClass = createEClass(FORWARD_STATEMENT);
+
+		ifStatementEClass = createEClass(IF_STATEMENT);
 
 		printStatementEClass = createEClass(PRINT_STATEMENT);
 		createEAttribute(printStatementEClass, PRINT_STATEMENT__TEXT);
@@ -588,10 +626,12 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		robotEClass.getESuperTypes().add(this.getNamedElement());
 		scenarioEClass.getESuperTypes().add(this.getNamedElement());
 		objectAheadConditionEClass.getESuperTypes().add(this.getCondition());
+		trueConditionEClass.getESuperTypes().add(this.getCondition());
 		conditionalStatementEClass.getESuperTypes().add(this.getStatement());
 		controlStatementEClass.getESuperTypes().add(this.getStatement());
 		executeStatementEClass.getESuperTypes().add(this.getStatement());
 		forwardStatementEClass.getESuperTypes().add(this.getControlStatement());
+		ifStatementEClass.getESuperTypes().add(this.getConditionalStatement());
 		printStatementEClass.getESuperTypes().add(this.getStatement());
 		rightStatementEClass.getESuperTypes().add(this.getControlStatement());
 		untilStatementEClass.getESuperTypes().add(this.getConditionalStatement());
@@ -633,6 +673,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 		initEClass(objectAheadConditionEClass, ObjectAheadCondition.class, "ObjectAheadCondition", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(trueConditionEClass, TrueCondition.class, "TrueCondition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
@@ -657,6 +700,9 @@ public class RobotPackageImpl extends EPackageImpl implements RobotPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forwardStatementEClass, ForwardStatement.class, "ForwardStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(printStatementEClass, PrintStatement.class, "PrintStatement", !IS_ABSTRACT, !IS_INTERFACE,

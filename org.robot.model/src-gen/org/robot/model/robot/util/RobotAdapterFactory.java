@@ -92,6 +92,11 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTrueCondition(TrueCondition object) {
+			return createTrueConditionAdapter();
+		}
+
+		@Override
 		public Adapter caseCondition(Condition object) {
 			return createConditionAdapter();
 		}
@@ -114,6 +119,11 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseForwardStatement(ForwardStatement object) {
 			return createForwardStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseIfStatement(IfStatement object) {
+			return createIfStatementAdapter();
 		}
 
 		@Override
@@ -236,6 +246,20 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.TrueCondition <em>True Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.TrueCondition
+	 * @generated
+	 */
+	public Adapter createTrueConditionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -302,6 +326,20 @@ public class RobotAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createForwardStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.robot.model.robot.IfStatement <em>If Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.robot.model.robot.IfStatement
+	 * @generated
+	 */
+	public Adapter createIfStatementAdapter() {
 		return null;
 	}
 

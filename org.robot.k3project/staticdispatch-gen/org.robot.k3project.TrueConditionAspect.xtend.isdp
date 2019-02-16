@@ -1,0 +1,5 @@
+	// BeginInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.TrueConditionAspect
+		if (_self instanceof org.robot.model.robot.TrueCondition){
+			result = org.robot.k3project.TrueConditionAspect.eval((org.robot.model.robot.TrueCondition)_self);
+		} else
+		// EndInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.TrueConditionAspect

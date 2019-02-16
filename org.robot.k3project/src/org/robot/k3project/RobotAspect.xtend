@@ -22,11 +22,13 @@ class RobotAspect {
 			sc.enter()
 			var Scenario next = null
 			//println(sc.isFinished())
-			while(!sc.isFinished()) {
-				_self.global.exec()
-				// TODO do something with shortcircuit
-				next = sc.step()
-				//Thread.sleep(200)				
+			while(!sc.isFinished() && next === null) {
+				val shortcut =_self.global.exec()
+				if (shortcut === null) {
+					next = sc.step()
+				} else {
+					next = shortcut
+				}
 			}
 			sc.exit()
 			sc = next

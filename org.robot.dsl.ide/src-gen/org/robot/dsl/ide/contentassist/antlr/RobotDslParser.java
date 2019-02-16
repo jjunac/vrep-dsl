@@ -32,6 +32,7 @@ public class RobotDslParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RobotDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getControlStatementAccess().getAlternatives_0(), "rule__ControlStatement__Alternatives_0");
 			builder.put(grammarAccess.getConditionalStatementAccess().getAlternatives(), "rule__ConditionalStatement__Alternatives");
@@ -43,6 +44,7 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStatementBlockAccess().getGroup(), "rule__StatementBlock__Group__0");
 			builder.put(grammarAccess.getStatementBlockAccess().getGroup_2(), "rule__StatementBlock__Group_2__0");
 			builder.put(grammarAccess.getObjectAheadConditionAccess().getGroup(), "rule__ObjectAheadCondition__Group__0");
+			builder.put(grammarAccess.getTrueConditionAccess().getGroup(), "rule__TrueCondition__Group__0");
 			builder.put(grammarAccess.getControlStatementAccess().getGroup(), "rule__ControlStatement__Group__0");
 			builder.put(grammarAccess.getRightStatementAccess().getGroup(), "rule__RightStatement__Group__0");
 			builder.put(grammarAccess.getForwardStatementAccess().getGroup(), "rule__ForwardStatement__Group__0");
@@ -50,6 +52,7 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExecuteStatementAccess().getGroup(), "rule__ExecuteStatement__Group__0");
 			builder.put(grammarAccess.getWhileStatementAccess().getGroup(), "rule__WhileStatement__Group__0");
 			builder.put(grammarAccess.getUntilStatementAccess().getGroup(), "rule__UntilStatement__Group__0");
+			builder.put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
 			builder.put(grammarAccess.getRobotAccess().getNameAssignment_1(), "rule__Robot__NameAssignment_1");
 			builder.put(grammarAccess.getRobotAccess().getConnectionAssignment_3_1(), "rule__Robot__ConnectionAssignment_3_1");
 			builder.put(grammarAccess.getRobotAccess().getScenariiAssignment_4_2(), "rule__Robot__ScenariiAssignment_4_2");
@@ -69,6 +72,8 @@ public class RobotDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWhileStatementAccess().getStatementBlockAssignment_3(), "rule__WhileStatement__StatementBlockAssignment_3");
 			builder.put(grammarAccess.getUntilStatementAccess().getConditionAssignment_2(), "rule__UntilStatement__ConditionAssignment_2");
 			builder.put(grammarAccess.getUntilStatementAccess().getStatementBlockAssignment_3(), "rule__UntilStatement__StatementBlockAssignment_3");
+			builder.put(grammarAccess.getIfStatementAccess().getConditionAssignment_2(), "rule__IfStatement__ConditionAssignment_2");
+			builder.put(grammarAccess.getIfStatementAccess().getStatementBlockAssignment_3(), "rule__IfStatement__StatementBlockAssignment_3");
 		}
 	}
 	

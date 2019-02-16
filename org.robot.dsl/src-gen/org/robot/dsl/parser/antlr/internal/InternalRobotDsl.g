@@ -488,14 +488,25 @@ ruleCondition returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getConditionAccess().getObjectAheadConditionParserRuleCall());
-	}
-	this_ObjectAheadCondition_0=ruleObjectAheadCondition
-	{
-		$current = $this_ObjectAheadCondition_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getObjectAheadConditionParserRuleCall_0());
+		}
+		this_ObjectAheadCondition_0=ruleObjectAheadCondition
+		{
+			$current = $this_ObjectAheadCondition_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getTrueConditionParserRuleCall_1());
+		}
+		this_TrueCondition_1=ruleTrueCondition
+		{
+			$current = $this_TrueCondition_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
 ;
 
 // Entry rule entryRuleObjectAheadCondition
@@ -524,6 +535,36 @@ ruleObjectAheadCondition returns [EObject current=null]
 		otherlv_1='object_ahead'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getObjectAheadConditionAccess().getObject_aheadKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleTrueCondition
+entryRuleTrueCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTrueConditionRule()); }
+	iv_ruleTrueCondition=ruleTrueCondition
+	{ $current=$iv_ruleTrueCondition.current; }
+	EOF;
+
+// Rule TrueCondition
+ruleTrueCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getTrueConditionAccess().getTrueConditionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='true'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTrueConditionAccess().getTrueKeyword_1());
 		}
 	)
 ;
@@ -826,6 +867,15 @@ ruleConditionalStatement returns [EObject current=null]
 			$current = $this_WhileStatement_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionalStatementAccess().getIfStatementParserRuleCall_2());
+		}
+		this_IfStatement_2=ruleIfStatement
+		{
+			$current = $this_IfStatement_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -952,6 +1002,74 @@ ruleUntilStatement returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUntilStatementRule());
+					}
+					set(
+						$current,
+						"statementBlock",
+						lv_statementBlock_3_0,
+						"org.robot.dsl.RobotDsl.StatementBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleIfStatement
+entryRuleIfStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIfStatementRule()); }
+	iv_ruleIfStatement=ruleIfStatement
+	{ $current=$iv_ruleIfStatement.current; }
+	EOF;
+
+// Rule IfStatement
+ruleIfStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIfStatementAccess().getIfStatementAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='if'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getIfStatementAccess().getIfKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfStatementAccess().getConditionConditionParserRuleCall_2_0());
+				}
+				lv_condition_2_0=ruleCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfStatementRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_2_0,
+						"org.robot.dsl.RobotDsl.Condition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfStatementAccess().getStatementBlockStatementBlockParserRuleCall_3_0());
+				}
+				lv_statementBlock_3_0=ruleStatementBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfStatementRule());
 					}
 					set(
 						$current,

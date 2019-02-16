@@ -165,6 +165,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.TrueCondition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TrueConditionItemProvider trueConditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.TrueCondition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTrueConditionAdapter() {
+		if (trueConditionItemProvider == null) {
+			trueConditionItemProvider = new TrueConditionItemProvider(this);
+		}
+
+		return trueConditionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.Condition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +254,29 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 		}
 
 		return forwardStatementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.robot.model.robot.IfStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfStatementItemProvider ifStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.robot.model.robot.IfStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfStatementAdapter() {
+		if (ifStatementItemProvider == null) {
+			ifStatementItemProvider = new IfStatementItemProvider(this);
+		}
+
+		return ifStatementItemProvider;
 	}
 
 	/**
@@ -455,12 +501,16 @@ public class RobotItemProviderAdapterFactory extends RobotAdapterFactory
 			connectionItemProvider.dispose();
 		if (objectAheadConditionItemProvider != null)
 			objectAheadConditionItemProvider.dispose();
+		if (trueConditionItemProvider != null)
+			trueConditionItemProvider.dispose();
 		if (conditionItemProvider != null)
 			conditionItemProvider.dispose();
 		if (executeStatementItemProvider != null)
 			executeStatementItemProvider.dispose();
 		if (forwardStatementItemProvider != null)
 			forwardStatementItemProvider.dispose();
+		if (ifStatementItemProvider != null)
+			ifStatementItemProvider.dispose();
 		if (printStatementItemProvider != null)
 			printStatementItemProvider.dispose();
 		if (rightStatementItemProvider != null)

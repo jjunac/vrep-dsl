@@ -58,6 +58,15 @@ public interface RobotFactory extends EFactory {
 	ObjectAheadCondition createObjectAheadCondition();
 
 	/**
+	 * Returns a new object of class '<em>True Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>True Condition</em>'.
+	 * @generated
+	 */
+	TrueCondition createTrueCondition();
+
+	/**
 	 * Returns a new object of class '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +92,15 @@ public interface RobotFactory extends EFactory {
 	 * @generated
 	 */
 	ForwardStatement createForwardStatement();
+
+	/**
+	 * Returns a new object of class '<em>If Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>If Statement</em>'.
+	 * @generated
+	 */
+	IfStatement createIfStatement();
 
 	/**
 	 * Returns a new object of class '<em>Print Statement</em>'.

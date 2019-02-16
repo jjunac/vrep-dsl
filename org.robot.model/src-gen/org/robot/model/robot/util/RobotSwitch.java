@@ -107,6 +107,15 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RobotPackage.TRUE_CONDITION: {
+			TrueCondition trueCondition = (TrueCondition) theEObject;
+			T result = caseTrueCondition(trueCondition);
+			if (result == null)
+				result = caseCondition(trueCondition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case RobotPackage.CONDITION: {
 			Condition condition = (Condition) theEObject;
 			T result = caseCondition(condition);
@@ -148,6 +157,17 @@ public class RobotSwitch<T> extends Switch<T> {
 				result = caseControlStatement(forwardStatement);
 			if (result == null)
 				result = caseStatement(forwardStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RobotPackage.IF_STATEMENT: {
+			IfStatement ifStatement = (IfStatement) theEObject;
+			T result = caseIfStatement(ifStatement);
+			if (result == null)
+				result = caseConditionalStatement(ifStatement);
+			if (result == null)
+				result = caseStatement(ifStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -289,6 +309,21 @@ public class RobotSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>True Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>True Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrueCondition(TrueCondition object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -360,6 +395,21 @@ public class RobotSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseForwardStatement(ForwardStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIfStatement(IfStatement object) {
 		return null;
 	}
 

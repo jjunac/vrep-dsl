@@ -266,7 +266,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 5;
+	int CONDITION = 6;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -315,6 +315,34 @@ public interface RobotPackage extends EPackage {
 	int OBJECT_AHEAD_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.TrueConditionImpl <em>True Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.TrueConditionImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getTrueCondition()
+	 * @generated
+	 */
+	int TRUE_CONDITION = 5;
+
+	/**
+	 * The number of structural features of the '<em>True Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>True Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementImpl <em>Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,7 +350,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 12;
+	int STATEMENT = 14;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -350,7 +378,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getConditionalStatement()
 	 * @generated
 	 */
-	int CONDITIONAL_STATEMENT = 6;
+	int CONDITIONAL_STATEMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -396,7 +424,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getControlStatement()
 	 * @generated
 	 */
-	int CONTROL_STATEMENT = 7;
+	int CONTROL_STATEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -433,7 +461,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getExecuteStatement()
 	 * @generated
 	 */
-	int EXECUTE_STATEMENT = 8;
+	int EXECUTE_STATEMENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Destination</b></em>' reference.
@@ -470,7 +498,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getForwardStatement()
 	 * @generated
 	 */
-	int FORWARD_STATEMENT = 9;
+	int FORWARD_STATEMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -500,6 +528,52 @@ public interface RobotPackage extends EPackage {
 	int FORWARD_STATEMENT_OPERATION_COUNT = CONTROL_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.robot.model.robot.impl.IfStatementImpl <em>If Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.robot.model.robot.impl.IfStatementImpl
+	 * @see org.robot.model.robot.impl.RobotPackageImpl#getIfStatement()
+	 * @generated
+	 */
+	int IF_STATEMENT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__CONDITION = CONDITIONAL_STATEMENT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Statement Block</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__STATEMENT_BLOCK = CONDITIONAL_STATEMENT__STATEMENT_BLOCK;
+
+	/**
+	 * The number of structural features of the '<em>If Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT_FEATURE_COUNT = CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>If Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT_OPERATION_COUNT = CONDITIONAL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.PrintStatementImpl <em>Print Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -507,7 +581,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getPrintStatement()
 	 * @generated
 	 */
-	int PRINT_STATEMENT = 10;
+	int PRINT_STATEMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -544,7 +618,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getRightStatement()
 	 * @generated
 	 */
-	int RIGHT_STATEMENT = 11;
+	int RIGHT_STATEMENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -581,7 +655,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getUntilStatement()
 	 * @generated
 	 */
-	int UNTIL_STATEMENT = 14;
+	int UNTIL_STATEMENT = 16;
 
 	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -591,7 +665,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getWhileStatement()
 	 * @generated
 	 */
-	int WHILE_STATEMENT = 15;
+	int WHILE_STATEMENT = 17;
 
 	/**
 	 * The meta object id for the '{@link org.robot.model.robot.impl.StatementBlockImpl <em>Statement Block</em>}' class.
@@ -601,7 +675,7 @@ public interface RobotPackage extends EPackage {
 	 * @see org.robot.model.robot.impl.RobotPackageImpl#getStatementBlock()
 	 * @generated
 	 */
-	int STATEMENT_BLOCK = 13;
+	int STATEMENT_BLOCK = 15;
 
 	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -841,6 +915,16 @@ public interface RobotPackage extends EPackage {
 	EClass getObjectAheadCondition();
 
 	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.TrueCondition <em>True Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>True Condition</em>'.
+	 * @see org.robot.model.robot.TrueCondition
+	 * @generated
+	 */
+	EClass getTrueCondition();
+
+	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -933,6 +1017,16 @@ public interface RobotPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getForwardStatement();
+
+	/**
+	 * Returns the meta object for class '{@link org.robot.model.robot.IfStatement <em>If Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Statement</em>'.
+	 * @see org.robot.model.robot.IfStatement
+	 * @generated
+	 */
+	EClass getIfStatement();
 
 	/**
 	 * Returns the meta object for class '{@link org.robot.model.robot.PrintStatement <em>Print Statement</em>}'.
@@ -1154,6 +1248,16 @@ public interface RobotPackage extends EPackage {
 		EClass OBJECT_AHEAD_CONDITION = eINSTANCE.getObjectAheadCondition();
 
 		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.TrueConditionImpl <em>True Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.TrueConditionImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getTrueCondition()
+		 * @generated
+		 */
+		EClass TRUE_CONDITION = eINSTANCE.getTrueCondition();
+
+		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.ConditionImpl <em>Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1234,6 +1338,16 @@ public interface RobotPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FORWARD_STATEMENT = eINSTANCE.getForwardStatement();
+
+		/**
+		 * The meta object literal for the '{@link org.robot.model.robot.impl.IfStatementImpl <em>If Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.robot.model.robot.impl.IfStatementImpl
+		 * @see org.robot.model.robot.impl.RobotPackageImpl#getIfStatement()
+		 * @generated
+		 */
+		EClass IF_STATEMENT = eINSTANCE.getIfStatement();
 
 		/**
 		 * The meta object literal for the '{@link org.robot.model.robot.impl.PrintStatementImpl <em>Print Statement</em>}' class.

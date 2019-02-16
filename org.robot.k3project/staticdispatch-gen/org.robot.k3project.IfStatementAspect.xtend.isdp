@@ -1,0 +1,5 @@
+	// BeginInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.IfStatementAspect
+		if (_self instanceof org.robot.model.robot.IfStatement){
+			result = org.robot.k3project.IfStatementAspect.shouldSkipBlock((org.robot.model.robot.IfStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.IfStatementAspect

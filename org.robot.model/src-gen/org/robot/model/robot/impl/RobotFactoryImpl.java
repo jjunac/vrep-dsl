@@ -63,12 +63,16 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 			return createConnection();
 		case RobotPackage.OBJECT_AHEAD_CONDITION:
 			return createObjectAheadCondition();
+		case RobotPackage.TRUE_CONDITION:
+			return createTrueCondition();
 		case RobotPackage.CONDITION:
 			return createCondition();
 		case RobotPackage.EXECUTE_STATEMENT:
 			return createExecuteStatement();
 		case RobotPackage.FORWARD_STATEMENT:
 			return createForwardStatement();
+		case RobotPackage.IF_STATEMENT:
+			return createIfStatement();
 		case RobotPackage.PRINT_STATEMENT:
 			return createPrintStatement();
 		case RobotPackage.RIGHT_STATEMENT:
@@ -129,6 +133,16 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TrueCondition createTrueCondition() {
+		TrueConditionImpl trueCondition = new TrueConditionImpl();
+		return trueCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Condition createCondition() {
 		ConditionImpl condition = new ConditionImpl();
 		return condition;
@@ -152,6 +166,16 @@ public class RobotFactoryImpl extends EFactoryImpl implements RobotFactory {
 	public ForwardStatement createForwardStatement() {
 		ForwardStatementImpl forwardStatement = new ForwardStatementImpl();
 		return forwardStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IfStatement createIfStatement() {
+		IfStatementImpl ifStatement = new IfStatementImpl();
+		return ifStatement;
 	}
 
 	/**

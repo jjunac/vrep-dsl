@@ -37,13 +37,17 @@ StatementBlock returns StatementBlock:
 
 
 Condition returns Condition:
-	ObjectAheadCondition;
+	ObjectAheadCondition | TrueCondition;
 
 ObjectAheadCondition returns ObjectAheadCondition:
 	{ObjectAheadCondition}
 	'object_ahead'
 	;
-
+	
+TrueCondition returns TrueCondition:
+	{TrueCondition}
+	'true'
+	;
 
 Statement returns Statement:
 	ControlStatement 
@@ -78,7 +82,7 @@ ExecuteStatement returns ExecuteStatement:
 	;
 
 ConditionalStatement returns ConditionalStatement:
-	UntilStatement | WhileStatement ;
+	UntilStatement | WhileStatement | IfStatement ;
 
 WhileStatement returns WhileStatement:
 	{WhileStatement}
@@ -89,6 +93,12 @@ WhileStatement returns WhileStatement:
 UntilStatement returns UntilStatement:
 	{UntilStatement}
 	'until' condition=Condition
+	statementBlock=StatementBlock
+	;
+
+IfStatement returns IfStatement:
+	{IfStatement}
+	'if' condition=Condition
 	statementBlock=StatementBlock
 	;
 

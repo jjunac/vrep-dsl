@@ -126,7 +126,7 @@ public abstract class StatementAspect {
     };
   }
   
-  private static boolean firstStep(final Statement _self) {
+  protected static boolean firstStep(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
     Object result = null;
     // #DispatchPointCut_before# boolean firstStep()
@@ -136,7 +136,7 @@ public abstract class StatementAspect {
     return (boolean)result;
   }
   
-  private static void firstStep(final Statement _self, final boolean firstStep) {
+  protected static void firstStep(final Statement _self, final boolean firstStep) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void firstStep(boolean)
     if (_self instanceof org.robot.model.robot.Statement){

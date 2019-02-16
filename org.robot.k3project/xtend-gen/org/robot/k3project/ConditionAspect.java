@@ -19,6 +19,11 @@ public abstract class ConditionAspect {
     			result = org.robot.k3project.ObjectAheadConditionAspect.eval((org.robot.model.robot.ObjectAheadCondition)_self);
     		} else
     		// EndInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.ObjectAheadConditionAspect
+    	// BeginInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.TrueConditionAspect
+    		if (_self instanceof org.robot.model.robot.TrueCondition){
+    			result = org.robot.k3project.TrueConditionAspect.eval((org.robot.model.robot.TrueCondition)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.ConditionAspect#boolean eval() from org.robot.k3project.TrueConditionAspect
     // #DispatchPointCut_before# boolean eval()
     if (_self instanceof org.robot.model.robot.Condition){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {

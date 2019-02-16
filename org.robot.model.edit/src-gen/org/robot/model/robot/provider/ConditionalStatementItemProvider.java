@@ -138,6 +138,9 @@ public class ConditionalStatementItemProvider extends StatementItemProvider {
 		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION,
 				RobotFactory.eINSTANCE.createObjectAheadCondition()));
 
+		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__CONDITION,
+				RobotFactory.eINSTANCE.createTrueCondition()));
+
 		newChildDescriptors.add(createChildParameter(RobotPackage.Literals.CONDITIONAL_STATEMENT__STATEMENT_BLOCK,
 				RobotFactory.eINSTANCE.createStatementBlock()));
 	}
