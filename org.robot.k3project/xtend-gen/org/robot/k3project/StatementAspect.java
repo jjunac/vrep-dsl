@@ -153,8 +153,9 @@ public abstract class StatementAspect {
   }
   
   protected static Scenario _privk3_stepWithoutDebug(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    final Scenario res = StatementAspect.doStep(_self);
     _self_.firstStep = false;
-    return StatementAspect.doStep(_self);
+    return res;
   }
   
   protected static Scenario _privk3_doStep(final StatementAspectStatementAspectProperties _self_, final Statement _self) {

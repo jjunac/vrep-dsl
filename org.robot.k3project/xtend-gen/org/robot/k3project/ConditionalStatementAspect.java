@@ -2,6 +2,7 @@ package org.robot.k3project;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.robot.k3project.ConditionalStatementAspectConditionalStatementAspectProperties;
 import org.robot.k3project.StatementAspect;
 import org.robot.k3project.StatementBlockAspect;
@@ -74,6 +75,8 @@ public abstract class ConditionalStatementAspect extends StatementAspect {
   }
   
   protected static void _privk3_enter(final ConditionalStatementAspectConditionalStatementAspectProperties _self_, final ConditionalStatement _self) {
+    StatementAspect.firstStep(_self, true);
+    InputOutput.<String>println("on entry condition");
     StatementBlockAspect.enter(_self.getStatementBlock());
   }
   

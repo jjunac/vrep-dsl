@@ -1,6 +1,7 @@
 package org.robot.k3project;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.robot.k3project.ConditionAspect;
 import org.robot.k3project.ConditionalStatementAspect;
 import org.robot.k3project.IfStatementAspectIfStatementAspectProperties;
@@ -21,6 +22,8 @@ public class IfStatementAspect extends ConditionalStatementAspect {
   }
   
   protected static boolean _privk3_shouldSkipBlock(final IfStatementAspectIfStatementAspectProperties _self_, final IfStatement _self) {
+    InputOutput.<Boolean>println(Boolean.valueOf(ConditionAspect.eval(_self.getCondition())));
+    InputOutput.<Boolean>println(Boolean.valueOf(StatementAspect.firstStep(_self)));
     return ((!ConditionAspect.eval(_self.getCondition())) || (!StatementAspect.firstStep(_self)));
   }
 }

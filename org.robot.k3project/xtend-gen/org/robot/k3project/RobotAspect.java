@@ -32,7 +32,7 @@ public class RobotAspect {
         while (((!ScenarioAspect.isFinished(sc)) && (next == null))) {
           {
             final Scenario shortcut = StatementBlockAspect.exec(_self.getGlobal());
-            if ((shortcut == null)) {
+            if (((shortcut == null) || (shortcut.getName() == sc.getName()))) {
               next = ScenarioAspect.step(sc);
             } else {
               next = shortcut;

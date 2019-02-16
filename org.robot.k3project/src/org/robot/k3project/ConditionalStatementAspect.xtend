@@ -10,6 +10,9 @@ import org.robot.model.robot.Scenario
 abstract class ConditionalStatementAspect extends StatementAspect {
 	
 	def void enter() {
+//		StatementAspect.enter(_self)
+		_self.firstStep = true
+		println("on entry condition")
 		_self.statementBlock.enter()
 	}
 	
@@ -20,13 +23,14 @@ abstract class ConditionalStatementAspect extends StatementAspect {
 	}
 	
 	def void exit() {
+//		StatementAspect.exit(_self)
 		_self.statementBlock.exit()
 	}
 	
 	def boolean shouldSkipBlock();
 	
 	def boolean isFinished() {
-		_self.shouldSkipBlock()
+		return _self.shouldSkipBlock()
 	}
 	
 }

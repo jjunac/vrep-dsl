@@ -24,7 +24,7 @@ class RobotAspect {
 			//println(sc.isFinished())
 			while(!sc.isFinished() && next === null) {
 				val shortcut =_self.global.exec()
-				if (shortcut === null) {
+				if (shortcut === null || shortcut.name === sc.name) {
 					next = sc.step()
 				} else {
 					next = shortcut

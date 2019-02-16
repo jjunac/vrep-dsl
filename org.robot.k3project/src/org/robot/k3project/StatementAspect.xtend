@@ -20,8 +20,9 @@ abstract class StatementAspect {
 	}
 	
 	def Scenario stepWithoutDebug() {
+		val res = _self.doStep()
 		_self_.firstStep = false
-		return _self.doStep()		
+		return res	
 	}
 	
 	def Scenario doStep();

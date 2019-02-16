@@ -9,6 +9,8 @@ import org.robot.model.robot.IfStatement
 class IfStatementAspect extends ConditionalStatementAspect {
 	
 	def boolean shouldSkipBlock() {
+		println(_self.condition.eval())
+		println(_self.firstStep)
 		return !_self.condition.eval() || !_self.firstStep
 	}
 	

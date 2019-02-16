@@ -2,6 +2,7 @@ package org.robot.k3project;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Iterator;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.robot.k3project.StatementAspect;
 import org.robot.k3project.StatementBlockAspectStatementBlockAspectProperties;
 import org.robot.model.robot.Scenario;
@@ -133,6 +134,7 @@ public class StatementBlockAspect {
   
   protected static void _privk3_enter(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {
     _self_.itStatement = _self.getStatements().iterator();
+    InputOutput.<Iterator<Statement>>println(_self_.itStatement);
     boolean _hasNext = _self_.itStatement.hasNext();
     if (_hasNext) {
       _self_.current = _self_.itStatement.next();

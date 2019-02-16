@@ -17,6 +17,7 @@ class StatementBlockAspect {
 	
 	def void enter() {
 		_self_.itStatement = _self.statements.iterator()
+		println(_self_.itStatement)
 		if(_self_.itStatement.hasNext()) {
 			_self_.current = _self_.itStatement.next()
 			_self_.current.enter()
