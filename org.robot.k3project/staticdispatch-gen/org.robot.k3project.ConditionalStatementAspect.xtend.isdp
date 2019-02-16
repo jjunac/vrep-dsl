@@ -1,20 +1,20 @@
-	// BeginInjectInto org.robot.k3project.StatementAspect#void enter() from org.robot.k3project.ConditionalStatementAspect
-		if (_self instanceof org.robot.model.robot.ConditionalStatement){
-			org.robot.k3project.ConditionalStatementAspect.enter((org.robot.model.robot.ConditionalStatement)_self);
-		} else
-		// EndInjectInto org.robot.k3project.StatementAspect#void enter() from org.robot.k3project.ConditionalStatementAspect
 	// BeginInjectInto org.robot.k3project.StatementAspect#boolean isFinished() from org.robot.k3project.ConditionalStatementAspect
 		if (_self instanceof org.robot.model.robot.ConditionalStatement){
 			result = org.robot.k3project.ConditionalStatementAspect.isFinished((org.robot.model.robot.ConditionalStatement)_self);
 		} else
 		// EndInjectInto org.robot.k3project.StatementAspect#boolean isFinished() from org.robot.k3project.ConditionalStatementAspect
-	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.ConditionalStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#void enter() from org.robot.k3project.ConditionalStatementAspect
 		if (_self instanceof org.robot.model.robot.ConditionalStatement){
-			result = org.robot.k3project.ConditionalStatementAspect.doStep((org.robot.model.robot.ConditionalStatement)_self);
+			org.robot.k3project.ConditionalStatementAspect.enter((org.robot.model.robot.ConditionalStatement)_self);
 		} else
-		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.ConditionalStatementAspect
+		// EndInjectInto org.robot.k3project.StatementAspect#void enter() from org.robot.k3project.ConditionalStatementAspect
 	// BeginInjectInto org.robot.k3project.StatementAspect#void exit() from org.robot.k3project.ConditionalStatementAspect
 		if (_self instanceof org.robot.model.robot.ConditionalStatement){
 			org.robot.k3project.ConditionalStatementAspect.exit((org.robot.model.robot.ConditionalStatement)_self);
 		} else
 		// EndInjectInto org.robot.k3project.StatementAspect#void exit() from org.robot.k3project.ConditionalStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.ConditionalStatementAspect
+		if (_self instanceof org.robot.model.robot.ConditionalStatement){
+			result = org.robot.k3project.ConditionalStatementAspect.doStep((org.robot.model.robot.ConditionalStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.ConditionalStatementAspect
