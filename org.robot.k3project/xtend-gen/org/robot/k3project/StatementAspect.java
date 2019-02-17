@@ -3,6 +3,7 @@ package org.robot.k3project;
 import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.robot.k3project.StatementAspectStatementAspectProperties;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
@@ -10,6 +11,52 @@ import org.robot.model.robot.Statement;
 @Aspect(className = Statement.class)
 @SuppressWarnings("all")
 public abstract class StatementAspect {
+  @Abstract
+  public static String getType(final Statement _self) {
+    final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
+    Object result = null;
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.ExecuteStatementAspect
+    		if (_self instanceof org.robot.model.robot.ExecuteStatement){
+    			result = org.robot.k3project.ExecuteStatementAspect.getType((org.robot.model.robot.ExecuteStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.ExecuteStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.ForwardStatementAspect
+    		if (_self instanceof org.robot.model.robot.ForwardStatement){
+    			result = org.robot.k3project.ForwardStatementAspect.getType((org.robot.model.robot.ForwardStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.ForwardStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.IfStatementAspect
+    		if (_self instanceof org.robot.model.robot.IfStatement){
+    			result = org.robot.k3project.IfStatementAspect.getType((org.robot.model.robot.IfStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.IfStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.PrintStatementAspect
+    		if (_self instanceof org.robot.model.robot.PrintStatement){
+    			result = org.robot.k3project.PrintStatementAspect.getType((org.robot.model.robot.PrintStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.PrintStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.RightStatementAspect
+    		if (_self instanceof org.robot.model.robot.RightStatement){
+    			result = org.robot.k3project.RightStatementAspect.getType((org.robot.model.robot.RightStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.RightStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.UntilStatementAspect
+    		if (_self instanceof org.robot.model.robot.UntilStatement){
+    			result = org.robot.k3project.UntilStatementAspect.getType((org.robot.model.robot.UntilStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.UntilStatementAspect
+    	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.WhileStatementAspect
+    		if (_self instanceof org.robot.model.robot.WhileStatement){
+    			result = org.robot.k3project.WhileStatementAspect.getType((org.robot.model.robot.WhileStatement)_self);
+    		} else
+    		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.WhileStatementAspect
+    // #DispatchPointCut_before# String getType()
+    if (_self instanceof org.robot.model.robot.Statement){
+    	result = org.robot.k3project.StatementAspect._privk3_getType(_self_, (org.robot.model.robot.Statement)_self);
+    };
+    return (java.lang.String)result;
+  }
+  
   public static void enter(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
     	// BeginInjectInto org.robot.k3project.StatementAspect#void enter() from org.robot.k3project.ConditionalStatementAspect
@@ -126,6 +173,26 @@ public abstract class StatementAspect {
     };
   }
   
+  public static Statement getCurrentStatement(final Statement _self) {
+    final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Statement getCurrentStatement()
+    if (_self instanceof org.robot.model.robot.Statement){
+    	result = org.robot.k3project.StatementAspect._privk3_getCurrentStatement(_self_, (org.robot.model.robot.Statement)_self);
+    };
+    return (org.robot.model.robot.Statement)result;
+  }
+  
+  public static boolean getIsActive(final Statement _self) {
+    final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean getIsActive()
+    if (_self instanceof org.robot.model.robot.Statement){
+    	result = org.robot.k3project.StatementAspect._privk3_getIsActive(_self_, (org.robot.model.robot.Statement)_self);
+    };
+    return (boolean)result;
+  }
+  
   protected static boolean firstStep(final Statement _self) {
     final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
     Object result = null;
@@ -144,8 +211,33 @@ public abstract class StatementAspect {
     };
   }
   
+  public static boolean isActive(final Statement _self) {
+    final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean isActive()
+    if (_self instanceof org.robot.model.robot.Statement){
+    	result = org.robot.k3project.StatementAspect._privk3_isActive(_self_, (org.robot.model.robot.Statement)_self);
+    };
+    return (boolean)result;
+  }
+  
+  public static void isActive(final Statement _self, final boolean isActive) {
+    final org.robot.k3project.StatementAspectStatementAspectProperties _self_ = org.robot.k3project.StatementAspectStatementAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void isActive(boolean)
+    if (_self instanceof org.robot.model.robot.Statement){
+    	org.robot.k3project.StatementAspect._privk3_isActive(_self_, (org.robot.model.robot.Statement)_self,isActive);
+    };
+  }
+  
+  protected static String _privk3_getType(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    throw new java.lang.RuntimeException("Not implemented");
+  }
+  
   protected static void _privk3_enter(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    InputOutput.<String>println("state in");
     _self_.firstStep = true;
+    _self_.isActive = true;
+    InputOutput.<String>println(("state" + Boolean.valueOf(_self_.isActive)));
   }
   
   protected static Scenario _privk3_step(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
@@ -167,6 +259,18 @@ public abstract class StatementAspect {
   }
   
   protected static void _privk3_exit(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    InputOutput.<String>println("state out");
+    _self_.isActive = false;
+    InputOutput.<String>println(("state" + Boolean.valueOf(_self_.isActive)));
+  }
+  
+  protected static Statement _privk3_getCurrentStatement(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    return _self;
+  }
+  
+  protected static boolean _privk3_getIsActive(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    InputOutput.<String>println(("state" + Boolean.valueOf(_self_.isActive)));
+    return _self_.isActive;
   }
   
   protected static boolean _privk3_firstStep(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
@@ -200,6 +304,40 @@ public abstract class StatementAspect {
     }
     if (!setterCalled) {
     	_self_.firstStep = firstStep;
+    }
+  }
+  
+  protected static boolean _privk3_isActive(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("isIsActive") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (boolean) ret;
+    				}		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.isActive;
+  }
+  
+  protected static void _privk3_isActive(final StatementAspectStatementAspectProperties _self_, final Statement _self, final boolean isActive) {
+    boolean setterCalled = false;
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setIsActive")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, isActive);
+    			setterCalled = true;
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.isActive = isActive;
     }
   }
 }

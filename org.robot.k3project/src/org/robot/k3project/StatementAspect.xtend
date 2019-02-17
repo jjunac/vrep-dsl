@@ -9,9 +9,15 @@ import org.robot.model.robot.Scenario
 abstract class StatementAspect {
 	
 	protected boolean firstStep = true
+	public boolean isActive = false
+	
+	def String getType();
 	
 	def void enter() {
+		println("state in")
 		_self_.firstStep = true
+		_self_.isActive = true
+		println("state" + _self_.isActive)
 	}
 
 	@Step
@@ -31,5 +37,20 @@ abstract class StatementAspect {
 		return !_self_.firstStep
 	}
 	
-	def void exit() {}
+	def void exit() {
+		println("state out")
+		_self_.isActive = false
+		println("state" + _self_.isActive)
+	}
+	
+	def Statement getCurrentStatement() {
+//		return new Random().nextBoolean();
+		return _self
+	}
+	
+	def boolean getIsActive() {
+		println("state" + _self_.isActive)
+		return _self_.isActive
+	}
+	
 }

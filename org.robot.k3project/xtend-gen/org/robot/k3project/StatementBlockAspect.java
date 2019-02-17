@@ -78,6 +78,16 @@ public class StatementBlockAspect {
     return (org.robot.model.robot.Scenario)result;
   }
   
+  public static Statement getCurrentStatement(final StatementBlock _self) {
+    final org.robot.k3project.StatementBlockAspectStatementBlockAspectProperties _self_ = org.robot.k3project.StatementBlockAspectStatementBlockAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Statement getCurrentStatement()
+    if (_self instanceof org.robot.model.robot.StatementBlock){
+    	result = org.robot.k3project.StatementBlockAspect._privk3_getCurrentStatement(_self_, (org.robot.model.robot.StatementBlock)_self);
+    };
+    return (org.robot.model.robot.Statement)result;
+  }
+  
   private static Iterator<Statement> itStatement(final StatementBlock _self) {
     final org.robot.k3project.StatementBlockAspectStatementBlockAspectProperties _self_ = org.robot.k3project.StatementBlockAspectStatementBlockAspectContext.getSelf(_self);
     Object result = null;
@@ -134,7 +144,6 @@ public class StatementBlockAspect {
   
   protected static void _privk3_enter(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {
     _self_.itStatement = _self.getStatements().iterator();
-    InputOutput.<Iterator<Statement>>println(_self_.itStatement);
     boolean _hasNext = _self_.itStatement.hasNext();
     if (_hasNext) {
       _self_.current = _self_.itStatement.next();
@@ -158,6 +167,7 @@ public class StatementBlockAspect {
   }
   
   protected static Scenario _privk3_step(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self, final boolean debug) {
+    InputOutput.<String>println(("curr " + _self_.current));
     _self_.next = null;
     if (debug) {
       _self_.next = StatementAspect.step(_self_.current);
@@ -182,6 +192,10 @@ public class StatementBlockAspect {
     }
     StatementBlockAspect.exit(_self);
     return _self_.next;
+  }
+  
+  protected static Statement _privk3_getCurrentStatement(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {
+    return StatementAspect.getCurrentStatement(_self_.current);
   }
   
   protected static Iterator<Statement> _privk3_itStatement(final StatementBlockAspectStatementBlockAspectProperties _self_, final StatementBlock _self) {

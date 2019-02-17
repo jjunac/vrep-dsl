@@ -11,6 +11,16 @@ import org.robot.model.robot.IfStatement;
 @Aspect(className = IfStatement.class)
 @SuppressWarnings("all")
 public class IfStatementAspect extends ConditionalStatementAspect {
+  public static String getType(final IfStatement _self) {
+    final org.robot.k3project.IfStatementAspectIfStatementAspectProperties _self_ = org.robot.k3project.IfStatementAspectIfStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# String getType()
+    if (_self instanceof org.robot.model.robot.IfStatement){
+    	result = org.robot.k3project.IfStatementAspect._privk3_getType(_self_, (org.robot.model.robot.IfStatement)_self);
+    };
+    return (java.lang.String)result;
+  }
+  
   public static boolean shouldSkipBlock(final IfStatement _self) {
     final org.robot.k3project.IfStatementAspectIfStatementAspectProperties _self_ = org.robot.k3project.IfStatementAspectIfStatementAspectContext.getSelf(_self);
     Object result = null;
@@ -19,6 +29,10 @@ public class IfStatementAspect extends ConditionalStatementAspect {
     	result = org.robot.k3project.IfStatementAspect._privk3_shouldSkipBlock(_self_, (org.robot.model.robot.IfStatement)_self);
     };
     return (boolean)result;
+  }
+  
+  protected static String _privk3_getType(final IfStatementAspectIfStatementAspectProperties _self_, final IfStatement _self) {
+    return "if";
   }
   
   protected static boolean _privk3_shouldSkipBlock(final IfStatementAspectIfStatementAspectProperties _self_, final IfStatement _self) {

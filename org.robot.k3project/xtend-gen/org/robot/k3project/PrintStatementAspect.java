@@ -10,6 +10,16 @@ import org.robot.model.robot.Scenario;
 @Aspect(className = PrintStatement.class)
 @SuppressWarnings("all")
 public class PrintStatementAspect extends StatementAspect {
+  public static String getType(final PrintStatement _self) {
+    final org.robot.k3project.PrintStatementAspectPrintStatementAspectProperties _self_ = org.robot.k3project.PrintStatementAspectPrintStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# String getType()
+    if (_self instanceof org.robot.model.robot.PrintStatement){
+    	result = org.robot.k3project.PrintStatementAspect._privk3_getType(_self_, (org.robot.model.robot.PrintStatement)_self);
+    };
+    return (java.lang.String)result;
+  }
+  
   public static Scenario doStep(final PrintStatement _self) {
     final org.robot.k3project.PrintStatementAspectPrintStatementAspectProperties _self_ = org.robot.k3project.PrintStatementAspectPrintStatementAspectContext.getSelf(_self);
     Object result = null;
@@ -18,6 +28,10 @@ public class PrintStatementAspect extends StatementAspect {
     	result = org.robot.k3project.PrintStatementAspect._privk3_doStep(_self_, (org.robot.model.robot.PrintStatement)_self);
     };
     return (org.robot.model.robot.Scenario)result;
+  }
+  
+  protected static String _privk3_getType(final PrintStatementAspectPrintStatementAspectProperties _self_, final PrintStatement _self) {
+    return "print";
   }
   
   protected static Scenario _privk3_doStep(final PrintStatementAspectPrintStatementAspectProperties _self_, final PrintStatement _self) {

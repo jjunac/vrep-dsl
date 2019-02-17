@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="robot" version="12.0.0.2017041100">
+  <ownedViewpoints name="Robot">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="RobotDiagram" initialisation="true" domainClass="Robot" enablePopupBars="true">
+      <metamodel href="../../org.robot.model/model/robot.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Status" domainClass="robot::Connection">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getRobotStatus()" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <containerMappings name="ScenarioContainer" domainClass="Scenario">
+          <subNodeMappings name="StatementNode" semanticCandidatesExpression="service:getStatements()" domainClass="Statement">
+            <style xsi:type="style:DotDescription" showIcon="false" labelExpression="service:getServiceName()" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+            <conditionnalStyles predicateExpression="service:isCurrentStatement()">
+              <style xsi:type="style:DotDescription" showIcon="false" labelExpression="service:getServiceName()" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" borderSizeComputationExpression="1" showIcon="false" labelAlignment="LEFT" heightComputationExpression="-100000">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.robot.design.services.StatementService"/>
+  </ownedViewpoints>
+</description:Group>

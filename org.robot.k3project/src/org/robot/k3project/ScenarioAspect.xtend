@@ -4,6 +4,8 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import org.robot.model.robot.Scenario
 
 import static extension org.robot.k3project.StatementBlockAspect.*
+import org.robot.model.robot.Statement
+import org.robot.model.robot.Robot
 
 @Aspect(className=Scenario)
 class ScenarioAspect {
@@ -22,5 +24,13 @@ class ScenarioAspect {
 	
 	def boolean isFinished() {
 		_self.statementBlock.isFinished()
+	}
+	
+	def Statement getCurrentStatement() {
+		return _self.statementBlock.getCurrentStatement()
+	}
+	
+	def String getFullName() {
+		return RobotAspect.getFullName(_self.eContainer as Robot) + _self.name
 	}
 }

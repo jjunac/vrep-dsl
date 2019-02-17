@@ -11,6 +11,16 @@ import org.robot.vrep.robot.PolyRob;
 @Aspect(className = ForwardStatement.class)
 @SuppressWarnings("all")
 public class ForwardStatementAspect extends ControlStatementAspect {
+  public static String getType(final ForwardStatement _self) {
+    final org.robot.k3project.ForwardStatementAspectForwardStatementAspectProperties _self_ = org.robot.k3project.ForwardStatementAspectForwardStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# String getType()
+    if (_self instanceof org.robot.model.robot.ForwardStatement){
+    	result = org.robot.k3project.ForwardStatementAspect._privk3_getType(_self_, (org.robot.model.robot.ForwardStatement)_self);
+    };
+    return (java.lang.String)result;
+  }
+  
   public static Scenario doStep(final ForwardStatement _self) {
     final org.robot.k3project.ForwardStatementAspectForwardStatementAspectProperties _self_ = org.robot.k3project.ForwardStatementAspectForwardStatementAspectContext.getSelf(_self);
     Object result = null;
@@ -19,6 +29,10 @@ public class ForwardStatementAspect extends ControlStatementAspect {
     	result = org.robot.k3project.ForwardStatementAspect._privk3_doStep(_self_, (org.robot.model.robot.ForwardStatement)_self);
     };
     return (org.robot.model.robot.Scenario)result;
+  }
+  
+  protected static String _privk3_getType(final ForwardStatementAspectForwardStatementAspectProperties _self_, final ForwardStatement _self) {
+    return "forward";
   }
   
   protected static Scenario _privk3_doStep(final ForwardStatementAspectForwardStatementAspectProperties _self_, final ForwardStatement _self) {

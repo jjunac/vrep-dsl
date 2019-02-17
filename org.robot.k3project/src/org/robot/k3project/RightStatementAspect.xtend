@@ -8,6 +8,10 @@ import org.robot.model.robot.RightStatement
 @Aspect(className=RightStatement)
 class RightStatementAspect extends ControlStatementAspect {
 	
+	def String getType() {
+		return "right"
+	}
+	
 	def Scenario doStep() {
 		println("right")
 		PolyRob.singleton.turnRight(1, _self.step);

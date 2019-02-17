@@ -8,6 +8,10 @@ import static extension org.robot.k3project.ConditionAspect.*
 @Aspect(className=UntilStatement)
 class UntilStatementAspect extends ConditionalStatementAspect {
 	
+	def String getType() {
+		return "until"
+	}
+	
 	def boolean shouldSkipBlock() {
 		return _self.condition.eval()
 	}

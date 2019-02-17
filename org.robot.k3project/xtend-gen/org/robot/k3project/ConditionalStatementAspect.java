@@ -75,6 +75,7 @@ public abstract class ConditionalStatementAspect extends StatementAspect {
   }
   
   protected static void _privk3_enter(final ConditionalStatementAspectConditionalStatementAspectProperties _self_, final ConditionalStatement _self) {
+    StatementAspect.isActive(_self, true);
     StatementAspect.firstStep(_self, true);
     InputOutput.<String>println("on entry condition");
     StatementBlockAspect.enter(_self.getStatementBlock());
@@ -90,6 +91,7 @@ public abstract class ConditionalStatementAspect extends StatementAspect {
   }
   
   protected static void _privk3_exit(final ConditionalStatementAspectConditionalStatementAspectProperties _self_, final ConditionalStatement _self) {
+    StatementAspect.isActive(_self, false);
     StatementBlockAspect.exit(_self.getStatementBlock());
   }
   

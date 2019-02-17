@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.robot.k3project; singleton:=true
-Export-Package: org.robot.k3project
+Export-Package: org.robot.k3project,
+ org.robot.vrep.robot,
+ org.robot.vrep.robot.utils
 Bundle-Name: org.robot.k3project
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .

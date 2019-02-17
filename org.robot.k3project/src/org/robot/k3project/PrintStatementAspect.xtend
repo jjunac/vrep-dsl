@@ -7,6 +7,11 @@ import fr.inria.diverse.k3.al.annotationprocessor.Step
 
 @Aspect(className=PrintStatement)
 class PrintStatementAspect extends StatementAspect {
+	
+	def String getType() {
+		return "print"
+	}
+	
 	def Scenario doStep() {
 		println(_self.text)
 		return null

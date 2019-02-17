@@ -5,12 +5,13 @@ import org.robot.model.robot.ConditionalStatement
 
 import static extension org.robot.k3project.StatementBlockAspect.*
 import org.robot.model.robot.Scenario
+import org.robot.model.robot.Statement
 
 @Aspect(className=ConditionalStatement)
 abstract class ConditionalStatementAspect extends StatementAspect {
 	
 	def void enter() {
-//		StatementAspect.enter(_self)
+		_self.isActive = true
 		_self.firstStep = true
 		println("on entry condition")
 		_self.statementBlock.enter()
@@ -23,7 +24,7 @@ abstract class ConditionalStatementAspect extends StatementAspect {
 	}
 	
 	def void exit() {
-//		StatementAspect.exit(_self)
+		_self.isActive = false
 		_self.statementBlock.exit()
 	}
 	
@@ -32,5 +33,4 @@ abstract class ConditionalStatementAspect extends StatementAspect {
 	def boolean isFinished() {
 		return _self.shouldSkipBlock()
 	}
-	
 }

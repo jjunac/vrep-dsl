@@ -8,6 +8,10 @@ import org.robot.model.robot.WhileStatement
 @Aspect(className=WhileStatement)
 class WhileStatementAspect extends ConditionalStatementAspect {
 	
+	def String getType() {
+		return "while"
+	}
+	
 	def boolean shouldSkipBlock() {
 		return !_self.condition.eval()
 	}

@@ -3,3 +3,8 @@
 			result = org.robot.k3project.PrintStatementAspect.doStep((org.robot.model.robot.PrintStatement)_self);
 		} else
 		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.PrintStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.PrintStatementAspect
+		if (_self instanceof org.robot.model.robot.PrintStatement){
+			result = org.robot.k3project.PrintStatementAspect.getType((org.robot.model.robot.PrintStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.PrintStatementAspect

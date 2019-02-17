@@ -10,6 +10,16 @@ import org.robot.model.robot.Scenario;
 @Aspect(className = ExecuteStatement.class)
 @SuppressWarnings("all")
 public class ExecuteStatementAspect extends StatementAspect {
+  public static String getType(final ExecuteStatement _self) {
+    final org.robot.k3project.ExecuteStatementAspectExecuteStatementAspectProperties _self_ = org.robot.k3project.ExecuteStatementAspectExecuteStatementAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# String getType()
+    if (_self instanceof org.robot.model.robot.ExecuteStatement){
+    	result = org.robot.k3project.ExecuteStatementAspect._privk3_getType(_self_, (org.robot.model.robot.ExecuteStatement)_self);
+    };
+    return (java.lang.String)result;
+  }
+  
   public static Scenario doStep(final ExecuteStatement _self) {
     final org.robot.k3project.ExecuteStatementAspectExecuteStatementAspectProperties _self_ = org.robot.k3project.ExecuteStatementAspectExecuteStatementAspectContext.getSelf(_self);
     Object result = null;
@@ -18,6 +28,10 @@ public class ExecuteStatementAspect extends StatementAspect {
     	result = org.robot.k3project.ExecuteStatementAspect._privk3_doStep(_self_, (org.robot.model.robot.ExecuteStatement)_self);
     };
     return (org.robot.model.robot.Scenario)result;
+  }
+  
+  protected static String _privk3_getType(final ExecuteStatementAspectExecuteStatementAspectProperties _self_, final ExecuteStatement _self) {
+    return "execute";
   }
   
   protected static Scenario _privk3_doStep(final ExecuteStatementAspectExecuteStatementAspectProperties _self_, final ExecuteStatement _self) {

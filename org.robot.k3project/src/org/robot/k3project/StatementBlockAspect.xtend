@@ -7,6 +7,7 @@ import static extension org.robot.k3project.StatementAspect.*
 import java.util.Iterator
 import org.robot.model.robot.Statement
 import org.robot.model.robot.StatementBlock
+import org.robot.model.robot.ConditionalStatement
 
 @Aspect(className=StatementBlock)
 class StatementBlockAspect {
@@ -17,7 +18,6 @@ class StatementBlockAspect {
 	
 	def void enter() {
 		_self_.itStatement = _self.statements.iterator()
-		println(_self_.itStatement)
 		if(_self_.itStatement.hasNext()) {
 			_self_.current = _self_.itStatement.next()
 			_self_.current.enter()
@@ -42,11 +42,13 @@ class StatementBlockAspect {
 	}
 	
 	private def Scenario step(boolean debug) {
+		println("curr " + _self_.current)
 		_self_.next = null
 		if (debug)
 			_self_.next = _self_.current.step()
 		else
 			_self_.next = _self_.current.stepWithoutDebug()
+		
 		_self_.current.exit()
 		if (_self_.current.isFinished() && _self_.itStatement.hasNext()) {
 			_self_.current = _self_.itStatement.next()
@@ -57,7 +59,6 @@ class StatementBlockAspect {
 	
 	def void exit() {}
 	
-
 	
 	def Scenario exec() {
 		_self.enter()
@@ -66,6 +67,10 @@ class StatementBlockAspect {
 		}
 		_self.exit()
 		return _self_.next
+	}
+	
+	def Statement getCurrentStatement() {
+		return _self_.current.getCurrentStatement()
 	}
 	
 }

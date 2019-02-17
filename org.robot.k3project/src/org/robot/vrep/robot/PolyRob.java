@@ -286,13 +286,11 @@ public class PolyRob {
     }
 	
 	public void stepSimulation(int ms) {
-        System.out.println("getting in step simulation");
         long startTime = vrep.simxGetLastCmdTime(clientID);
         long time;
         do {
             stepSimulationOnce();
             time = vrep.simxGetLastCmdTime(clientID);
-            System.out.println("stepping " + time);
         }while(time - startTime < ms);
         
     }

@@ -8,6 +8,10 @@ import org.robot.model.robot.IfStatement
 @Aspect(className=IfStatement)
 class IfStatementAspect extends ConditionalStatementAspect {
 	
+	def String getType() {
+		return "if"
+	}
+	
 	def boolean shouldSkipBlock() {
 		println(_self.condition.eval())
 		println(_self.firstStep)

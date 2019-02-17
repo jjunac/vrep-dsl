@@ -3,3 +3,8 @@
 			result = org.robot.k3project.UntilStatementAspect.shouldSkipBlock((org.robot.model.robot.UntilStatement)_self);
 		} else
 		// EndInjectInto org.robot.k3project.ConditionalStatementAspect#boolean shouldSkipBlock() from org.robot.k3project.UntilStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.UntilStatementAspect
+		if (_self instanceof org.robot.model.robot.UntilStatement){
+			result = org.robot.k3project.UntilStatementAspect.getType((org.robot.model.robot.UntilStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.UntilStatementAspect
