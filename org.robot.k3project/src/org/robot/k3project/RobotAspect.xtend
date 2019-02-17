@@ -36,8 +36,6 @@ class RobotAspect {
 				val shortcut =_self.global.exec()
 				if (shortcut === null || shortcut.name === _self_.sc.name) {
 					next = _self_.sc.step()
-					println(_self)
-					println(_self_)
 				} else {
 					next = shortcut
 				}
@@ -51,8 +49,6 @@ class RobotAspect {
 	}
 	
 	def Statement getCurrentStatement() {
-		println(_self)
-		println(_self_)
 		if (_self_.sc === null)
 			return null
 		return _self_.sc.getCurrentStatement()

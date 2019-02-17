@@ -79,8 +79,6 @@ public class RobotAspect {
             final Scenario shortcut = StatementBlockAspect.exec(_self.getGlobal());
             if (((shortcut == null) || (shortcut.getName() == _self_.sc.getName()))) {
               next = ScenarioAspect.step(_self_.sc);
-              InputOutput.<Robot>println(_self);
-              InputOutput.<RobotAspectRobotAspectProperties>println(_self_);
             } else {
               next = shortcut;
             }
@@ -98,8 +96,6 @@ public class RobotAspect {
   }
   
   protected static Statement _privk3_getCurrentStatement(final RobotAspectRobotAspectProperties _self_, final Robot _self) {
-    InputOutput.<Robot>println(_self);
-    InputOutput.<RobotAspectRobotAspectProperties>println(_self_);
     if ((_self_.sc == null)) {
       return null;
     }

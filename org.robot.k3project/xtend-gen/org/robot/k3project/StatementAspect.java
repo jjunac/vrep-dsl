@@ -3,7 +3,6 @@ package org.robot.k3project;
 import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.robot.k3project.StatementAspectStatementAspectProperties;
 import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
@@ -234,10 +233,8 @@ public abstract class StatementAspect {
   }
   
   protected static void _privk3_enter(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
-    InputOutput.<String>println("state in");
     _self_.firstStep = true;
     _self_.isActive = true;
-    InputOutput.<String>println(("state" + Boolean.valueOf(_self_.isActive)));
   }
   
   protected static Scenario _privk3_step(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
@@ -259,9 +256,7 @@ public abstract class StatementAspect {
   }
   
   protected static void _privk3_exit(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
-    InputOutput.<String>println("state out");
     _self_.isActive = false;
-    InputOutput.<String>println(("state" + Boolean.valueOf(_self_.isActive)));
   }
   
   protected static Statement _privk3_getCurrentStatement(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
@@ -269,7 +264,6 @@ public abstract class StatementAspect {
   }
   
   protected static boolean _privk3_getIsActive(final StatementAspectStatementAspectProperties _self_, final Statement _self) {
-    InputOutput.<String>println(("state" + Boolean.valueOf(_self_.isActive)));
     return _self_.isActive;
   }
   

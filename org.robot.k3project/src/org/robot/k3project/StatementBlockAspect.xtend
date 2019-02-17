@@ -42,7 +42,6 @@ class StatementBlockAspect {
 	}
 	
 	private def Scenario step(boolean debug) {
-		println("curr " + _self_.current)
 		_self_.next = null
 		if (debug)
 			_self_.next = _self_.current.step()

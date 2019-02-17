@@ -1,13 +1,13 @@
-	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
-		if (_self instanceof org.robot.model.robot.RightStatement){
-			result = org.robot.k3project.RightStatementAspect.doStep((org.robot.model.robot.RightStatement)_self);
-		} else
-		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
 	// BeginInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.RightStatementAspect
 		if (_self instanceof org.robot.model.robot.RightStatement){
 			result = org.robot.k3project.RightStatementAspect.getType((org.robot.model.robot.RightStatement)_self);
 		} else
 		// EndInjectInto org.robot.k3project.StatementAspect#String getType() from org.robot.k3project.RightStatementAspect
+	// BeginInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
+		if (_self instanceof org.robot.model.robot.RightStatement){
+			result = org.robot.k3project.RightStatementAspect.doStep((org.robot.model.robot.RightStatement)_self);
+		} else
+		// EndInjectInto org.robot.k3project.StatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
 	// BeginInjectInto org.robot.k3project.ControlStatementAspect#Scenario doStep() from org.robot.k3project.RightStatementAspect
 		if (_self instanceof org.robot.model.robot.RightStatement){
 			result = org.robot.k3project.RightStatementAspect.doStep((org.robot.model.robot.RightStatement)_self);

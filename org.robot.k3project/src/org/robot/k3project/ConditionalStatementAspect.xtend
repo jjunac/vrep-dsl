@@ -13,7 +13,6 @@ abstract class ConditionalStatementAspect extends StatementAspect {
 	def void enter() {
 		_self.isActive = true
 		_self.firstStep = true
-		println("on entry condition")
 		_self.statementBlock.enter()
 	}
 	

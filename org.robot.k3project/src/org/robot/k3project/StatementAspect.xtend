@@ -14,10 +14,8 @@ abstract class StatementAspect {
 	def String getType();
 	
 	def void enter() {
-		println("state in")
 		_self_.firstStep = true
 		_self_.isActive = true
-		println("state" + _self_.isActive)
 	}
 
 	@Step
@@ -38,18 +36,14 @@ abstract class StatementAspect {
 	}
 	
 	def void exit() {
-		println("state out")
 		_self_.isActive = false
-		println("state" + _self_.isActive)
 	}
 	
 	def Statement getCurrentStatement() {
-//		return new Random().nextBoolean();
 		return _self
 	}
 	
 	def boolean getIsActive() {
-		println("state" + _self_.isActive)
 		return _self_.isActive
 	}
 	
