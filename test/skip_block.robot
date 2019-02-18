@@ -3,12 +3,10 @@ Robot robot{
 	scenarii{
 		Scenario init {
 			forward
-			print "in s1"
 			execute go_forward
 		}
 		Scenario go_forward {
 			until object_ahead {
-				print "in s2"
 				forward 35
 				forward 20
 			}
@@ -16,14 +14,11 @@ Robot robot{
 		}
 		Scenario avoid_object {
 			while object_ahead {
-				print "in s2 left"
 				right
 			}
 			execute go_forward
 		}
 	}
-	global {
-		print "global"
-	}
+	global {}
 	initial init
 }

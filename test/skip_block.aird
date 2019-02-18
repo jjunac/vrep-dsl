@@ -1,336 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:robot="http://org/robot" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_BEIdoDL8EemKevIbtKJoYA" selectedViews="_BfPsUDL8EemKevIbtKJoYA" version="13.0.0.201804031646">
+  <viewpoint:DAnalysis xmi:id="_ryDfwDL-Eemwc5C4Pr35tw" selectedViews="_sWWfoDL-Eemwc5C4Pr35tw" version="13.0.0.201804031646">
     <semanticResources>skip_block.robot</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" xmi:id="_BfPsUDL8EemKevIbtKJoYA">
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_sWWfoDL-Eemwc5C4Pr35tw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_BgN8sDL8EemKevIbtKJoYA" name="RobotDiagram" repPath="#_BfQTYDL8EemKevIbtKJoYA">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_sXd58DL-Eemwc5C4Pr35tw" name="RobotDiagram" repPath="#_sWXtwDL-Eemwc5C4Pr35tw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']"/>
         <target xmi:type="robot:Robot" href="skip_block.robot#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_BgMukDL8EemKevIbtKJoYA" name="RobotDiagram" uid="_BfQTYDL8EemKevIbtKJoYA">
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BgMukTL8EemKevIbtKJoYA" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_BgMukjL8EemKevIbtKJoYA"/>
+  <diagram:DSemanticDiagram xmi:id="_sXcEwDL-Eemwc5C4Pr35tw" name="RobotDiagram" uid="_sWXtwDL-Eemwc5C4Pr35tw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_sXcEwTL-Eemwc5C4Pr35tw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_sXcEwjL-Eemwc5C4Pr35tw"/>
     </ownedAnnotationEntries>
-    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BgOjwDL8EemKevIbtKJoYA" source="GMF_DIAGRAMS">
-      <data xmi:type="notation:Diagram" xmi:id="_BgOjwTL8EemKevIbtKJoYA" type="Sirius" element="_BgMukDL8EemKevIbtKJoYA" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_BgOjwzL8EemKevIbtKJoYA" type="2001" element="_BgMulDL8EemKevIbtKJoYA">
-          <children xmi:type="notation:Node" xmi:id="_BgPK0DL8EemKevIbtKJoYA" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_BgPK0TL8EemKevIbtKJoYA" y="5"/>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_sXehADL-Eemwc5C4Pr35tw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_sXehATL-Eemwc5C4Pr35tw" type="Sirius" element="_sXcEwDL-Eemwc5C4Pr35tw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_sXehAzL-Eemwc5C4Pr35tw" type="2001" element="_sXcExDL-Eemwc5C4Pr35tw">
+          <children xmi:type="notation:Node" xmi:id="_sXfvIDL-Eemwc5C4Pr35tw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sXfvITL-Eemwc5C4Pr35tw" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_BgRABDL8EemKevIbtKJoYA" type="3003" element="_BgMulTL8EemKevIbtKJoYA">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_BgRABTL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgRABjL8EemKevIbtKJoYA"/>
+          <children xmi:type="notation:Node" xmi:id="_sXpgIzL-Eemwc5C4Pr35tw" type="3003" element="_sXcExTL-Eemwc5C4Pr35tw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_sXpgJDL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXpgJTL-Eemwc5C4Pr35tw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_BgOjxDL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgOjxTL8EemKevIbtKJoYA" x="675" y="85" width="171" height="106"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sXehBDL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXehBTL-Eemwc5C4Pr35tw" x="600" y="60" width="169" height="140"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_BgPK0jL8EemKevIbtKJoYA" type="2002" element="_BgMuljL8EemKevIbtKJoYA">
-          <children xmi:type="notation:Node" xmi:id="_BgPx4DL8EemKevIbtKJoYA" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_BgPx4TL8EemKevIbtKJoYA" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_BgRnEDL8EemKevIbtKJoYA" type="3007" element="_BgMumDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgRnEzL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgRnFDL8EemKevIbtKJoYA" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_sXfvIjL-Eemwc5C4Pr35tw" type="2002" element="_sXcExjL-Eemwc5C4Pr35tw">
+          <children xmi:type="notation:Node" xmi:id="_sXg9QDL-Eemwc5C4Pr35tw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_sXg9QTL-Eemwc5C4Pr35tw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_sXqHMDL-Eemwc5C4Pr35tw" type="3007" element="_sXcEyDL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sXquQDL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sXquQTL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgS1MjL8EemKevIbtKJoYA" type="3002" element="_BgMumTL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgS1MzL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgS1NDL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sXtKgDL-Eemwc5C4Pr35tw" type="3002" element="_sXcEyTL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sXtKgTL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXtKgjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgRnETL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgRnEjL8EemKevIbtKJoYA" x="30" y="32" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sXqHMTL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXqHMjL-Eemwc5C4Pr35tw" x="31" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgSOIDL8EemKevIbtKJoYA" type="3007" element="_BgMumjL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgSOIzL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgSOJDL8EemKevIbtKJoYA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_sXquQjL-Eemwc5C4Pr35tw" type="3007" element="_sXcEyjL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sXrVUDL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sXrVUTL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgS1NTL8EemKevIbtKJoYA" type="3002" element="_BgMumzL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgS1NjL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgS1NzL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sXtxkDL-Eemwc5C4Pr35tw" type="3002" element="_sXcEyzL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sXtxkTL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXtxkjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgSOITL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgSOIjL8EemKevIbtKJoYA" x="110" y="32" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sXquQzL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXquRDL-Eemwc5C4Pr35tw" x="115" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgSOJTL8EemKevIbtKJoYA" type="3007" element="_BgMunDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgS1MDL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgS1MTL8EemKevIbtKJoYA" y="5"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_CUyNMDL8EemKevIbtKJoYA" type="3002" element="_CUvJ4DL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_CUyNMTL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CUyNMjL8EemKevIbtKJoYA"/>
-              </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgSOJjL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgSOJzL8EemKevIbtKJoYA" x="220" y="32" width="50" height="50"/>
-            </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_BgPx4jL8EemKevIbtKJoYA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_BgPx4zL8EemKevIbtKJoYA"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_sXg9QjL-Eemwc5C4Pr35tw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_sXg9QzL-Eemwc5C4Pr35tw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_BgPK0zL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgPK1DL8EemKevIbtKJoYA" x="90" y="42"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sXfvIzL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXfvJDL-Eemwc5C4Pr35tw" x="72" y="29"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_BgPx5DL8EemKevIbtKJoYA" type="2002" element="_BgMunjL8EemKevIbtKJoYA">
-          <children xmi:type="notation:Node" xmi:id="_BgQY8DL8EemKevIbtKJoYA" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_BgQY8TL8EemKevIbtKJoYA" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_BgTcQzL8EemKevIbtKJoYA" type="3007" element="_BgMuoDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgUqYDL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgUqYTL8EemKevIbtKJoYA" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_sXhkUDL-Eemwc5C4Pr35tw" type="2002" element="_sXcEzjL-Eemwc5C4Pr35tw">
+          <children xmi:type="notation:Node" xmi:id="_sXiLYDL-Eemwc5C4Pr35tw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_sXiLYTL-Eemwc5C4Pr35tw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_sXu_sDL-Eemwc5C4Pr35tw" type="3007" element="_sXcE0DL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sXw04DL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sXw04TL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgYUwDL8EemKevIbtKJoYA" type="3002" element="_BgMuoTL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgYUwTL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgYUwjL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX1GUDL-Eemwc5C4Pr35tw" type="3002" element="_sXcE0TL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX1GUTL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX1GUjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgTcRDL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgTcRTL8EemKevIbtKJoYA" x="30" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sXu_sTL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXu_sjL-Eemwc5C4Pr35tw" x="31" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgVRcDL8EemKevIbtKJoYA" type="3007" element="_BgMuojL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgV4gDL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgV4gTL8EemKevIbtKJoYA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_sXxb8DL-Eemwc5C4Pr35tw" type="3007" element="_sXcE0jL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sXyDADL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sXyDATL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgYUwzL8EemKevIbtKJoYA" type="3002" element="_BgMuozL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgYUxDL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgYUxTL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX1GUzL-Eemwc5C4Pr35tw" type="3002" element="_sXcE0zL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX1GVDL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX1GVTL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgVRcTL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgVRcjL8EemKevIbtKJoYA" x="110" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sXxb8TL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXxb8jL-Eemwc5C4Pr35tw" x="115" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgWfkDL8EemKevIbtKJoYA" type="3007" element="_BgMupDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgXGoDL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgXGoTL8EemKevIbtKJoYA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_sXyqEDL-Eemwc5C4Pr35tw" type="3007" element="_sXcE1DL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sXzRIDL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sXzRITL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgY70DL8EemKevIbtKJoYA" type="3002" element="_BgMupTL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgY70TL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgY70jL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX2UcDL-Eemwc5C4Pr35tw" type="3002" element="_sXcE1TL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX2UcTL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX2UcjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgWfkTL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgWfkjL8EemKevIbtKJoYA" x="220" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sXyqETL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXyqEjL-Eemwc5C4Pr35tw" x="223" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgXtsDL8EemKevIbtKJoYA" type="3007" element="_BgMupjL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgXtszL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgXttDL8EemKevIbtKJoYA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_sXz4MjL-Eemwc5C4Pr35tw" type="3007" element="_sXcE2DL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sX0fQDL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sX0fQTL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgY70zL8EemKevIbtKJoYA" type="3002" element="_BgMupzL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgY71DL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgY71TL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX27gDL-Eemwc5C4Pr35tw" type="3002" element="_sXcE2TL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX27gTL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX27gjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgXtsTL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgXtsjL8EemKevIbtKJoYA" x="330" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sXz4MzL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXz4NDL-Eemwc5C4Pr35tw" x="439" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgXttTL8EemKevIbtKJoYA" type="3007" element="_BgMuqDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgXtuDL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgXtuTL8EemKevIbtKJoYA" y="5"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_BgY71jL8EemKevIbtKJoYA" type="3002" element="_BgMuqTL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgY71zL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgY72DL8EemKevIbtKJoYA"/>
-              </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgXttjL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgXttzL8EemKevIbtKJoYA" x="440" y="29" width="50" height="50"/>
-            </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_BgQY8jL8EemKevIbtKJoYA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_BgQY8zL8EemKevIbtKJoYA"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_sXiLYjL-Eemwc5C4Pr35tw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_sXiLYzL-Eemwc5C4Pr35tw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_BgPx5TL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgPx5jL8EemKevIbtKJoYA" x="95" y="180"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sXhkUTL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXhkUjL-Eemwc5C4Pr35tw" x="72" y="156"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_BgQY9DL8EemKevIbtKJoYA" type="2002" element="_BgMuqjL8EemKevIbtKJoYA">
-          <children xmi:type="notation:Node" xmi:id="_BgRAADL8EemKevIbtKJoYA" type="5006"/>
-          <children xmi:type="notation:Node" xmi:id="_BgRAATL8EemKevIbtKJoYA" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_BgY72TL8EemKevIbtKJoYA" type="3007" element="_BgMurDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgZi4DL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgZi4TL8EemKevIbtKJoYA" y="5"/>
+        <children xmi:type="notation:Node" xmi:id="_sXiLZDL-Eemwc5C4Pr35tw" type="2002" element="_sXcE2jL-Eemwc5C4Pr35tw">
+          <children xmi:type="notation:Node" xmi:id="_sXo5EDL-Eemwc5C4Pr35tw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_sXpgIDL-Eemwc5C4Pr35tw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_sX3ikDL-Eemwc5C4Pr35tw" type="3007" element="_sXcE3DL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sX3ikzL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sX3ilDL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgaJ9TL8EemKevIbtKJoYA" type="3002" element="_BgMurTL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgaJ9jL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgaJ9zL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX9CIDL-Eemwc5C4Pr35tw" type="3002" element="_sXcE3TL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX9CITL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX9CIjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgY72jL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgY72zL8EemKevIbtKJoYA" x="30" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sX3ikTL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX3ikjL-Eemwc5C4Pr35tw" x="31" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgZi4jL8EemKevIbtKJoYA" type="3007" element="_BgMurjL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgZi5TL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgZi5jL8EemKevIbtKJoYA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_sX4JoDL-Eemwc5C4Pr35tw" type="3007" element="_sXcE3jL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sX4JozL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sX4JpDL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgaxADL8EemKevIbtKJoYA" type="3002" element="_BgMurzL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgaxATL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgaxAjL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX-QQDL-Eemwc5C4Pr35tw" type="3002" element="_sXcE3zL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX-QQTL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX-QQjL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgZi4zL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgZi5DL8EemKevIbtKJoYA" x="110" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sX4JoTL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX4JojL-Eemwc5C4Pr35tw" x="115" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgZi5zL8EemKevIbtKJoYA" type="3007" element="_BgMusDL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgZi6jL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgZi6zL8EemKevIbtKJoYA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_sX70ADL-Eemwc5C4Pr35tw" type="3007" element="_sXcE4jL-Eemwc5C4Pr35tw">
+              <children xmi:type="notation:Node" xmi:id="_sX8bEDL-Eemwc5C4Pr35tw" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_sX8bETL-Eemwc5C4Pr35tw" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_BgaxAzL8EemKevIbtKJoYA" type="3002" element="_BgMusTL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgaxBDL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgaxBTL8EemKevIbtKJoYA"/>
+              <children xmi:type="notation:Node" xmi:id="_sX-3UzL-Eemwc5C4Pr35tw" type="3002" element="_sXcE4zL-Eemwc5C4Pr35tw">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_sX-3VDL-Eemwc5C4Pr35tw" fontName="Cantarell"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX-3VTL-Eemwc5C4Pr35tw"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgZi6DL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgZi6TL8EemKevIbtKJoYA" x="220" y="29" width="50" height="50"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_sX70ATL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sX70AjL-Eemwc5C4Pr35tw" x="331" y="30" width="50" height="50"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_BgaJ8DL8EemKevIbtKJoYA" type="3007" element="_BgMusjL8EemKevIbtKJoYA">
-              <children xmi:type="notation:Node" xmi:id="_BgaJ8zL8EemKevIbtKJoYA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_BgaJ9DL8EemKevIbtKJoYA" y="5"/>
-              </children>
-              <children xmi:type="notation:Node" xmi:id="_BgaxBjL8EemKevIbtKJoYA" type="3002" element="_BgMuszL8EemKevIbtKJoYA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_BgaxBzL8EemKevIbtKJoYA" fontName="Segoe UI"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgaxCDL8EemKevIbtKJoYA"/>
-              </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_BgaJ8TL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgaJ8jL8EemKevIbtKJoYA" x="330" y="29" width="50" height="50"/>
-            </children>
-            <styles xmi:type="notation:SortingStyle" xmi:id="_BgRAAjL8EemKevIbtKJoYA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_BgRAAzL8EemKevIbtKJoYA"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_sXpgITL-Eemwc5C4Pr35tw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_sXpgIjL-Eemwc5C4Pr35tw"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_BgQY9TL8EemKevIbtKJoYA" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BgQY9jL8EemKevIbtKJoYA" x="95" y="315"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_sXiLZTL-Eemwc5C4Pr35tw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXiLZjL-Eemwc5C4Pr35tw" x="72" y="288"/>
         </children>
-        <styles xmi:type="notation:DiagramStyle" xmi:id="_BgOjwjL8EemKevIbtKJoYA"/>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_sXehAjL-Eemwc5C4Pr35tw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMulDL8EemKevIbtKJoYA" name="x: 3&#xA;y: 383&#xA;distance with object: 145" width="3" height="3" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcExDL-Eemwc5C4Pr35tw" name="Invalid feature as name" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="robot:Connection" href="skip_block.robot#//@connection"/>
       <semanticElements xmi:type="robot:Connection" href="skip_block.robot#//@connection"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" xmi:id="_BgMulTL8EemKevIbtKJoYA" showIcon="false" labelPosition="node" color="204,242,166">
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_sXcExTL-Eemwc5C4Pr35tw" showIcon="false" labelPosition="node" color="204,242,166">
         <description xmi:type="style:SquareDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@nodeMappings[name='Status']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@nodeMappings[name='Status']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_BgMuljL8EemKevIbtKJoYA" name="init">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_sXcExjL-Eemwc5C4Pr35tw" name="init">
       <target xmi:type="robot:Scenario" href="skip_block.robot#//@scenarii.0"/>
       <semanticElements xmi:type="robot:Scenario" href="skip_block.robot#//@scenarii.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_BgMulzL8EemKevIbtKJoYA" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_sXcExzL-Eemwc5C4Pr35tw" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMumDL8EemKevIbtKJoYA" name="forward" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcEyDL-Eemwc5C4Pr35tw" name="forward" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.0"/>
         <semanticElements xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.0"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMumTL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcEyTL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMumjL8EemKevIbtKJoYA" name="print" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="robot:PrintStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.1"/>
-        <semanticElements xmi:type="robot:PrintStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.1"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMumzL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
-          <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMunDL8EemKevIbtKJoYA" name="execute" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.2"/>
-        <semanticElements xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.2"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_CUvJ4DL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcEyjL-Eemwc5C4Pr35tw" name="execute" width="5" height="5" resizeKind="NSEW">
+        <target xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.1"/>
+        <semanticElements xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.0/@statementBlock/@statements.1"/>
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcEyzL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_BgMunjL8EemKevIbtKJoYA" name="go_forward">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_sXcEzjL-Eemwc5C4Pr35tw" name="go_forward">
       <target xmi:type="robot:Scenario" href="skip_block.robot#//@scenarii.1"/>
       <semanticElements xmi:type="robot:Scenario" href="skip_block.robot#//@scenarii.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_BgMunzL8EemKevIbtKJoYA" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_sXcEzzL-Eemwc5C4Pr35tw" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMuoDL8EemKevIbtKJoYA" name="until" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE0DL-Eemwc5C4Pr35tw" name="until" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="robot:UntilStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0"/>
         <semanticElements xmi:type="robot:UntilStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMuoTL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE0TL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMuojL8EemKevIbtKJoYA" name="print" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="robot:PrintStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
-        <semanticElements xmi:type="robot:PrintStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMuozL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE0jL-Eemwc5C4Pr35tw" name="forward" width="5" height="5" resizeKind="NSEW">
+        <target xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
+        <semanticElements xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE0zL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMupDL8EemKevIbtKJoYA" name="forward" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE1DL-Eemwc5C4Pr35tw" name="forward" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.1"/>
         <semanticElements xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.1"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMupTL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE1TL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMupjL8EemKevIbtKJoYA" name="forward" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.2"/>
-        <semanticElements xmi:type="robot:ForwardStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.0/@statementBlock/@statements.2"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMupzL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
-          <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMuqDL8EemKevIbtKJoYA" name="execute" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE2DL-Eemwc5C4Pr35tw" name="execute" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.1"/>
         <semanticElements xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.1/@statementBlock/@statements.1"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMuqTL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE2TL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_BgMuqjL8EemKevIbtKJoYA" name="avoid_object">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_sXcE2jL-Eemwc5C4Pr35tw" name="avoid_object">
       <target xmi:type="robot:Scenario" href="skip_block.robot#//@scenarii.2"/>
       <semanticElements xmi:type="robot:Scenario" href="skip_block.robot#//@scenarii.2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_BgMuqzL8EemKevIbtKJoYA" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_sXcE2zL-Eemwc5C4Pr35tw" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMurDL8EemKevIbtKJoYA" name="while" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE3DL-Eemwc5C4Pr35tw" name="while" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="robot:WhileStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0"/>
         <semanticElements xmi:type="robot:WhileStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMurTL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="246,139,139">
-          <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@conditionnalStyles.0/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMurjL8EemKevIbtKJoYA" name="print" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="robot:PrintStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
-        <semanticElements xmi:type="robot:PrintStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMurzL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE3TL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMusDL8EemKevIbtKJoYA" name="right" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="robot:RightStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0/@statementBlock/@statements.1"/>
-        <semanticElements xmi:type="robot:RightStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0/@statementBlock/@statements.1"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMusTL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE3jL-Eemwc5C4Pr35tw" name="right" width="5" height="5" resizeKind="NSEW">
+        <target xmi:type="robot:RightStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
+        <semanticElements xmi:type="robot:RightStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.0/@statementBlock/@statements.0"/>
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE3zL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BgMusjL8EemKevIbtKJoYA" name="execute" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_sXcE4jL-Eemwc5C4Pr35tw" name="execute" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.1"/>
         <semanticElements xmi:type="robot:ExecuteStatement" href="skip_block.robot#//@scenarii.2/@statementBlock/@statements.1"/>
-        <ownedStyle xmi:type="diagram:Dot" xmi:id="_BgMuszL8EemKevIbtKJoYA" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
+        <ownedStyle xmi:type="diagram:Dot" xmi:id="_sXcE4zL-Eemwc5C4Pr35tw" showIcon="false" borderColor="252,175,62" labelPosition="node" backgroundColor="253,206,137">
           <description xmi:type="style:DotDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='StatementNode']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']"/>
-    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_BgMutDL8EemKevIbtKJoYA"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_sXcE5DL-Eemwc5C4Pr35tw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.robot.design/description/robot.odesign#//@ownedViewpoints[name='Robot']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer"/>
     <target xmi:type="robot:Robot" href="skip_block.robot#/"/>
   </diagram:DSemanticDiagram>
