@@ -12,7 +12,7 @@
 
 ## Launching the Modeling Workbench
 * You can import the launch configuration of the modeling workbench with the `modelingWB.launch`
-* Please make sure that your `LD_LIBRARY_PATH` (`PATH` on Windows) in your run configuration is set to `${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/ModelingWB`
+* Please make sure that your `LD_LIBRARY_PATH` (`PATH` on Windows) in your run configuration is set to `${workspace_loc:org.robot.k3project/vrepLibs/Linux/64Bit}`
 * The modeling workbench should then be launched successfully
 
 ## Interpreting a model
