@@ -20,6 +20,43 @@
 * You can also import the run conditions with the `Shortcut.launch` and the `Skip block.launch` files
 * Then you can run the models if you have VREP installed (or comment the robot control command and use the print statement)
 
+## Example
+Here is an example of program written with this DSL. The different types are described in the following sections
+
+```
+Robot robot{
+	connect_to "127.0.0.1":19997
+	scenarii{
+		Scenario init {
+			forward
+			execute go_forward
+		}
+		Scenario go_forward {
+			while true {
+				forward
+			}
+			execute avoid_object
+		}
+		Scenario avoid_object {
+			while object_ahead {
+				right
+			}
+			execute go_forward
+		}
+	}
+	global {
+		if object_ahead {
+			execute avoid_object
+		}
+	}
+	initial init
+}
+```
+
+## Scenarios and global (shorcuts)
+A typical program is represented by multiple Scenario objects contained in a Robot.
+However, there is a special type of Scenario called the global. The global is executed between every statement of a scenario. The goal is to react to event that are not exepected in the usual scenario (ie. hit a wall), and hence "shortcut" the scenario to go to another one, to handle this event
+
 ## Statements
 | Statement | Description                                                           |
 | --------- | --------------------------------------------------------------------- |
@@ -30,7 +67,8 @@
 |`execute`  | Change the executed scenario                                          |
 
 ## Conditional statements
-The conditional statements are composed with the keyword, a condition and the statements to execute between curly brackets
+The conditional statements are composed with the keyword, a condition and the statements to execute between curly brackets.
+There is a specificities compared to usual programming language: condition are evaluated even between statement, and hence the end of an if block can be skipped for instance.
 
 | Keyword   | Description                                                           |
 | --------- | --------------------------------------------------------------------- |
@@ -39,7 +77,6 @@ The conditional statements are composed with the keyword, a condition and the st
 |`until`    | While the condition is false                                          |
 
 ## Conditions
-
 | Condition     | Description                                                       |
 | ------------- | ----------------------------------------------------------------- |
 |`true`         | Always true                                                       |
