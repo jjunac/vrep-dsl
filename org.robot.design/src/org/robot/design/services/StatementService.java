@@ -22,7 +22,7 @@ import org.robot.model.robot.Scenario;
 import org.robot.model.robot.Statement;
 import org.robot.vrep.robot.PolyRob;
 
-public class StatementService extends AbstractGemocDebuggerServices {
+public class StatementService {
 
 	public String getServiceName(Statement s) {
 		return StatementAspect.getType(s);
@@ -111,17 +111,6 @@ public class StatementService extends AbstractGemocDebuggerServices {
 		
 		 return "void";
 	}
-
-	@Override
-	protected List<StringCouple> getRepresentationRefreshList() {
-		return Arrays.asList(new StringCouple("RobotDiagram", "Default"));
-	}
-
-	@Override
-	public String getModelIdentifier() {
-		return null;
-	}
-
 
 }
 
